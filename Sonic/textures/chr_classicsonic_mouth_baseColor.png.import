@@ -2,18 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj3hwwsx7ir3g"
-path.s3tc="res://.godot/imported/Sonic_chr_classicsonic_body_dif.png-bced122ac862eeb552366ee5f219fb68.s3tc.ctex"
+uid="uid://ch22k44a43gtn"
+path.s3tc="res://.godot/imported/chr_classicsonic_mouth_baseColor.png-c3946d00c3b74baa8b3e366a9043e839.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://Sonic/Sonic_chr_classicsonic_body_dif.png"
-dest_files=["res://.godot/imported/Sonic_chr_classicsonic_body_dif.png-bced122ac862eeb552366ee5f219fb68.s3tc.ctex"]
+source_file="res://Sonic/textures/chr_classicsonic_mouth_baseColor.png"
+dest_files=["res://.godot/imported/chr_classicsonic_mouth_baseColor.png-c3946d00c3b74baa8b3e366a9043e839.s3tc.ctex"]
 
 [params]
 

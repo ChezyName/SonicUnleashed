@@ -2,18 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpoaetgp5fcug"
-path.s3tc="res://.godot/imported/Sonic_chr_classicsonic_eye_dif.png-464d49c3ef63dde37cb3e9d390799c35.s3tc.ctex"
+uid="uid://ccgo4kar3ys1"
+path.s3tc="res://.godot/imported/chr_classicsonic_body_baseColor.png-d4c0d6e616d765a9de5bd4079857044a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://Sonic/Sonic_chr_classicsonic_eye_dif.png"
-dest_files=["res://.godot/imported/Sonic_chr_classicsonic_eye_dif.png-464d49c3ef63dde37cb3e9d390799c35.s3tc.ctex"]
+source_file="res://Sonic/textures/chr_classicsonic_body_baseColor.png"
+dest_files=["res://.godot/imported/chr_classicsonic_body_baseColor.png-d4c0d6e616d765a9de5bd4079857044a.s3tc.ctex"]
 
 [params]
 

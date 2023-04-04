@@ -1,0 +1,11 @@
+Model Information:
+* title:	ANIMATIONS Classic Sonic - Sonic Runners
+* source:	https://sketchfab.com/3d-models/animations-classic-sonic-sonic-runners-fa58f582a6f4425ba303c1b0cf3f34c8
+* author:	clwent (https://sketchfab.com/davetehhedgehog)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "ANIMATIONS Classic Sonic - Sonic Runners" (https://sketchfab.com/3d-models/animations-classic-sonic-sonic-runners-fa58f582a6f4425ba303c1b0cf3f34c8) by clwent (https://sketchfab.com/davetehhedgehog) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

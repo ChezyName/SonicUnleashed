@@ -1,22 +1,28 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbbkrlmaf07ed"]
 
 [ext_resource type="Script" path="res://Sonic/Scripts/Movement.gd" id="1_dv7wy"]
-[ext_resource type="PackedScene" uid="uid://cdihtsl761kc7" path="res://Sonic/Sonic.glb" id="1_nfxmp"]
+[ext_resource type="PackedScene" uid="uid://cp6161uxbc6ao" path="res://Sonic/Sonic.gltf" id="2_y1scu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lgno2"]
 height = 1.3702
 
 [node name="SonicPlayer" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278187, 2.52538, -1.33322)
+can_sleep = false
+lock_rotation = true
 script = ExtResource("1_dv7wy")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.626312, 0)
 shape = SubResource("CapsuleShape3D_lgno2")
 
-[node name="SonicMesh" parent="." instance=ExtResource("1_nfxmp")]
-metadata/_edit_group_ = true
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0.5, 0)
 current = true
+
+[node name="GroundCheck" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26062, 0)
+target_position = Vector3(0, -0.5, 0)
+
+[node name="SonicMesh" parent="." instance=ExtResource("2_y1scu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
