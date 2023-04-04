@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://wsv6bg6tnnqm"]
+[gd_scene load_steps=2 format=3 uid="uid://wsv6bg6tnnqm"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y6fvg"]
 
 [node name="World" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.85102, 0, 0, 0, 1, 0, 0, 0, 12.614, 0, 0, 0)
+mesh = SubResource("PlaneMesh_y6fvg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0605259, 0.998167, 0, -0.998167, -0.0605259, 0, 1.40064, 0)
