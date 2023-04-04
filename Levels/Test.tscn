@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://wsv6bg6tnnqm"]
+[gd_scene load_steps=3 format=3 uid="uid://wsv6bg6tnnqm"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_y6fvg"]
+[ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="1_i6154"]
+[ext_resource type="PackedScene" uid="uid://ds68hs5k2m60l" path="res://Prefabs/Ground.tscn" id="2_dhjbc"]
 
 [node name="World" type="Node3D"]
 
-[node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.85102, 0, 0, 0, 1, 0, 0, 0, 12.614, 0, 0, 0)
-mesh = SubResource("PlaneMesh_y6fvg")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0605259, 0.998167, 0, -0.998167, -0.0605259, 0, 1.40064, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.40064, 0)
+
+[node name="SonicPlayer" parent="." instance=ExtResource("1_i6154")]
+
+[node name="Ground" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(25, 0, 0, 0, 2.06002, 0, 0, 0, 25, 2.72328, 0, 4.86654)

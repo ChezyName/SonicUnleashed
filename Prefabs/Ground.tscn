@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds68hs5k2m60l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fitca"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83cph"]
+
+[node name="Ground" type="StaticBody3D"]
+transform = Transform3D(25, 0, 0, 0, 2.06002, 0, 0, 0, 25, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_fitca")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_83cph")
