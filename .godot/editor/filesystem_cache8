@@ -1,3 +1,11 @@
 2a60927148abd1d33b818b535e306557
-::res://::1680573659
+::res://::1680575450
 icon.svg::CompressedTexture2D::5395367413076328724::1680573645::1680573661::1::::<><>::
+README.md::TextFile::-1::1680573771::0::1::::<><>::
+::res://ClassicSonic/::1680575450
+ClassicSonic.glb::PackedScene::2794924294252146249::1680575441::1680575451::1::::<><>::uid://dpndhtdy1upks<>uid://chvl66fhmiib3<>uid://5h630doj3b5s
+ClassicSonic_chr_classicsonic_body_dif.png::CompressedTexture2D::8239127271692264354::1680575441::1680575450::1::::<><>::
+ClassicSonic_chr_classicsonic_eye_dif.png::CompressedTexture2D::2122049500791879938::1680575441::1680575450::1::::<><>::
+ClassicSonic_chr_classicsonic_mouth_dif.png::CompressedTexture2D::5308240088501451262::1680575441::1680575450::1::::<><>::
+::res://Levels/::1680575197
+Test.tscn::PackedScene::1582643839295527640::1680575197::0::1::::<><>::uid://4cst51woqli1
