@@ -11,4 +11,16 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.4
 [node name="SonicPlayer" parent="." instance=ExtResource("1_i6154")]
 
 [node name="Ground" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.87494, 0, 0, 0, 2.06002, 0, 0, 0, 666854, 0.220713, 0, 127623)
+transform = Transform3D(3.17299, 0, 0, 0, 0.524194, 0, 0, 0, 25, -0.105894, 0, 5.42873)
+
+[node name="Ground2" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.17299, 0, 0, 0, 0.52355, 1.23824, 0, -0.0259631, 24.9693, -0.105894, 0.631061, 27.5568)
+
+[node name="Ground3" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.17299, 0, 0, 0, 0.515262, 4.59535, 0, -0.0963542, 24.574, -0.105894, 3.08677, 49.7569)
+
+[node name="Ground4" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.17299, 0, 0, 0, 0.49014, 8.8638, 0, -0.185854, 23.3759, -0.105894, 9.04284, 70.9597)
+
+[node name="Ground5" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.17299, 0, 0, 0, 0.45072, 12.7643, 0, -0.267639, 21.4959, -0.105894, 18.8539, 91.4226)

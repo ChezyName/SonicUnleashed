@@ -13,19 +13,20 @@ can_sleep = false
 lock_rotation = true
 script = ExtResource("1_dv7wy")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0150785, 0)
-shape = SubResource("CapsuleShape3D_lgno2")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0.0820947, 0)
 current = true
 
-[node name="GroundCheck" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.415005, 0)
-target_position = Vector3(0, -0.5, 0)
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0150785, 0)
+shape = SubResource("CapsuleShape3D_lgno2")
 
 [node name="MeshHolder" type="Node3D" parent="."]
+
+[node name="GroundCheck" type="RayCast3D" parent="MeshHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.471692, 0)
+target_position = Vector3(0, -0.5, 0)
+debug_shape_thickness = 5
 
 [node name="SonicMesh" parent="MeshHolder" instance=ExtResource("2_y1scu")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.675625, 0)

@@ -20,7 +20,7 @@ var Spedometer:RichTextLabel;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SonicMesh = get_node("MeshHolder/SonicMesh");
-	GroundCheck = get_node("GroundCheck")
+	GroundCheck = get_node("MeshHolder/GroundCheck")
 	Animator = get_node("MeshHolder/SonicMesh/AnimationPlayer")
 	Spedometer = get_node("HUD/Speed")
 	MeshHolder = get_node("MeshHolder")
@@ -73,6 +73,14 @@ func _process(delta):
 	self.linear_velocity = c_Vel;
 	Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
 	PlayAnimation(c_Vel,isOnGround)
+	
+	if(isOnGround): 
+		var xform = global_transform
+		xform.basis.y = GroundCheck.get_collision_normal()
+		xform.basis.x = -xform.basis.z.cross(GroundCheck.get_collision_normal())
+		xform.basis = xform.basis.orthonormalized()
+		MeshHolder.global_transform = xform
+		self.linear_velocity += -get_global_transform().basis.z * 12 * delta;
 	
 	#Flip Character Based On facingForward
 	if(facingForward): SonicMesh.rotation_degrees.y = 0;
