@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbbkrlmaf07ed"]
+[gd_scene load_steps=5 format=3 uid="uid://dbbkrlmaf07ed"]
 
 [ext_resource type="Script" path="res://Sonic/Scripts/Movement.gd" id="1_dv7wy"]
 [ext_resource type="PackedScene" uid="uid://cp6161uxbc6ao" path="res://Sonic/Sonic.gltf" id="2_y1scu"]
+[ext_resource type="FontFile" uid="uid://vwaa215ubcbi" path="res://Fonts/Torch.ttf" id="3_xt0np"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lgno2"]
 height = 1.3702
@@ -24,6 +25,11 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.415005, 0)
 target_position = Vector3(0, -0.5, 0)
 
+[node name="MeshHolder" type="Node3D" parent="."]
+
+[node name="SonicMesh" parent="MeshHolder" instance=ExtResource("2_y1scu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.675625, 0)
+
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -37,12 +43,11 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -23.0
-offset_right = 218.0
+offset_left = 18.0
+offset_top = -68.0
+offset_right = 425.0
+offset_bottom = -6.0
 grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_xt0np")
+theme_override_font_sizes/normal_font_size = 50
 text = "100ms"
-
-[node name="MeshHolder" type="Node3D" parent="."]
-
-[node name="SonicMesh" parent="MeshHolder" instance=ExtResource("2_y1scu")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.675625, 0)

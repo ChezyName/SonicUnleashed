@@ -28,7 +28,7 @@ func _ready():
 
 # process velocity and play animation based on that
 func PlayAnimation(velocity,OnGround) -> void:
-	Animator.speed_scale = abs(velocity.z) / 10;
+	Animator.speed_scale = clamp(abs(velocity.z) / 10,0,40);
 	# Broke Sound Barrier
 	if(abs(velocity.z) > 120): Animator.play("sc_boost");
 	elif(abs(velocity.z) > 0): Animator.play("sc_run");
