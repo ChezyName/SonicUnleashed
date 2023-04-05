@@ -1,3 +1,7 @@
+Node3D
+RichTextLabel
+TextEdit
+Control
 RayCast3D
 CollisionShape3D
 MeshInstance3D
