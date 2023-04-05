@@ -21,6 +21,8 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0150785, 0)
 shape = SubResource("CapsuleShape3D_lgno2")
 
+[node name="Forward" type="Node3D" parent="."]
+
 [node name="MeshHolder" type="Node3D" parent="."]
 
 [node name="GroundCheck" type="RayCast3D" parent="MeshHolder"]

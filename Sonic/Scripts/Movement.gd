@@ -5,6 +5,7 @@ const GroundSpeed = 24;
 const AirSpeed = 14;
 const SlowDownPercentage = 0.75;
 const AirControlPercentage = 0.6;
+const SpeedForSuper = 120;
 
 var facingForward = true;
 var ForceGravity = 0;
@@ -30,7 +31,7 @@ func _ready():
 func PlayAnimation(velocity,OnGround) -> void:
 	Animator.speed_scale = clamp(abs(velocity.z) / 10,0,40);
 	# Broke Sound Barrier
-	if(abs(velocity.z) > 120): Animator.play("sc_boost");
+	if(abs(velocity.z) > SpeedForSuper): Animator.play("sc_boost");
 	elif(abs(velocity.z) > 0): Animator.play("sc_run");
 	else: Animator.play("");
 	
@@ -63,14 +64,27 @@ func _process(delta):
 	
 	c_Vel.z += (XInput * GroundSpeed * delta);
 	
-	if isOnGround:
-		if(Input.is_action_just_pressed("Jump")): c_Vel.y = 6;
-	else:
-		if(Input.is_action_pressed("Jump")): c_Vel.y -= 5.8 * delta;
-		else: c_Vel.y -= 9.8 * delta;
-	
 	#Set Velecity
-	self.linear_velocity = c_Vel;
+	var Forward = $Forward.transform.basis.z
+	var Up = -$Forward.transform.basis.y
+	var UpMomentum = (Up * abs(c_Vel.y))
+	
+	if isOnGround and Input.is_action_just_pressed("Jump"):
+		UpMomentum = (Up * -6);
+		c_Vel.y = 6;
+	elif(!isOnGround and Input.is_action_pressed("Jump")):
+		c_Vel.y -= 5.8 * delta;
+		UpMomentum = (Up * (5.8 * delta));
+	elif(!isOnGround):
+		c_Vel.y -= 9.8 * delta;
+		UpMomentum = (Up * (9.8 * delta));
+	
+	var MoveDir = (Forward *  c_Vel.z) + UpMomentum;
+	print(UpMomentum)
+	
+	if(isOnGround): self.linear_velocity = MoveDir;
+	else: self.linear_velocity = c_Vel;
+	
 	Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
 	PlayAnimation(c_Vel,isOnGround)
 	
@@ -80,7 +94,7 @@ func _process(delta):
 		xform.basis.x = -xform.basis.z.cross(GroundCheck.get_collision_normal())
 		xform.basis = xform.basis.orthonormalized()
 		MeshHolder.global_transform = xform
-		self.linear_velocity += -get_global_transform().basis.z * 12 * delta;
+		$Forward.global_transform = xform;
 	
 	#Flip Character Based On facingForward
 	if(facingForward): SonicMesh.rotation_degrees.y = 0;

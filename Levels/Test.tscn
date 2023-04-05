@@ -24,3 +24,12 @@ transform = Transform3D(3.17299, 0, 0, 0, 0.49014, 8.8638, 0, -0.185854, 23.3759
 
 [node name="Ground5" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.17299, 0, 0, 0, 0.45072, 12.7643, 0, -0.267639, 21.4959, -0.105894, 18.8539, 91.4226)
+
+[node name="Ground6" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.17299, 0, 0, 0, 0.403127, 15.9799, 0, -0.335063, 19.2261, -0.105894, 32.0853, 110.27)
+
+[node name="Ground7" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.17299, 0, 0, 0, 0.354241, 18.4275, 0, -0.386383, 16.8946, -0.105894, 47.3765, 126.55)
+
+[node name="Ground8" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.17299, 0, 0, 0, 0.280421, 21.122, 0, -0.44288, 13.3739, -0.105894, 64.8684, 139.932)
