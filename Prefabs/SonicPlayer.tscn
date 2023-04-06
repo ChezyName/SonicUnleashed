@@ -26,12 +26,12 @@ shape = SubResource("CapsuleShape3D_lgno2")
 [node name="MeshHolder" type="Node3D" parent="."]
 
 [node name="GroundCheck" type="RayCast3D" parent="MeshHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.471692, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.407419, 0)
 target_position = Vector3(0, -0.5, 0)
 debug_shape_thickness = 5
 
 [node name="SonicMesh" parent="MeshHolder" instance=ExtResource("2_y1scu")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.675625, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.611352, 0)
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3

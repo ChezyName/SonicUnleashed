@@ -11,28 +11,16 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.4
 [node name="SonicPlayer" parent="." instance=ExtResource("1_i6154")]
 
 [node name="Ground" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 0.524194, 0, 0, 0, 25, -0.105894, 0, 5.42873)
+transform = Transform3D(3.17299, 0, 0, 0, 0.524194, 0, 0, 0, 249.983, -0.105894, 0, -102.252)
 
 [node name="Ground2" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 0.521326, 1.34433, 0, -0.0258528, 27.1086, -0.105894, 0.631061, 27.5568)
+transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105894, 0.519914, 29.8354)
 
 [node name="Ground3" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 0.515262, 4.59535, 0, -0.0963542, 24.574, -0.105894, 3.08677, 49.7569)
+transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105894, -0.720651, 52.8505)
 
 [node name="Ground4" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 0.49014, 8.8638, 0, -0.185854, 23.3759, -0.105894, 9.04284, 70.9597)
+transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105892, 4.11887, 77.5516)
 
 [node name="Ground5" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 0.45072, 12.7643, 0, -0.267639, 21.4959, -0.105894, 18.8539, 91.4226)
-
-[node name="Ground6" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 0.403127, 15.9799, 0, -0.335063, 19.2261, -0.105894, 32.0853, 110.27)
-
-[node name="Ground7" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, -0.520225, -3.07055, 0, 0.0643826, -24.8107, -0.170614, 59.6565, 178.497)
-
-[node name="Ground8" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, -0.501313, -7.30551, 0, 0.153181, -23.9088, -0.170613, 54.4957, 154.09)
-
-[node name="Ground9" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, -0.471058, -10.9675, 0, 0.229964, -22.4659, -0.105894, 45.4612, 131.057)
+transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105894, 9.08072, 102.77)

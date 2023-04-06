@@ -31,20 +31,20 @@ func _ready():
 func PlayAnimation(velocity,OnGround) -> void:
 	Animator.speed_scale = clamp(abs(velocity.z) / 10,0,40);
 	# Broke Sound Barrier
-	if(abs(velocity.z) > SpeedForSuper): Animator.play("sc_boost");
-	elif(abs(velocity.z) > 0): Animator.play("sc_run");
-	else: Animator.play("");
-	
-	if(!OnGround): 
-		Animator.play("sc_jump_ball");
-		MeshHolder.rotation_degrees.x += 9999;
+	if(OnGround):
+		if(abs(velocity.z) > SpeedForSuper): Animator.play("sc_boost");
+		else: Animator.play("sc_run");
+		MeshHolder.rotation_degrees.x = 0
 	else:
-		MeshHolder.rotation_degrees.x = 0;
+		Animator.speed_scale = 0;
+		Animator.play("sc_jump_ball");
+		if(facingForward): MeshHolder.rotation_degrees.x += 25;
+		else: MeshHolder.rotation_degrees.x -= 25;
 	
 	#print(velocity)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	var MoveInput:Vector2 = Input.get_vector("Left","Right","Backward","Forward");
 	var isOnGround := GroundCheck.is_colliding();
 	
@@ -59,8 +59,8 @@ func _process(delta):
 			XInput = -1;
 			facingForward = false;
 		else: facingForward = true;
-	#elif (MoveInput.x == 0 and abs(c_Vel.z) > 0):
-		#XInput = -(c_Vel.z * (SlowDownPercentage*SlowDownPercentage));
+	elif (MoveInput.x == 0 and abs(c_Vel.z) > 0):
+		XInput =  -1 * delta;
 	
 	c_Vel.z += (XInput * GroundSpeed * delta);
 	
@@ -69,30 +69,29 @@ func _process(delta):
 	var Up = $Forward.transform.basis.y
 	
 	if isOnGround and Input.is_action_just_pressed("Jump"):
-		c_Vel.y = 6;
-	elif(isOnGround):
-		c_Vel.y -= 4 * delta;
+		c_Vel.y = 8 * clamp((abs(c_Vel.z) / 100) + 1,1,2);
 	elif(!isOnGround and Input.is_action_pressed("Jump")):
-		c_Vel.y -= 5.8 * delta;
+		c_Vel.y -= 1.8 * delta;
 	elif(!isOnGround):
 		c_Vel.y -= 9.8 * delta;
 	
-	var MoveDir = (Forward *  c_Vel.z) + (Up * c_Vel);
-	print(str(MoveDir) + " / " + str(c_Vel))
+	#var MoveDir = (Forward *  c_Vel.z) + (Up * c_Vel);
+	#print(str(MoveDir))
 	
-	if(isOnGround): self.linear_velocity = MoveDir;
-	else: self.linear_velocity = c_Vel;
+	self.linear_velocity = c_Vel;
 	
 	Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
 	PlayAnimation(c_Vel,isOnGround)
 	
+	""" GROUND ANGLEING
 	if(isOnGround): 
 		var xform = global_transform
 		xform.basis.y = GroundCheck.get_collision_normal()
 		xform.basis.x = -xform.basis.z.cross(GroundCheck.get_collision_normal())
 		xform.basis = xform.basis.orthonormalized()
-		MeshHolder.global_transform = xform
+		MeshHolder.global_transform = xform;
 		$Forward.global_transform = xform;
+	"""
 	
 	#Flip Character Based On facingForward
 	if(facingForward): SonicMesh.rotation_degrees.y = 0;
