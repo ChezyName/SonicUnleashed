@@ -66,21 +66,19 @@ func _process(delta):
 	
 	#Set Velecity
 	var Forward = $Forward.transform.basis.z
-	var Up = -$Forward.transform.basis.y
-	var UpMomentum = (Up * abs(c_Vel.y))
+	var Up = $Forward.transform.basis.y
 	
 	if isOnGround and Input.is_action_just_pressed("Jump"):
-		UpMomentum = (Up * -6);
 		c_Vel.y = 6;
+	elif(isOnGround):
+		c_Vel.y -= 4 * delta;
 	elif(!isOnGround and Input.is_action_pressed("Jump")):
 		c_Vel.y -= 5.8 * delta;
-		UpMomentum = (Up * (5.8 * delta));
 	elif(!isOnGround):
 		c_Vel.y -= 9.8 * delta;
-		UpMomentum = (Up * (9.8 * delta));
 	
-	var MoveDir = (Forward *  c_Vel.z) + UpMomentum;
-	print(UpMomentum)
+	var MoveDir = (Forward *  c_Vel.z) + (Up * c_Vel);
+	print(str(MoveDir) + " / " + str(c_Vel))
 	
 	if(isOnGround): self.linear_velocity = MoveDir;
 	else: self.linear_velocity = c_Vel;
