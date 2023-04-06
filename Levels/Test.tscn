@@ -11,7 +11,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.4
 [node name="SonicPlayer" parent="." instance=ExtResource("1_i6154")]
 
 [node name="Ground" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 0.524194, 0, 0, 0, 249.983, -0.105894, 0, -102.252)
+transform = Transform3D(3.17299, 0, 0, 0, 0.524194, 0, 0, 0, 9471.34, -0.105894, 0, 5.60272)
 
 [node name="Ground2" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105894, 0.519914, 29.8354)

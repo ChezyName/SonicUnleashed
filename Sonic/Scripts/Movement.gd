@@ -38,8 +38,8 @@ func PlayAnimation(velocity,OnGround) -> void:
 	else:
 		Animator.speed_scale = 0;
 		Animator.play("sc_jump_ball");
-		if(facingForward): MeshHolder.rotation_degrees.x += 25;
-		else: MeshHolder.rotation_degrees.x -= 25;
+		if(facingForward): MeshHolder.rotation_degrees.x += 250 * clamp(Animator.speed_scale,1,20);
+		else: MeshHolder.rotation_degrees.x -= 250 * clamp(Animator.speed_scale,1,20);
 	
 	#print(velocity)
 
@@ -69,16 +69,15 @@ func _physics_process(delta):
 	var Up = $Forward.transform.basis.y
 	
 	if isOnGround and Input.is_action_just_pressed("Jump"):
-		c_Vel.y = 8 * clamp((abs(c_Vel.z) / 100) + 1,1,2);
+		c_Vel.y = 8 * clamp((abs(c_Vel.z) / 100) + 1,1,1.25);
 	elif(!isOnGround and Input.is_action_pressed("Jump")):
 		c_Vel.y -= 1.8 * delta;
 	elif(!isOnGround):
 		c_Vel.y -= 9.8 * delta;
 	
-	#var MoveDir = (Forward *  c_Vel.z) + (Up * c_Vel);
-	#print(str(MoveDir))
-	
-	self.linear_velocity = c_Vel;
+	if(isOnGround): self.linear_velocity = c_Vel;
+	else:
+		self.linear_velocity.y = c_Vel.y;
 	
 	Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
 	PlayAnimation(c_Vel,isOnGround)
