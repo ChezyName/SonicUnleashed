@@ -38,10 +38,13 @@ func PlayAnimation(velocity,OnGround) -> void:
 	else:
 		Animator.speed_scale = 0;
 		Animator.play("sc_jump_ball");
-		if(facingForward): MeshHolder.rotation_degrees.x += 250 * clamp(Animator.speed_scale,1,20);
-		else: MeshHolder.rotation_degrees.x -= 250 * clamp(Animator.speed_scale,1,20);
+		if(facingForward): MeshHolder.rotation_degrees.x += 250 * clamp(Animator.speed_scale/40,0.1,2);
+		else: MeshHolder.rotation_degrees.x -= 250 * clamp(Animator.speed_scale/40,0.1,2);
 	
 	#print(velocity)
+
+func CameraZoom(speed):
+	$Camera3D.fov = 75 * clamp((speed / 80) + 0.2,0.8,1.6)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -60,9 +63,14 @@ func _physics_process(delta):
 			facingForward = false;
 		else: facingForward = true;
 	elif (MoveInput.x == 0 and abs(c_Vel.z) > 0):
-		XInput =  -1 * delta;
+		if(facingForward): XInput =  -1 * delta;
+		else: XInput =  1 * delta;
 	
-	c_Vel.z += (XInput * GroundSpeed * delta);
+	if(!isOnGround and abs(c_Vel.z) > 0):
+		XInput = c_Vel.z * 0.005;
+	
+	c_Vel.z += (XInput * GroundSpeed * delta) + (abs(c_Vel.z) * 0.005 * XInput)
+	c_Vel.z = clamp(c_Vel.z,-400,400);
 	
 	#Set Velecity
 	var Forward = $Forward.transform.basis.z
@@ -75,12 +83,11 @@ func _physics_process(delta):
 	elif(!isOnGround):
 		c_Vel.y -= 9.8 * delta;
 	
-	if(isOnGround): self.linear_velocity = c_Vel;
-	else:
-		self.linear_velocity.y = c_Vel.y;
+	self.linear_velocity = c_Vel;
 	
 	Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
 	PlayAnimation(c_Vel,isOnGround)
+	CameraZoom(abs(c_Vel.z))
 	
 	""" GROUND ANGLEING
 	if(isOnGround): 
