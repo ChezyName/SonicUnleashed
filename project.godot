@@ -54,4 +54,6 @@ Jump={
 
 [physics]
 
+common/physics_ticks_per_second=999
+common/max_physics_steps_per_frame=16
 3d/physics_engine="GodotPhysics3D"

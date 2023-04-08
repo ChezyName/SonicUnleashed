@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://wsv6bg6tnnqm"]
+[gd_scene load_steps=4 format=3 uid="uid://wsv6bg6tnnqm"]
 
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="1_i6154"]
 [ext_resource type="PackedScene" uid="uid://ds68hs5k2m60l" path="res://Prefabs/Ground.tscn" id="2_dhjbc"]
+[ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/SonicRing.tscn" id="3_2c8uy"]
 
 [node name="World" type="Node3D"]
 
@@ -24,3 +25,39 @@ transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105892, 4.118
 
 [node name="Ground5" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105894, 9.08072, 102.77)
+
+[node name="SonicRing" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -5.28643)
+
+[node name="SonicRing2" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -7.46172)
+
+[node name="SonicRing3" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -9.73279)
+
+[node name="SonicRing4" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -12.7538)
+
+[node name="SonicRing5" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -14.929)
+
+[node name="SonicRing6" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -17.2001)
+
+[node name="SonicRing7" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -19.4933)
+
+[node name="SonicRing8" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -21.6686)
+
+[node name="SonicRing9" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -23.9397)
+
+[node name="SonicRing10" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -26.9607)
+
+[node name="SonicRing11" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -29.136)
+
+[node name="SonicRing12" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.09265, -31.407)
