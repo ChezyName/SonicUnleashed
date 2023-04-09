@@ -83,6 +83,7 @@ func _process(delta):
 	elif(!isOnGround):
 		c_Vel.y -= 9.8 * delta;
 	
+	c_Vel.z = clamp(c_Vel.z,-400,400)
 	if(isOnGround): self.linear_velocity = c_Vel;
 	else:
 		self.linear_velocity.y = c_Vel.y;
