@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cp6161uxbc6ao" path="res://Sonic/Sonic.gltf" id="2_y1scu"]
 [ext_resource type="FontFile" uid="uid://vwaa215ubcbi" path="res://Fonts/Torch.ttf" id="3_xt0np"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lgno2"]
-height = 1.3702
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2avpm"]
+height = 1.25
 
 [node name="SonicPlayer" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278187, 2.52538, -1.33322)
@@ -19,7 +19,7 @@ current = true
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0150785, 0)
-shape = SubResource("CapsuleShape3D_lgno2")
+shape = SubResource("CylinderShape3D_2avpm")
 
 [node name="Forward" type="Node3D" parent="."]
 
@@ -32,6 +32,11 @@ debug_shape_thickness = 5
 
 [node name="SonicMesh" parent="MeshHolder" instance=ExtResource("2_y1scu")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.611352, 0)
+
+[node name="RoofCheck" type="RayCast3D" parent="MeshHolder"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.346804, 0)
+target_position = Vector3(0, -0.5, 0)
+debug_shape_thickness = 5
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3

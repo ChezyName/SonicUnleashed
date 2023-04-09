@@ -18,6 +18,8 @@ var Animator:AnimationPlayer;
 var Spedometer:RichTextLabel;
 var TotalRings:int;
 
+var BasicHeight = 0;
+
 @export var SpeedMS:int = 0;
 
 func onRing():
@@ -31,6 +33,7 @@ func _ready():
 	Animator = get_node("MeshHolder/SonicMesh/AnimationPlayer")
 	Spedometer = get_node("HUD/Speed")
 	MeshHolder = get_node("MeshHolder")
+	BasicHeight = $Collision.shape.height;
 	pass # Replace with function body.
 
 # process velocity and play animation based on that
@@ -58,7 +61,7 @@ func _process(delta):
 	
 	var c_Vel = self.linear_velocity;
 	
-	Rolling = (isOnGround and Input.is_action_pressed("Backward") and int(abs(c_Vel.z)) > 0)
+	Rolling = (isOnGround and Input.is_action_pressed("Backward") and int(abs(c_Vel.z)) > 0) or ($MeshHolder/RoofCheck.is_colliding())
 	
 	var XInput = MoveInput.x;
 	if(abs(MoveInput.x) > 0):
@@ -73,13 +76,16 @@ func _process(delta):
 		XInput =  -1;
 	
 	var speedMod = 0.1;
+	if($MeshHolder/RoofCheck.is_colliding() and abs(c_Vel.z) <= 15): XInput = MoveInput.x;
 	if(abs(c_Vel.z) > 0): speedMod = clamp((abs(c_Vel.z)/400),0.1,1)
 	c_Vel.z += (XInput * GroundSpeed * delta) + (XInput * delta * speedMod * (abs(c_Vel.z)));
 	
 	if isOnGround and Input.is_action_just_pressed("Jump"):
 		c_Vel.y = 8 * clamp((abs(c_Vel.z) / 100) + 1,1,1.25);
 	elif(!isOnGround and Input.is_action_pressed("Jump")):
-		c_Vel.y -= 1.8 * delta;
+		c_Vel.y -= 2.8 * delta;
+	elif(!isOnGround and Input.is_action_pressed("Backward")):
+		c_Vel.y -= 16.8 * delta;
 	elif(!isOnGround):
 		c_Vel.y -= 9.8 * delta;
 	
@@ -91,6 +97,9 @@ func _process(delta):
 	Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
 	PlayAnimation(c_Vel,isOnGround)
 	CameraZoom(abs(self.linear_velocity.z))
+	
+	if(Rolling): $Collision.shape.height = 0.5;
+	else: $Collision.shape.height = 1.25;
 	
 	""" GROUND ANGLEING
 	if(isOnGround): 
