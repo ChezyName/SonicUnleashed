@@ -18,10 +18,10 @@ transform = Transform3D(3.17299, 0, 0, 0, 0.524194, 0, 0, 0, 9471.34, -0.105894,
 transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105894, 4.33561, 29.8354)
 
 [node name="Ground4" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105892, 4.11887, 77.5516)
+transform = Transform3D(3.17299, 0, 0, 0, 5.61736, 3.89879, 0, -0.886888, 24.6941, -0.105892, -0.717238, 77.5516)
 
 [node name="Ground5" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105894, 9.08072, 102.77)
+transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105894, 1.06096, 102.77)
 
 [node name="SonicRing" parent="." instance=ExtResource("3_2c8uy")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 0.94512, 44.822)
@@ -58,3 +58,6 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 0.94512, 20.
 
 [node name="SonicRing12" parent="." instance=ExtResource("3_2c8uy")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 0.94512, 18.7015)
+
+[node name="Ground3" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.17299, 0, 0, 0, 0.159185, 24.9902, 0, -5.68471, 0.699785, -0.105894, 4.54084, -7.49044)

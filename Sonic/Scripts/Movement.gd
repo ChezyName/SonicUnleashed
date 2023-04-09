@@ -63,6 +63,10 @@ func _process(delta):
 	
 	Rolling = (isOnGround and Input.is_action_pressed("Backward") and int(abs(c_Vel.z)) > 0) or ($MeshHolder/RoofCheck.is_colliding())
 	
+		#Flip Character Based On facingForward
+	if(facingForward): SonicMesh.rotation_degrees.y = 0;
+	else: SonicMesh.rotation_degrees.y = 180;
+	
 	var XInput = MoveInput.x;
 	if(abs(MoveInput.x) > 0):
 		if(abs(c_Vel.z) > 0.5): XInput = MoveInput.x;
@@ -78,7 +82,8 @@ func _process(delta):
 	var speedMod = 0.1;
 	if($MeshHolder/RoofCheck.is_colliding() and abs(c_Vel.z) <= 15): XInput = MoveInput.x;
 	if(abs(c_Vel.z) > 0): speedMod = clamp((abs(c_Vel.z)/400),0.1,1)
-	c_Vel.z += (XInput * GroundSpeed * delta) + (XInput * delta * speedMod * (abs(c_Vel.z)));
+	
+	c_Vel.z += (XInput * GroundSpeed * delta) + (XInput * delta * speedMod * (abs(c_Vel.z)))
 	
 	if isOnGround and Input.is_action_just_pressed("Jump"):
 		c_Vel.y = 8 * clamp((abs(c_Vel.z) / 100) + 1,1,1.25);
@@ -96,7 +101,7 @@ func _process(delta):
 	
 	Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
 	PlayAnimation(c_Vel,isOnGround)
-	CameraZoom(abs(self.linear_velocity.z))
+	CameraZoom(maxf(abs(self.linear_velocity.z), abs(self.linear_velocity.y)))
 	
 	if(Rolling): $Collision.shape.height = 0.5;
 	else: $Collision.shape.height = 1.25;
@@ -110,9 +115,4 @@ func _process(delta):
 		MeshHolder.global_transform = xform;
 		$Forward.global_transform = xform;
 	"""
-	
-	#Flip Character Based On facingForward
-	if(facingForward): SonicMesh.rotation_degrees.y = 0;
-	else: SonicMesh.rotation_degrees.y = 180;
-	
 	pass
