@@ -22,7 +22,7 @@ var TotalRings:int;
 
 func onRing():
 	if(abs(self.linear_velocity.z) > 0):
-		self.linear_velocity.z += (self.linear_velocity.z * 0.05) + (25 * (self.linear_velocity.z/abs(self.linear_velocity.z)));
+		self.linear_velocity.z += (self.linear_velocity.z * 0.005) + (8 * (self.linear_velocity.z/abs(self.linear_velocity.z)));
 	TotalRings += 1
 
 func _ready():
@@ -43,8 +43,8 @@ func PlayAnimation(velocity,OnGround) -> void:
 	else:
 		Animator.speed_scale = 0;
 		Animator.play("sc_jump_ball");
-		if(facingForward): MeshHolder.rotation_degrees.x += 250 * clamp(Animator.speed_scale/40,0.1,2);
-		else: MeshHolder.rotation_degrees.x -= 250 * clamp(Animator.speed_scale/40,0.1,2);
+		if(facingForward): MeshHolder.rotation_degrees.x += 250 * clamp(Animator.speed_scale,1,20);
+		else: MeshHolder.rotation_degrees.x -= 250 * clamp(Animator.speed_scale,1,20);
 	
 	#print(velocity)
 
@@ -61,35 +61,20 @@ func _process(delta):
 	Rolling = (isOnGround and Input.is_action_pressed("Backward") and int(abs(c_Vel.z)) > 0)
 	
 	var XInput = MoveInput.x;
-	if(!Rolling):
-		if(!Input.is_action_pressed("Backward")):
-			if(abs(MoveInput.x) > 0):
-				if(abs(c_Vel.z) > 0.5): XInput = MoveInput.x;
-				elif((c_Vel.z > 0.5 and MoveInput.x <= -0.5) or (c_Vel.z < -0.5 and MoveInput.x >= 0.5)):
-					XInput = -((c_Vel.z * SlowDownPercentage) * 2);
-				elif(c_Vel.z <= 0.5 and MoveInput.x <= -0.5):
-					XInput = -1;
-					facingForward = false;
-				else: facingForward = true;
-			elif (MoveInput.x == 0 and abs(c_Vel.z) > 0):
-				if(facingForward): XInput =  -1 * delta;
-				else: XInput =  1 * delta;
+	if(abs(MoveInput.x) > 0):
+		if(abs(c_Vel.z) > 0.5): XInput = MoveInput.x;
+		elif((c_Vel.z > 0.5 and MoveInput.x <= -0.5) or (c_Vel.z < -0.5 and MoveInput.x >= 0.5)):
+			XInput = -((c_Vel.z * SlowDownPercentage) * 6);
+		elif(c_Vel.z <= 0.5 and MoveInput.x <= -0.5):
+			XInput = -1;
+			facingForward = false;
+		else: facingForward = true;
+	elif (MoveInput.x == 0 and abs(c_Vel.z) > 0):
+		XInput =  -1;
 	
-	if(!isOnGround and abs(c_Vel.z) > 0):
-		var speedMod = clamp(1 - (c_Vel.z/120),0.1,1)
-		var speedReduc = c_Vel.z  * (0.005*(speedMod * 5));
-		if(abs(speedReduc) > abs(c_Vel.z)): speedReduc = -c_Vel.z;
-		c_Vel.z = speedReduc;
-	
-	if(Rolling and abs(c_Vel.z) > 2.5): c_Vel.z += abs(c_Vel.z) * 0.005;
-	elif(Rolling): c_Vel.z = 0
-	elif(isOnGround):
-		var speedMod = 1
-		if(abs(c_Vel.z) > 0): speedMod = clamp((c_Vel.z/120),0.1,1)
-		print(speedMod)
-		c_Vel.z += ((XInput * GroundSpeed * delta) / (speedMod * 24)) + (abs(c_Vel.z) * 0.005 * XInput);
-		
-	c_Vel.z = clamp(c_Vel.z,-400,400);
+	var speedMod = 0.1;
+	if(abs(c_Vel.z) > 0): speedMod = clamp((abs(c_Vel.z)/400),0.1,1)
+	c_Vel.z += (XInput * GroundSpeed * delta) + (XInput * delta * speedMod * (abs(c_Vel.z)));
 	
 	if isOnGround and Input.is_action_just_pressed("Jump"):
 		c_Vel.y = 8 * clamp((abs(c_Vel.z) / 100) + 1,1,1.25);
@@ -98,7 +83,9 @@ func _process(delta):
 	elif(!isOnGround):
 		c_Vel.y -= 9.8 * delta;
 	
-	self.linear_velocity = c_Vel;
+	if(isOnGround): self.linear_velocity = c_Vel;
+	else:
+		self.linear_velocity.y = c_Vel.y;
 	
 	Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
 	PlayAnimation(c_Vel,isOnGround)

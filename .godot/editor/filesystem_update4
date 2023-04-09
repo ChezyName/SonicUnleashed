@@ -3,7 +3,5 @@ res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
 res://Sonic/Animations/sc_jump_ball.res
-res://Sonic/Scripts/Movement.gd
 res://Rings/SonicRing.tres
-res://Rings/Ring.gd
-res://Prefabs/SonicRing.tscn
+res://Sonic/Scripts/Movement.gd
