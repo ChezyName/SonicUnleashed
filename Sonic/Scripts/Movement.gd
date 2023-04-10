@@ -16,9 +16,8 @@ var MeshHolder:Node3D;
 var GroundCheck:RayCast3D;
 var Animator:AnimationPlayer;
 var Spedometer:RichTextLabel;
+var CollisionBody:CollisionShape3D;
 var TotalRings:int;
-
-var BasicHeight = 0;
 
 @export var SpeedMS:int = 0;
 
@@ -27,13 +26,16 @@ func onRing():
 		self.linear_velocity.z += (self.linear_velocity.z * 0.005) + (8 * (self.linear_velocity.z/abs(self.linear_velocity.z)));
 	TotalRings += 1
 
+func takeDamage():
+	print("OUCH!")
+
 func _ready():
 	SonicMesh = get_node("MeshHolder/SonicMesh");
 	GroundCheck = get_node("MeshHolder/GroundCheck")
 	Animator = get_node("MeshHolder/SonicMesh/AnimationPlayer")
 	Spedometer = get_node("HUD/Speed")
 	MeshHolder = get_node("MeshHolder")
-	BasicHeight = $Collision.shape.height;
+	CollisionBody = get_node("Collision")
 	pass # Replace with function body.
 
 # process velocity and play animation based on that
@@ -57,7 +59,7 @@ func CameraZoom(speed):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var MoveInput:Vector2 = Input.get_vector("Left","Right","Backward","Forward");
-	var isOnGround := GroundCheck.is_colliding();
+	var isOnGround := GroundCheck.is_colliding() or (self.get_contact_count() > 0);
 	
 	var c_Vel = self.linear_velocity;
 	
@@ -77,21 +79,25 @@ func _process(delta):
 			facingForward = false;
 		else: facingForward = true;
 	elif (MoveInput.x == 0 and abs(c_Vel.z) > 0):
-		XInput =  -1;
+		XInput = -((c_Vel.z * SlowDownPercentage) * 2);
+	elif(MoveInput.x == 0):
+		c_Vel.z = 0;
+		XInput = 0
 	
-	var speedMod = 0.1;
 	if($MeshHolder/RoofCheck.is_colliding() and abs(c_Vel.z) <= 15): XInput = MoveInput.x;
-	if(abs(c_Vel.z) > 0): speedMod = clamp((abs(c_Vel.z)/400),0.1,1)
 	
-	c_Vel.z += (XInput * GroundSpeed * delta) + (XInput * delta * speedMod * (abs(c_Vel.z)))
+	print(XInput)
+	c_Vel.z += (XInput * GroundSpeed * delta)
 	
 	if isOnGround and Input.is_action_just_pressed("Jump"):
 		c_Vel.y = 8 * clamp((abs(c_Vel.z) / 100) + 1,1,1.25);
 	elif(!isOnGround and Input.is_action_pressed("Jump")):
-		c_Vel.y -= 2.8 * delta;
+		c_Vel.y -= 9.8 * delta;
 	elif(!isOnGround and Input.is_action_pressed("Backward")):
 		c_Vel.y -= 16.8 * delta;
 	elif(!isOnGround):
+		c_Vel.y -= 12.8 * delta;
+	else:
 		c_Vel.y -= 9.8 * delta;
 	
 	c_Vel.z = clamp(c_Vel.z,-400,400)
@@ -101,10 +107,10 @@ func _process(delta):
 	
 	Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
 	PlayAnimation(c_Vel,isOnGround)
-	CameraZoom(maxf(abs(self.linear_velocity.z), abs(self.linear_velocity.y)))
+	CameraZoom(abs(self.linear_velocity.z))
 	
-	if(Rolling): $Collision.shape.height = 0.5;
-	else: $Collision.shape.height = 1.25;
+	if(Rolling or !isOnGround): CollisionBody.shape.height = 1;
+	else: CollisionBody.shape.height = 1.25;
 	
 	""" GROUND ANGLEING
 	if(isOnGround): 

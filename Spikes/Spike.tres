@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ba2wetv83rf0l"]
+
+[resource]
+resource_name = "Spike"
+cull_mode = 2
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0.0339174, 1)
+metallic = 1.0
+roughness = 0.0

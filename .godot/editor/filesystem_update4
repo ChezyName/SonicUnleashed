@@ -1,8 +1,10 @@
+res://Spikes/Plate.tres
 res://Levels/Test.tscn
 res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
 res://Sonic/Animations/sc_jump_ball.res
 res://Rings/SonicRing.tres
-res://Prefabs/SonicPlayer.tscn
 res://Sonic/Scripts/Movement.gd
+res://Spikes/Spike.tres
+res://Prefabs/SonicPlayer.tscn

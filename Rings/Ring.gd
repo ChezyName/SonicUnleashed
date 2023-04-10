@@ -14,6 +14,6 @@ func _process(delta):
 	for body in get_overlapping_bodies():
 		if(body.name == "SonicPlayer"):
 			body.onRing()
-			print(self.name + " is going to die.")
+			#print(self.name + " is going to die.")
 			queue_free()
 	pass

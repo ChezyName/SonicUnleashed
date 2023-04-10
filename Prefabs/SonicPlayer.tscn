@@ -9,6 +9,8 @@ height = 1.25
 
 [node name="SonicPlayer" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278187, 2.52538, -1.33322)
+max_contacts_reported = 1
+contact_monitor = true
 can_sleep = false
 lock_rotation = true
 script = ExtResource("1_dv7wy")
