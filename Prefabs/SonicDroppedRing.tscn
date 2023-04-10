@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://j4wqsremp4x0"]
+
+[ext_resource type="Script" path="res://Rings/RingOnDropped.gd" id="1_doeex"]
+[ext_resource type="PackedScene" uid="uid://btftxfjjsy7pc" path="res://Rings/SonicRing.glb" id="2_ecx05"]
+[ext_resource type="PackedScene" uid="uid://dqygiukxj4s2d" path="res://Spikes/Spikes.glb" id="3_aqmsx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_co78b"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_doeex")
+
+[node name="SonicRing" type="Area3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+collision_priority = 999.0
+
+[node name="Collider" type="CollisionShape3D" parent="SonicRing"]
+shape = SubResource("SphereShape3D_co78b")
+
+[node name="Ring Model" parent="SonicRing" instance=ExtResource("2_ecx05")]
+transform = Transform3D(-1.63918e-08, -0.375, 1.63918e-08, 0, -1.63918e-08, -0.375, 0.375, -1.63918e-08, 7.16507e-16, 0, 0, 0)
+
+[node name="Spikes" parent="SonicRing" instance=ExtResource("3_aqmsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.202505, 1.94599, 29.4274)
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_co78b")

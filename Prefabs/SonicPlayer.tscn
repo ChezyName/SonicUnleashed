@@ -27,18 +27,8 @@ shape = SubResource("CylinderShape3D_2avpm")
 
 [node name="MeshHolder" type="Node3D" parent="."]
 
-[node name="GroundCheck" type="RayCast3D" parent="MeshHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.217895, 0)
-target_position = Vector3(0, -0.5, 0)
-debug_shape_thickness = 5
-
 [node name="SonicMesh" parent="MeshHolder" instance=ExtResource("2_y1scu")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.611352, 0)
-
-[node name="RoofCheck" type="RayCast3D" parent="MeshHolder"]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.346804, 0)
-target_position = Vector3(0, -0.5, 0)
-debug_shape_thickness = 5
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -61,3 +51,23 @@ grow_vertical = 0
 theme_override_fonts/normal_font = ExtResource("3_xt0np")
 theme_override_font_sizes/normal_font_size = 50
 text = "100ms"
+
+[node name="GroundCheck" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.217895, 0)
+target_position = Vector3(0, -0.5, 0)
+debug_shape_thickness = 5
+
+[node name="RoofCheck" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.346804, 0)
+target_position = Vector3(0, -0.5, 0)
+debug_shape_thickness = 5
+
+[node name="GroundCheck2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.217895, 0.512573)
+target_position = Vector3(0, -0.5, 0)
+debug_shape_thickness = 5
+
+[node name="GroundCheck3" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.217895, -0.495937)
+target_position = Vector3(0, -0.5, 0)
+debug_shape_thickness = 5

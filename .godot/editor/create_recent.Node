@@ -1,5 +1,6 @@
-Area3D
+RigidBody3D
 CollisionShape3D
+Area3D
 StaticBody3D
 Node3D
 Node
@@ -9,5 +10,4 @@ Control
 RayCast3D
 MeshInstance3D
 Camera3D
-RigidBody3D
 DirectionalLight3D

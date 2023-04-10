@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="1_i6154"]
 [ext_resource type="PackedScene" uid="uid://ds68hs5k2m60l" path="res://Prefabs/Ground.tscn" id="2_dhjbc"]
 [ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/SonicRing.tscn" id="3_2c8uy"]
-[ext_resource type="PackedScene" uid="uid://dqygiukxj4s2d" path="res://Spikes/Spikes.glb" id="4_5ti67"]
+[ext_resource type="PackedScene" uid="uid://dsaev41c2k82l" path="res://Prefabs/Spikes.tscn" id="4_15leg"]
 
 [node name="World" type="Node3D"]
 
@@ -12,19 +12,26 @@ transform = Transform3D(0.629117, 3.39773e-08, -0.777311, 0.777311, -2.74996e-08
 light_volumetric_fog_energy = 0.0
 
 [node name="SonicPlayer" parent="." instance=ExtResource("1_i6154")]
-SpeedMS = null
 
 [node name="Ground" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.173, 7.73211e-07, 0, -2.77392e-07, 8.84451, 0, 0, 0, 250, -0.105894, -4.05089, 117.916)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Ground2" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.17299, 0, 0, 0, 0.447972, 0, 0, 0, 23.3861, -0.105894, 1.76275, 31.5133)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Ground4" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.17299, 0, 0, 0, 5.61736, 3.89879, 0, -0.886888, 24.6941, -0.105892, -0.717238, 77.5516)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Ground5" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105894, 1.06096, 102.77)
+collision_layer = 3
+collision_mask = 3
 
 [node name="SonicRing" parent="." instance=ExtResource("3_2c8uy")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 0.919109, 44.822)
@@ -64,9 +71,22 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 0.919109, 18
 
 [node name="Ground3" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.17299, 0, 0, 0, 0.159185, 24.9902, 0, -5.68471, 0.699785, -0.105894, 4.54084, -7.49044)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Ground6" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.17299, 0, 0, 0, 3.95806, 0, 0, 0, 4.41389, -0.105894, 3.72999, 32.7266)
+collision_layer = 3
+collision_mask = 3
 
-[node name="Spikes" parent="." instance=ExtResource("4_5ti67")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.202505, 1.94599, 29.4274)
+[node name="DamageSpikes" parent="." instance=ExtResource("4_15leg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114683, 1.98674, 29.32)
+
+[node name="SonicRing13" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 2.91806, 19.3046)
+
+[node name="SonicRing14" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 2.51927, 17.8522)
+
+[node name="SonicRing15" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 1.79488, 16.3844)

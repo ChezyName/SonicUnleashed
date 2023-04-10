@@ -17,6 +17,7 @@ var GroundCheck:RayCast3D;
 var Animator:AnimationPlayer;
 var Spedometer:RichTextLabel;
 var CollisionBody:CollisionShape3D;
+var RingPrefab:Resource;
 var TotalRings:int;
 
 @export var SpeedMS:int = 0;
@@ -26,16 +27,22 @@ func onRing():
 		self.linear_velocity.z += (self.linear_velocity.z * 0.005) + (8 * (self.linear_velocity.z/abs(self.linear_velocity.z)));
 	TotalRings += 1
 
-func takeDamage():
-	print("OUCH!")
+func takeDamage(goThruRoll):
+	if(!goThruRoll and Rolling): return
+	for i in TotalRings:
+		var newRing:RigidBody3D = RingPrefab.instantiate()
+		newRing.position = self.position
+		get_tree().current_scene.add_child(newRing)
+		TotalRings -= 1;
 
 func _ready():
 	SonicMesh = get_node("MeshHolder/SonicMesh");
-	GroundCheck = get_node("MeshHolder/GroundCheck")
+	GroundCheck = get_node("GroundCheck")
 	Animator = get_node("MeshHolder/SonicMesh/AnimationPlayer")
 	Spedometer = get_node("HUD/Speed")
 	MeshHolder = get_node("MeshHolder")
 	CollisionBody = get_node("Collision")
+	RingPrefab = load("res://Prefabs/SonicDroppedRing.tscn")
 	pass # Replace with function body.
 
 # process velocity and play animation based on that
@@ -59,11 +66,11 @@ func CameraZoom(speed):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var MoveInput:Vector2 = Input.get_vector("Left","Right","Backward","Forward");
-	var isOnGround := GroundCheck.is_colliding() or (self.get_contact_count() > 0);
+	var isOnGround:bool = GroundCheck.is_colliding() or $GroundCheck2.is_colliding() or $GroundCheck3.is_colliding()
 	
 	var c_Vel = self.linear_velocity;
 	
-	Rolling = (isOnGround and Input.is_action_pressed("Backward") and int(abs(c_Vel.z)) > 0) or ($MeshHolder/RoofCheck.is_colliding())
+	Rolling = (isOnGround and Input.is_action_pressed("Backward") and int(abs(c_Vel.z)) > 0) or ($RoofCheck.is_colliding())
 	
 		#Flip Character Based On facingForward
 	if(facingForward): SonicMesh.rotation_degrees.y = 0;
@@ -84,9 +91,8 @@ func _process(delta):
 		c_Vel.z = 0;
 		XInput = 0
 	
-	if($MeshHolder/RoofCheck.is_colliding() and abs(c_Vel.z) <= 15): XInput = MoveInput.x;
+	if($RoofCheck.is_colliding() and abs(c_Vel.z) <= 15): XInput = MoveInput.x;
 	
-	print(XInput)
 	c_Vel.z += (XInput * GroundSpeed * delta)
 	
 	if isOnGround and Input.is_action_just_pressed("Jump"):
@@ -97,8 +103,6 @@ func _process(delta):
 		c_Vel.y -= 16.8 * delta;
 	elif(!isOnGround):
 		c_Vel.y -= 12.8 * delta;
-	else:
-		c_Vel.y -= 9.8 * delta;
 	
 	c_Vel.z = clamp(c_Vel.z,-400,400)
 	if(isOnGround): self.linear_velocity = c_Vel;
