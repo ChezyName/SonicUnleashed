@@ -79,12 +79,12 @@ func _process(delta):
 	var isOnGround:bool = GroundCheck.is_colliding() or $GroundCheck2.is_colliding() or $GroundCheck3.is_colliding()
 	
 	var justSpun = false
-	if(SpinDashing and !Input.is_action_pressed("Backward") or !Input.is_action_pressed("Jump")):
+	if(SpinDashing and !Input.is_action_pressed("Backward")):
 		#Was Spindashing
 		self.linear_velocity.z += SpinDashCharge
 		justSpun = true
 	
-	SpinDashing = isOnGround and Input.is_action_pressed("Backward") and Input.is_action_pressed("Jump") and abs(self.linear_velocity.z) <= 0.01
+	SpinDashing = isOnGround and Input.is_action_pressed("Backward") and abs(self.linear_velocity.z) <= 0.01
 	if(SpinDashing): 
 		var speedMulti = (1 - clamp(SpinDashCharge/400,0,1))
 		SpinDashCharge += (speedMulti*speedMulti) * 25 * delta

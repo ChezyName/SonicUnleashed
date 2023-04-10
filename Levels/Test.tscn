@@ -70,7 +70,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 0.919109, 20
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 0.919109, 18.7015)
 
 [node name="Ground3" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 0.159185, 24.9902, 0, -5.68471, 0.699785, -0.105894, 4.54084, -7.49044)
+transform = Transform3D(3.17299, 0, 0, 0, 0.159185, 24.9902, 0, -5.68471, 0.699785, 0, 4.541, -7.49)
 collision_layer = 3
 collision_mask = 3
 
