@@ -26,8 +26,10 @@ var SpinDashCharge = 0
 @onready var RingPrefab:Resource = load("res://Prefabs/SonicDroppedRing.tscn")
 
 func onRing():
-	#if(abs(self.linear_velocity.z) > 0):
-		#self.linear_velocity.z += (self.linear_velocity.z * 0.005) + (8 * (self.linear_velocity.z/abs(self.linear_velocity.z)));
+	if(abs(self.linear_velocity.z) > 0 and Rolling):
+		var speed = clamp((1-clamp(self.linear_velocity.z/80,0,1)) * 15,-15,15);
+		if(facingForward): self.linear_velocity.z += speed;
+		else: self.linear_velocity.z -= speed;
 	TotalRings += 1
 
 func takeDamage(goThruRoll):
@@ -52,7 +54,8 @@ func _ready():
 
 # process velocity and play animation based on that
 func PlayAnimation(velocity,OnGround) -> void:
-	if(OnGround and !Rolling and !SpinDashing):
+	var isFRRolling = (Rolling and abs(velocity.z) > 0.5)
+	if(OnGround and !isFRRolling and !SpinDashing):
 		Animator.speed_scale = clamp(abs(velocity.z) / 10,0,40);
 		MeshHolder.rotation_degrees.x = 0
 		if(abs(velocity.z) > SpeedForSuper): Animator.play("sc_boost");
@@ -75,6 +78,9 @@ func CameraZoom(speed,delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#Restart Level
+	if(Input.is_action_pressed("Restart")): get_tree().reload_current_scene()
+		
 	var MoveInput:Vector2 = Input.get_vector("Left","Right","Backward","Forward");
 	var isOnGround:bool = GroundCheck.is_colliding() or $GroundCheck2.is_colliding() or $GroundCheck3.is_colliding()
 	
@@ -131,7 +137,7 @@ func _process(delta):
 	
 	c_Vel.z = clamp(c_Vel.z,-400,400)
 	if(!SpinDashing and !justSpun):
-		if(isOnGround): self.linear_velocity = c_Vel;
+		if(isOnGround and !Rolling): self.linear_velocity = c_Vel;
 		else:
 			self.linear_velocity.y = c_Vel.y;
 	elif(justSpun):

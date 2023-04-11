@@ -4,8 +4,10 @@
 resource_name = "SonicRing"
 cull_mode = 2
 diffuse_mode = 3
+disable_ambient_light = true
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 0, 1)
-metallic = 1.0
 metallic_specular = 1.0
-roughness = 0.0
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 5.0
