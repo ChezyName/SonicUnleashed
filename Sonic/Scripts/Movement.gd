@@ -17,17 +17,17 @@ var GroundCheck:RayCast3D;
 var Animator:AnimationPlayer;
 var Spedometer:RichTextLabel;
 var CollisionBody:CollisionShape3D;
-var RingPrefab:Resource;
 var TotalRings:int;
 
 var SpinDashing:bool = false
 var SpinDashCharge = 0
 
 @export var SpeedMS:int = 0;
+@onready var RingPrefab:Resource = load("res://Prefabs/SonicDroppedRing.tscn")
 
 func onRing():
-	if(abs(self.linear_velocity.z) > 0):
-		self.linear_velocity.z += (self.linear_velocity.z * 0.005) + (8 * (self.linear_velocity.z/abs(self.linear_velocity.z)));
+	#if(abs(self.linear_velocity.z) > 0):
+		#self.linear_velocity.z += (self.linear_velocity.z * 0.005) + (8 * (self.linear_velocity.z/abs(self.linear_velocity.z)));
 	TotalRings += 1
 
 func takeDamage(goThruRoll):
@@ -48,7 +48,6 @@ func _ready():
 	Spedometer = get_node("HUD/Speed")
 	MeshHolder = get_node("MeshHolder")
 	CollisionBody = get_node("Collision")
-	RingPrefab = load("res://Prefabs/SonicDroppedRing.tscn")
 	pass # Replace with function body.
 
 # process velocity and play animation based on that
@@ -70,8 +69,9 @@ func PlayAnimation(velocity,OnGround) -> void:
 	
 	#print(velocity)
 
-func CameraZoom(speed):
-	$Camera3D.fov = 75 * clamp((speed / 80) + 0.2,0.8,1.6)
+func CameraZoom(speed,delta):
+	$Camera3D.fov = 75 * clamp((speed / 25) + 0.2,0.8,1.6)
+	$Camera3D.size = 15 * clamp((speed / 25) + 0.2,0.8,1.6)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -79,12 +79,14 @@ func _process(delta):
 	var isOnGround:bool = GroundCheck.is_colliding() or $GroundCheck2.is_colliding() or $GroundCheck3.is_colliding()
 	
 	var justSpun = false
-	if(SpinDashing and !Input.is_action_pressed("Backward")):
+	if(SpinDashing and (!Input.is_action_pressed("Jump") or !Input.is_action_pressed("Backward"))):
 		#Was Spindashing
-		self.linear_velocity.z += SpinDashCharge
+		if(facingForward): self.linear_velocity.z += SpinDashCharge
+		else: self.linear_velocity.z -= SpinDashCharge
 		justSpun = true
+		SpinDashing = false
 	
-	SpinDashing = isOnGround and Input.is_action_pressed("Backward") and abs(self.linear_velocity.z) <= 0.01
+	SpinDashing = isOnGround and Input.is_action_pressed("Backward") and (SpinDashing or Input.is_action_pressed("Jump")) and abs(self.linear_velocity.z) <= 0.01
 	if(SpinDashing): 
 		var speedMulti = (1 - clamp(SpinDashCharge/400,0,1))
 		SpinDashCharge += (speedMulti*speedMulti) * 25 * delta
@@ -139,7 +141,7 @@ func _process(delta):
 	if(SpinDashing): Spedometer.text = str(int(abs(SpinDashCharge))) + "m/s";
 	else: Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
 	PlayAnimation(c_Vel,isOnGround)
-	CameraZoom(abs(self.linear_velocity.z))
+	CameraZoom(abs(self.linear_velocity.z),delta)
 	
 	if(Rolling or !isOnGround or SpinDashing): CollisionBody.shape.height = 1;
 	else: CollisionBody.shape.height = 1.25;
