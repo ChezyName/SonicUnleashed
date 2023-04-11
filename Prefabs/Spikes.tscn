@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsaev41c2k82l"]
+[gd_scene load_steps=5 format=3 uid="uid://dsaev41c2k82l"]
 
 [ext_resource type="PackedScene" uid="uid://dqygiukxj4s2d" path="res://Spikes/Spikes.glb" id="1_5t2ub"]
 [ext_resource type="Script" path="res://Spikes/SpikeDamage.gd" id="1_y8yqm"]
+[ext_resource type="AudioStream" uid="uid://bugf5pe4a7k2t" path="res://Spikes/Spikes.wav" id="3_6lfs7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m3nb5"]
 size = Vector3(1.81358, 1.0614, 1.79522)
@@ -14,3 +15,6 @@ script = ExtResource("1_y8yqm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00269818, 0.451691, 0.0227814)
 shape = SubResource("BoxShape3D_m3nb5")
+
+[node name="SpikesSFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_6lfs7")

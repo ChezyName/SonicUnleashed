@@ -9,5 +9,6 @@ func _ready():
 func _process(delta):
 	for body in get_overlapping_bodies():
 		if(body.name == "SonicPlayer"):
-			body.takeDamage(true)
+			if(body.takeDamage(true)):
+				$SpikesSFX.play()
 	pass

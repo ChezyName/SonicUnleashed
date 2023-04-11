@@ -1,12 +1,13 @@
 AudioStreamPlayer3D
+Node3D
+VisibleOnScreenNotifier2D
+WorldEnvironment
 CollisionShape3D
 Area3D
 Label3D
 Sprite3D
-WorldEnvironment
 RigidBody3D
 StaticBody3D
-Node3D
 Node
 RichTextLabel
 TextEdit

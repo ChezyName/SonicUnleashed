@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbbkrlmaf07ed"]
+[gd_scene load_steps=11 format=3 uid="uid://dbbkrlmaf07ed"]
 
 [ext_resource type="Script" path="res://Sonic/Scripts/Movement.gd" id="1_dv7wy"]
 [ext_resource type="PackedScene" uid="uid://cp6161uxbc6ao" path="res://Sonic/Sonic.gltf" id="2_y1scu"]
 [ext_resource type="FontFile" uid="uid://vwaa215ubcbi" path="res://Fonts/Torch.ttf" id="3_xt0np"]
 [ext_resource type="Script" path="res://Util/FPS.gd" id="4_ngbdc"]
+[ext_resource type="AudioStream" uid="uid://bx6b430o1h54w" path="res://Rings/RingsDamage.wav" id="5_7v5cc"]
+[ext_resource type="AudioStream" uid="uid://dpuittphak7qp" path="res://Sonic/SFX/Spin.wav" id="6_u78c3"]
+[ext_resource type="AudioStream" uid="uid://1kn81hwucap5" path="res://Sonic/SFX/Jump.wav" id="7_8bpe0"]
+[ext_resource type="AudioStream" uid="uid://bwoi05x5ic3hh" path="res://Sonic/SFX/Skid.wav" id="8_4wj67"]
+[ext_resource type="AudioStream" uid="uid://b1c4hbd7wra4o" path="res://Sonic/SFX/Boost.wav" id="9_dvj8m"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2avpm"]
 height = 1.25
@@ -106,3 +111,23 @@ theme_override_font_sizes/normal_font_size = 15
 text = "0 FPS
 0 PHYS FPS"
 fit_content = true
+
+[node name="SoundFXs" type="Node3D" parent="."]
+
+[node name="RingDamage" type="AudioStreamPlayer3D" parent="SoundFXs"]
+stream = ExtResource("5_7v5cc")
+
+[node name="Death" type="AudioStreamPlayer3D" parent="SoundFXs"]
+stream = ExtResource("5_7v5cc")
+
+[node name="Spin" type="AudioStreamPlayer3D" parent="SoundFXs"]
+stream = ExtResource("6_u78c3")
+
+[node name="Jump" type="AudioStreamPlayer3D" parent="SoundFXs"]
+stream = ExtResource("7_8bpe0")
+
+[node name="Skid" type="AudioStreamPlayer3D" parent="SoundFXs"]
+stream = ExtResource("8_4wj67")
+
+[node name="Boost" type="AudioStreamPlayer3D" parent="SoundFXs"]
+stream = ExtResource("9_dvj8m")

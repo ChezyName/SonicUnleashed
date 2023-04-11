@@ -31,7 +31,7 @@ func _process(delta):
 					body.onRing()
 					destroy = true
 					$RingPickup.play()
-					var node = get_node_or_null("Ring Model")
+					var node = get_node_or_null("SonicRing/Ring Model")
 					if(node != null): node.visible = false
 					await $RingPickup.finished
 					queue_free()

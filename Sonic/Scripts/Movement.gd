@@ -44,17 +44,21 @@ func onRing():
 			else: self.linear_velocity.z -= speed;
 	TotalRings += 1
 
-func takeDamage(goThruRoll):
-	if(!goThruRoll and Rolling) or Invinciblity > 0: return
+func takeDamage(goThruRoll) -> bool:
+	if(!goThruRoll and Rolling) or Invinciblity > 0: return false
 	if(TotalRings <= 0):
 		print("DEATH NOISES!")
+		$SoundFXs/Death.play()
+		return true
 	else:
 		Invinciblity = 5
+		$SoundFXs/RingDamage.play()
 		for i in TotalRings:
 			var newRing:RigidBody3D = RingPrefab.instantiate()
 			newRing.position = self.position
 			get_tree().current_scene.add_child(newRing)
 			TotalRings -= 1;
+		return true
 
 func _ready():
 	SonicMesh = get_node("MeshHolder/SonicMesh");
@@ -100,15 +104,17 @@ func _process(delta):
 	var isOnGround:bool = GroundCheck.is_colliding() or $GroundCheck2.is_colliding() or $GroundCheck3.is_colliding()
 	
 	var justSpun = false
-	if(SpinDashing and (!Input.is_action_pressed("Jump") or !Input.is_action_pressed("Backward"))):
+	if(SpinDashing and (!Input.is_action_pressed("Jump") or !Input.is_action_pressed("Backward")) and SpinDashCharge >= 5):
 		#Was Spindashing
 		if(facingForward): self.linear_velocity.z += SpinDashCharge
 		else: self.linear_velocity.z -= SpinDashCharge
+		$SoundFXs/Boost.play()
 		justSpun = true
 		SpinDashing = false
 	
 	SpinDashing = isOnGround and Input.is_action_pressed("Backward") and (SpinDashing or Input.is_action_pressed("Jump")) and abs(self.linear_velocity.z) <= 0.5
 	if(SpinDashing): 
+		if(SpinDashCharge == 0 and Input.is_action_pressed("Backward") and Input.is_action_pressed("Jump")): $SoundFXs/Spin.play()
 		var speedMulti = (1 - clamp(SpinDashCharge/400,0,1))
 		SpinDashCharge += (speedMulti*speedMulti) * 25 * delta
 		SpinDashCharge = clamp(SpinDashCharge,0,100)
@@ -124,9 +130,9 @@ func _process(delta):
 	
 	var XInput = MoveInput.x;
 	if(abs(MoveInput.x) > 0):
-		if(abs(c_Vel.z) > 0.5): XInput = MoveInput.x;
-		elif((c_Vel.z > 2 and MoveInput.x <= -0.5) or (c_Vel.z < -2 and MoveInput.x >= 0.5)):
-			XInput = -((c_Vel.z * SlowDownPercentage) * 25);
+		if((c_Vel.z > 2 and MoveInput.x <= -0.5) or (c_Vel.z < -2 and MoveInput.x >= 0.5)):
+			XInput = -((c_Vel.z * SlowDownPercentage) * 2);
+			if(!$SoundFXs/Skid.playing and isOnGround): $SoundFXs/Skid.play()
 		elif(c_Vel.z <= 0.5 and MoveInput.x <= -0.5):
 			XInput = -1;
 			facingForward = false;
@@ -141,8 +147,9 @@ func _process(delta):
 	
 	c_Vel.z += (XInput * GroundSpeed * delta)
 	
-	if isOnGround and Input.is_action_just_pressed("Jump") and !Rolling and !Input.is_action_pressed("Backward"):
+	if isOnGround and (Input.is_action_just_pressed("Jump") or Input.is_action_just_pressed("Forward")) and !Rolling and !Input.is_action_pressed("Backward"):
 		c_Vel.y = 8 * clamp((abs(c_Vel.z) / 100) + 1,1,1.25);
+		$SoundFXs/Jump.play()
 	elif(!isOnGround and Input.is_action_pressed("Jump")):
 		c_Vel.y -= 9.8 * delta;
 	elif(!isOnGround and Input.is_action_pressed("Backward")):

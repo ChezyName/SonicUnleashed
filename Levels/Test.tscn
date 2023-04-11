@@ -239,7 +239,7 @@ Roll"
 font_size = 124
 
 [node name="Label3D5" type="Label3D" parent="."]
-transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 13.1658, 77.9724)
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 13.1658, 78.3004)
 modulate = Color(0, 1, 0, 1)
 text = "GREAT WORK!"
 font_size = 124
