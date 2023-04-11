@@ -11,3 +11,6 @@ res://Spring/Spring.tres
 res://Prefabs/Spring.tscn
 res://Sonic/Scripts/Movement.gd
 res://Spring/SpringRebounce.gd
+res://Prefabs/SonicDroppedRing.tscn
+res://Prefabs/SonicRing.tscn
+res://Rings/RingOnDropped.gd

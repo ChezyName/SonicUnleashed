@@ -201,7 +201,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0662505, 1.91639, 39.7875)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0662505, 1.91639, 41.7855)
 
 [node name="Ground10" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 0.703689, 0, 0, 0, 8.58894, -0.105894, 11.0766, 80.5014)
+transform = Transform3D(3.17299, 0, 0, 0, 0.703689, 0, 0, 0, 3.72629, -0.105894, 11.0766, 78.3206)
 collision_layer = 3
 collision_mask = 3
 
@@ -223,24 +223,13 @@ text = "Use S To
 Roll"
 font_size = 124
 
-[node name="Label3D4" type="Label3D" parent="."]
-transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 4.36906, 81.8213)
-modulate = Color(1, 0, 0, 1)
-text = "Wrong Way!"
-font_size = 124
-
-[node name="Label3D6" type="Label3D" parent="."]
-transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 5.93042, 81.8213)
-text = "Use S + Space
-For Spin Dash
-<---"
-font_size = 124
-
 [node name="Label3D5" type="Label3D" parent="."]
-transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 13.1658, 81.8213)
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 13.1658, 77.9724)
 modulate = Color(0, 1, 0, 1)
 text = "GREAT WORK!"
 font_size = 124
 
 [node name="Spring" parent="." instance=ExtResource("5_iqvhm")]
-transform = Transform3D(1, 0, 0, 0, 0.97128, 0.23794, 0, -0.23794, 0.97128, -0.340653, 2.34294, 82.9342)
+transform = Transform3D(0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0, 1, -0.340653, 2.57255, 83.1324)
+MaxSpringSpeed = 18
+MinSpringSpeed = 18.0

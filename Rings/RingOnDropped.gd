@@ -2,7 +2,7 @@ extends RigidBody3D
 
 var AreaParent:Area3D;
 var rng = RandomNumberGenerator.new()
-var cantPickupTime = 1.25;
+var cantPickupTime = 0.3;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
