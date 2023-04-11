@@ -33,6 +33,9 @@ var Invinciblity = 5;
 @export var SpeedMS:int = 0;
 @onready var RingPrefab:Resource = load("res://Prefabs/SonicDroppedRing.tscn")
 
+func Rebounce(velocity):
+	self.linear_velocity = velocity
+
 func onRing():
 	if(abs(self.linear_velocity.z) > 0 and Rolling):
 		var speed = clamp((1-clamp(self.linear_velocity.z/80,0,1)) * 5,-5,5);

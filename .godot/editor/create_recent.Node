@@ -1,9 +1,9 @@
+CollisionShape3D
+Area3D
 Label3D
 Sprite3D
 WorldEnvironment
 RigidBody3D
-CollisionShape3D
-Area3D
 StaticBody3D
 Node3D
 Node

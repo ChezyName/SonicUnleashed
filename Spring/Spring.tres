@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://desi5vg4rmq4c"]
+
+[resource]
+resource_name = "Spring"
+cull_mode = 2
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.604273, 0.604273, 0.604273, 1)
+metallic_specular = 1.0

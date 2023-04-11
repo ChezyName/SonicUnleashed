@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://wsv6bg6tnnqm"]
+[gd_scene load_steps=6 format=3 uid="uid://wsv6bg6tnnqm"]
 
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="1_i6154"]
 [ext_resource type="PackedScene" uid="uid://ds68hs5k2m60l" path="res://Prefabs/Ground.tscn" id="2_dhjbc"]
 [ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/SonicRing.tscn" id="3_2c8uy"]
 [ext_resource type="PackedScene" uid="uid://dsaev41c2k82l" path="res://Prefabs/Spikes.tscn" id="4_15leg"]
+[ext_resource type="PackedScene" uid="uid://ddya7fjyslxx" path="res://Prefabs/Spring.tscn" id="5_iqvhm"]
 
 [node name="World" type="Node3D"]
 
@@ -229,7 +230,7 @@ text = "Wrong Way!"
 font_size = 124
 
 [node name="Label3D6" type="Label3D" parent="."]
-transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 5.6814, 81.8213)
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 5.93042, 81.8213)
 text = "Use S + Space
 For Spin Dash
 <---"
@@ -240,3 +241,6 @@ transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.018
 modulate = Color(0, 1, 0, 1)
 text = "GREAT WORK!"
 font_size = 124
+
+[node name="Spring" parent="." instance=ExtResource("5_iqvhm")]
+transform = Transform3D(1, 0, 0, 0, 0.97128, 0.23794, 0, -0.23794, 0.97128, -0.340653, 2.34294, 82.9342)

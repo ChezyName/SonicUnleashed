@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddya7fjyslxx"]
+
+[ext_resource type="Script" path="res://Spring/SpringRebounce.gd" id="1_konbq"]
+[ext_resource type="PackedScene" uid="uid://clfs3at6idcp4" path="res://Spring/Spring.glb" id="1_xpo8f"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8tclk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1dra6"]
+height = 0.214554
+radius = 1.00526
+
+[node name="Spring" type="Area3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_konbq")
+
+[node name="Model" parent="." instance=ExtResource("1_xpo8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Spring" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_8tclk")
+
+[node name="SpringTop" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.897848, 0)
+shape = SubResource("CylinderShape3D_1dra6")
