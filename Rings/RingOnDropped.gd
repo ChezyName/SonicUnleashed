@@ -4,6 +4,8 @@ var AreaParent:Area3D;
 var rng = RandomNumberGenerator.new()
 var cantPickupTime = 0.3;
 
+var destroy:bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Spawned New Ring!")
@@ -23,9 +25,14 @@ func _process(delta):
 	cantPickupTime -= delta;
 	if(cantPickupTime < 0):
 		spin(delta)
-		for body in AreaParent.get_overlapping_bodies():
-			if(body.name == "SonicPlayer"):
-				body.onRing()
-				#print(self.name + " is going to die.")
-				queue_free()
+		if(!destroy):
+			for body in AreaParent.get_overlapping_bodies():
+				if(body.name == "SonicPlayer"):
+					body.onRing()
+					destroy = true
+					$RingPickup.play()
+					var node = get_node_or_null("Ring Model")
+					if(node != null): node.visible = false
+					await $RingPickup.finished
+					queue_free()
 	pass

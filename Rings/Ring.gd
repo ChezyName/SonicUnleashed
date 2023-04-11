@@ -1,5 +1,6 @@
 extends Area3D
 
+var destroy:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,9 +12,13 @@ func spin(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	spin(delta)
-	for body in get_overlapping_bodies():
-		if(body.name == "SonicPlayer"):
-			body.onRing()
-			#print(self.name + " is going to die.")
-			queue_free()
+	if(destroy == false):
+		for body in get_overlapping_bodies():
+			if(body.name == "SonicPlayer"):
+				body.onRing()
+				destroy = true
+				$RingPickup.play()
+				$"Ring Model".visible = false
+				await $RingPickup.finished
+				queue_free()
 	pass

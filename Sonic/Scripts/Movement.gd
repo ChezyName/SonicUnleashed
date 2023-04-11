@@ -161,6 +161,8 @@ func _process(delta):
 	elif(justSpun):
 		self.linear_velocity.z += SpinDashCharge
 	
+	self.linear_velocity.x = 0
+	
 	# Visuals
 	if(SpinDashing): Spedometer.text = str(int(abs(SpinDashCharge))) + "m/s";
 	else: Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";

@@ -18,4 +18,5 @@ func _process(delta):
 			#print("REBOUNCING " + str(velocty) + " @ " + body.name + " W " + str(speed))
 			print(str(MinSpringSpeed) + " / " + str(MaxSpringSpeed))
 			body.linear_velocity = (self.transform.basis.y) * (clamp(speed,MinSpringSpeed,MaxSpringSpeed));
+			$SpringAudioPlayer.play()
 	pass

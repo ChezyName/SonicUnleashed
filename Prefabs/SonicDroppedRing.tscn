@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://j4wqsremp4x0"]
+[gd_scene load_steps=5 format=3 uid="uid://j4wqsremp4x0"]
 
 [ext_resource type="Script" path="res://Rings/RingOnDropped.gd" id="1_doeex"]
 [ext_resource type="PackedScene" uid="uid://btftxfjjsy7pc" path="res://Rings/SonicRing.glb" id="2_ecx05"]
+[ext_resource type="AudioStream" uid="uid://d1g3su2c6t2r6" path="res://Rings/SonicRingPickup.wav" id="3_jpexh"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_co78b"]
 
@@ -22,3 +23,6 @@ transform = Transform3D(-1.63918e-08, -0.375, 1.63918e-08, 0, -1.63918e-08, -0.3
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_co78b")
+
+[node name="RingPickup" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_jpexh")
