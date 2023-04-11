@@ -104,7 +104,7 @@ func _process(delta):
 		justSpun = true
 		SpinDashing = false
 	
-	SpinDashing = isOnGround and Input.is_action_pressed("Backward") and (SpinDashing or Input.is_action_pressed("Jump")) and abs(self.linear_velocity.z) <= 0.01
+	SpinDashing = isOnGround and Input.is_action_pressed("Backward") and (SpinDashing or Input.is_action_pressed("Jump")) and abs(self.linear_velocity.z) <= 0.5
 	if(SpinDashing): 
 		var speedMulti = (1 - clamp(SpinDashCharge/400,0,1))
 		SpinDashCharge += (speedMulti*speedMulti) * 25 * delta
@@ -122,8 +122,8 @@ func _process(delta):
 	var XInput = MoveInput.x;
 	if(abs(MoveInput.x) > 0):
 		if(abs(c_Vel.z) > 0.5): XInput = MoveInput.x;
-		elif((c_Vel.z > 0.5 and MoveInput.x <= -0.5) or (c_Vel.z < -0.5 and MoveInput.x >= 0.5)):
-			XInput = -((c_Vel.z * SlowDownPercentage) * 6);
+		elif((c_Vel.z > 2 and MoveInput.x <= -0.5) or (c_Vel.z < -2 and MoveInput.x >= 0.5)):
+			XInput = -((c_Vel.z * SlowDownPercentage) * 25);
 		elif(c_Vel.z <= 0.5 and MoveInput.x <= -0.5):
 			XInput = -1;
 			facingForward = false;
@@ -154,6 +154,7 @@ func _process(delta):
 			self.linear_velocity = c_Vel;
 		else:
 			self.linear_velocity.y = c_Vel.y;
+			self.linear_velocity.z += (XInput * delta * AirSpeed);
 	elif(justSpun):
 		self.linear_velocity.z += SpinDashCharge
 	

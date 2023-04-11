@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbbkrlmaf07ed"]
+[gd_scene load_steps=6 format=3 uid="uid://dbbkrlmaf07ed"]
 
 [ext_resource type="Script" path="res://Sonic/Scripts/Movement.gd" id="1_dv7wy"]
 [ext_resource type="PackedScene" uid="uid://cp6161uxbc6ao" path="res://Sonic/Sonic.gltf" id="2_y1scu"]
 [ext_resource type="FontFile" uid="uid://vwaa215ubcbi" path="res://Fonts/Torch.ttf" id="3_xt0np"]
+[ext_resource type="Script" path="res://Util/FPS.gd" id="4_ngbdc"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2avpm"]
 height = 1.25
@@ -82,3 +83,26 @@ offset_bottom = 62.0
 theme_override_fonts/normal_font = ExtResource("3_xt0np")
 theme_override_font_sizes/normal_font_size = 50
 text = "Rings:"
+
+[node name="FPS" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_ngbdc")
+
+[node name="FPSLabel" type="RichTextLabel" parent="FPS"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 41.0
+grow_horizontal = 0
+theme_override_fonts/normal_font = ExtResource("3_xt0np")
+theme_override_font_sizes/normal_font_size = 15
+text = "0 FPS
+0 PHYS FPS"
+fit_content = true

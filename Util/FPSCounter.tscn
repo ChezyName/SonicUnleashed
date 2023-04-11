@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://276h8yaqpe6b"]
+
+[ext_resource type="Script" path="res://Util/FPS.gd" id="1_ykxhi"]
+[ext_resource type="FontFile" uid="uid://vwaa215ubcbi" path="res://Fonts/Torch.ttf" id="2_yk5ie"]
+
+[node name="FPS" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ykxhi")
+
+[node name="FPSLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 41.0
+grow_horizontal = 0
+theme_override_fonts/normal_font = ExtResource("2_yk5ie")
+theme_override_font_sizes/normal_font_size = 15
+text = "0 FPS
+0 PHYS FPS"
+fit_content = true
