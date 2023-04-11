@@ -8,11 +8,11 @@ var destroy:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Spawned New Ring!")
+	randomize()
 	AreaParent = get_node("SonicRing")
 	var randomX = rng.randf_range(-25, 25)
-	var randomY = rng.randf_range(2.5, 15)
-	self.linear_velocity = Vector3(0,randomY,randomX)
+	var randomY = rng.randf_range(5, 30)
+	self.linear_velocity += Vector3(0,randomY,randomX)
 	var spikes = get_node_or_null("SonicRing/Spikes")
 	pass # Replace with function body.
 

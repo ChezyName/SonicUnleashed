@@ -13,3 +13,4 @@ res://Sonic/Scripts/Movement.gd
 res://Rings/RingOnDropped.gd
 res://Prefabs/Spikes.tscn
 res://Spikes/SpikeDamage.gd
+res://Prefabs/SonicDroppedRing.tscn
