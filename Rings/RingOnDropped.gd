@@ -11,7 +11,7 @@ func _ready():
 	var randomX = rng.randf_range(-25, 25)
 	var randomY = rng.randf_range(2.5, 15)
 	self.linear_velocity = Vector3(0,randomY,randomX)
-	#print(self.position)
+	var spikes = get_node_or_null("SonicRing/Spikes")
 	pass # Replace with function body.
 
 func spin(delta):

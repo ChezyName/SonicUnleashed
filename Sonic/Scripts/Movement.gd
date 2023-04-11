@@ -1,11 +1,17 @@
 extends RigidBody3D
 
+#Editable Vars
 const SpinSpeed = 16;
 const GroundSpeed = 16;
 const AirSpeed = 14;
 const SlowDownPercentage = 0.75;
 const AirControlPercentage = 0.6;
 const SpeedForSuper = 120;
+const CameraFOVSpeed = 0.15;
+
+
+
+
 
 var facingForward = true;
 var Rolling = false;
@@ -16,27 +22,31 @@ var MeshHolder:Node3D;
 var GroundCheck:RayCast3D;
 var Animator:AnimationPlayer;
 var Spedometer:RichTextLabel;
+var RingsCounter:RichTextLabel;
 var CollisionBody:CollisionShape3D;
 var TotalRings:int;
 
 var SpinDashing:bool = false
 var SpinDashCharge = 0
+var Invinciblity = 5;
 
 @export var SpeedMS:int = 0;
 @onready var RingPrefab:Resource = load("res://Prefabs/SonicDroppedRing.tscn")
 
 func onRing():
 	if(abs(self.linear_velocity.z) > 0 and Rolling):
-		var speed = clamp((1-clamp(self.linear_velocity.z/80,0,1)) * 15,-15,15);
-		if(facingForward): self.linear_velocity.z += speed;
-		else: self.linear_velocity.z -= speed;
+		var speed = clamp((1-clamp(self.linear_velocity.z/80,0,1)) * 5,-5,5);
+		if(abs(self.linear_velocity.z) <= 30):
+			if(facingForward): self.linear_velocity.z += speed;
+			else: self.linear_velocity.z -= speed;
 	TotalRings += 1
 
 func takeDamage(goThruRoll):
-	if(!goThruRoll and Rolling): return
+	if(!goThruRoll and Rolling) or Invinciblity > 0: return
 	if(TotalRings <= 0):
 		print("DEATH NOISES!")
 	else:
+		Invinciblity = 5
 		for i in TotalRings:
 			var newRing:RigidBody3D = RingPrefab.instantiate()
 			newRing.position = self.position
@@ -50,6 +60,7 @@ func _ready():
 	Spedometer = get_node("HUD/Speed")
 	MeshHolder = get_node("MeshHolder")
 	CollisionBody = get_node("Collision")
+	RingsCounter = get_node("HUD/Rings")
 	pass # Replace with function body.
 
 # process velocity and play animation based on that
@@ -72,13 +83,14 @@ func PlayAnimation(velocity,OnGround) -> void:
 	
 	#print(velocity)
 
-func CameraZoom(speed,delta):
-	$Camera3D.fov = 75 * clamp((speed / 25) + 0.2,0.8,1.6)
-	$Camera3D.size = 15 * clamp((speed / 25) + 0.2,0.8,1.6)
+func CameraZoom(speed):
+	$Camera3D.fov = lerp($Camera3D.fov,75 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
+	$Camera3D.size = lerp($Camera3D.size,15 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#Restart Level
+	Invinciblity -= delta
 	if(Input.is_action_pressed("Restart")): get_tree().reload_current_scene()
 		
 	var MoveInput:Vector2 = Input.get_vector("Left","Right","Backward","Forward");
@@ -126,7 +138,7 @@ func _process(delta):
 	
 	c_Vel.z += (XInput * GroundSpeed * delta)
 	
-	if isOnGround and Input.is_action_just_pressed("Jump"):
+	if isOnGround and Input.is_action_just_pressed("Jump") and !Rolling and !Input.is_action_pressed("Backward"):
 		c_Vel.y = 8 * clamp((abs(c_Vel.z) / 100) + 1,1,1.25);
 	elif(!isOnGround and Input.is_action_pressed("Jump")):
 		c_Vel.y -= 9.8 * delta;
@@ -137,7 +149,9 @@ func _process(delta):
 	
 	c_Vel.z = clamp(c_Vel.z,-400,400)
 	if(!SpinDashing and !justSpun):
-		if(isOnGround and !Rolling): self.linear_velocity = c_Vel;
+		if(isOnGround and !Rolling): 
+			if(abs(c_Vel.z) <= 0.05): c_Vel.z = c_Vel.z * 2;
+			self.linear_velocity = c_Vel;
 		else:
 			self.linear_velocity.y = c_Vel.y;
 	elif(justSpun):
@@ -146,8 +160,9 @@ func _process(delta):
 	# Visuals
 	if(SpinDashing): Spedometer.text = str(int(abs(SpinDashCharge))) + "m/s";
 	else: Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
+	RingsCounter.text = "Rings: " + str(TotalRings)
 	PlayAnimation(c_Vel,isOnGround)
-	CameraZoom(abs(self.linear_velocity.z),delta)
+	CameraZoom(abs(self.linear_velocity.z))
 	
 	if(Rolling or !isOnGround or SpinDashing): CollisionBody.shape.height = 1;
 	else: CollisionBody.shape.height = 1.25;

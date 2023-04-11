@@ -8,3 +8,6 @@ res://Spikes/Plate.tres
 res://Spikes/Spike.tres
 res://Sonic/Scripts/Movement.gd
 res://Prefabs/SonicPlayer.tscn
+res://Prefabs/SonicRing.tscn
+res://Rings/RingOnDropped.gd
+res://Prefabs/SonicDroppedRing.tscn

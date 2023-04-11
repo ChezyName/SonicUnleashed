@@ -1,0 +1,14 @@
+res://Levels/Test.tscn::390bd727df3c31bd7e7a6f994e8f3f72::1681187638::res://.godot/exported/133200997/export-3fd8c6f81d5dbf68d10c8231786c7401-Test.scn
+res://Prefabs/Ground.tscn::ba930fe2d505bc2323adcbb16d1536c1::1680586611::res://.godot/exported/133200997/export-8e46e26b243611f8d502dbc53dba0998-Ground.scn
+res://Prefabs/SonicDroppedRing.tscn::0f72e98ec5640b46331d8b3503dd4e2e::1681186416::res://.godot/exported/133200997/export-f263e9ab469d0f7e21b4628ce4c2f704-SonicDroppedRing.scn
+res://Prefabs/SonicPlayer.tscn::796248a33bc41b21f5415ad29e08ef42::1681184983::res://.godot/exported/133200997/export-8e889cf16c6faa0e3c8794e4089c146e-SonicPlayer.scn
+res://Prefabs/SonicRing.tscn::95589004b389a14fca68ec1cacfb62e7::1681186388::res://.godot/exported/133200997/export-a48c92a6c9a91d3b86dd77c7355ceaa4-SonicRing.scn
+res://Prefabs/Spikes.tscn::d213bc0e0f686f5d54dc8dee58ebb10b::1681159479::res://.godot/exported/133200997/export-1d7b46dda8206f7732a0daeffd12ee05-Spikes.scn
+res://Rings/SonicRing.tres::1ff52e438381f7f88b13c2e1317f690e::1681180237::res://.godot/exported/133200997/export-736acfcf1b0b7239dc363c89552dd410-SonicRing.res
+res://Sonic/Materials/chr_classicsonic_body.tres::59bd8d381e92534951d570cf4bacc0db::1681173646::res://.godot/exported/133200997/export-3e10337ae49a2ff418e8a6bce474b756-chr_classicsonic_body.res
+res://Sonic/Materials/chr_classicsonic_eye.tres::d99e704f0e2774ecf6a83b7bd2874500::1681173646::res://.godot/exported/133200997/export-d38af8cb8421300dcdabc8bd6a2116b9-chr_classicsonic_eye.res
+res://Sonic/Materials/chr_classicsonic_mouth.tres::9ab531dc22bce52859030d5033cf3dc0::1681173646::res://.godot/exported/133200997/export-8fee1eeba8971b59b7b4b7dbbac32b78-chr_classicsonic_mouth.res
+res://Spikes/Plate.tres::9733c5656207681728525ec28206a691::1681180000::res://.godot/exported/133200997/export-dd0e0cabdb21c7167f116cf34f1529fa-Plate.res
+res://Spikes/Spike.tres::18f9d40559594c7205f8f6abdd1c06e9::1681180225::res://.godot/exported/133200997/export-51ad8e76b1c84b076a142c17aa01911f-Spike.res
+res://addons/godot_icon/IconCreator.tscn::2b85d66556bb13c4c8a89d2726760b8b::1681187938::res://.godot/exported/133200997/export-f2dcf3657cf737695776722ecee5deed-IconCreator.scn
+res://addons/godot_icon/IconReplacer.tscn::2b1f0668426696265b0de73c1f54ce76::1681187938::res://.godot/exported/133200997/export-89793dc9e4f743748928076f333e2bff-IconReplacer.scn

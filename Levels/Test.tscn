@@ -8,13 +8,19 @@
 [node name="World" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.629117, 3.39773e-08, -0.777311, 0.777311, -2.74996e-08, 0.629117, 0, -1, -4.37114e-08, 0, 1.40064, 0)
+transform = Transform3D(0.629117, 3.39773e-08, -0.777311, 0.777311, -2.74996e-08, 0.629117, 0, -1, -4.37114e-08, 0, 2.52606, 0)
 light_volumetric_fog_energy = 0.0
 
 [node name="SonicPlayer" parent="." instance=ExtResource("1_i6154")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278187, 0.986011, -5.06031)
 
 [node name="Ground" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.173, 7.73211e-07, 0, -2.77392e-07, 8.84451, 0, 0, 0, 250, -0.105894, -4.05089, 117.916)
+transform = Transform3D(3.173, 7.73211e-07, 0, -2.77392e-07, 8.84451, 0, 0, 0, 103.641, -0.105894, -4.05089, 33.9794)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground11" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 7.73211e-07, 0, -2.77392e-07, 8.84451, 0, 0, 0, 59.4492, -0.105894, 7.00589, 117.48)
 collision_layer = 3
 collision_mask = 3
 
@@ -29,7 +35,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="Ground5" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 5.68694, 0, 0, 0, 25, -0.105894, 1.19933, 101.947)
+transform = Transform3D(3.17299, 0, 0, 0, -2.48584e-07, 15.775, 0, -5.68694, -6.89549e-07, -0.105894, 3.54142, 87.0508)
 collision_layer = 3
 collision_mask = 3
 
@@ -70,7 +76,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 0.919109, 20
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 0.919109, 18.7015)
 
 [node name="Ground3" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, 0.159185, 24.9902, 0, -5.68471, 0.699785, 0, 4.541, -7.49)
+transform = Transform3D(3.17299, 0, 0, 0, 0.384665, 23.999, 0, -13.7369, 0.672029, 0, 4.541, -13.229)
 collision_layer = 3
 collision_mask = 3
 
@@ -163,6 +169,24 @@ transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846
 [node name="SonicRing35" parent="." instance=ExtResource("3_2c8uy")]
 transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 9.30046, 68.4963)
 
+[node name="SonicRing36" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 9.96567, 69.9052)
+
+[node name="SonicRing37" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 10.5703, 71.2923)
+
+[node name="SonicRing38" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.2371, 72.8251)
+
+[node name="SonicRing39" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9246, 74.4613)
+
+[node name="SonicRing40" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 12.1207, 75.8652)
+
+[node name="SonicRing41" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 12.0439, 77.1667)
+
 [node name="DamageSpikes" parent="." instance=ExtResource("4_15leg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0662505, 1.91639, 35.7942)
 
@@ -174,3 +198,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0662505, 1.91639, 39.7875)
 
 [node name="DamageSpikes4" parent="." instance=ExtResource("4_15leg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0662505, 1.91639, 41.7855)
+
+[node name="Ground10" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.17299, 0, 0, 0, 0.703689, 0, 0, 0, 8.58894, -0.105894, 11.0766, 80.5014)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 2.87302, 0)
+text = "Use W and D
+To Move Around"
+font_size = 124
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 4.60828, 11.8743)
+text = "Use Space
+To Jump ->"
+font_size = 124
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 1.18223, 11.8743)
+text = "Use S To
+Roll"
+font_size = 124
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 4.36906, 81.8213)
+modulate = Color(1, 0, 0, 1)
+text = "Wrong Way!"
+font_size = 124
+
+[node name="Label3D6" type="Label3D" parent="."]
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 5.6814, 81.8213)
+text = "Use S + Space
+For Spin Dash
+<---"
+font_size = 124
+
+[node name="Label3D5" type="Label3D" parent="."]
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 13.1658, 81.8213)
+modulate = Color(0, 1, 0, 1)
+text = "GREAT WORK!"
+font_size = 124
