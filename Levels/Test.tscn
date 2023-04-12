@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://wsv6bg6tnnqm"]
+[gd_scene load_steps=8 format=3 uid="uid://wsv6bg6tnnqm"]
 
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="1_i6154"]
 [ext_resource type="PackedScene" uid="uid://ds68hs5k2m60l" path="res://Prefabs/Ground.tscn" id="2_dhjbc"]
 [ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/SonicRing.tscn" id="3_2c8uy"]
 [ext_resource type="PackedScene" uid="uid://dsaev41c2k82l" path="res://Prefabs/Spikes.tscn" id="4_15leg"]
 [ext_resource type="PackedScene" uid="uid://ddya7fjyslxx" path="res://Prefabs/Spring.tscn" id="5_iqvhm"]
+[ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="6_2k6v6"]
+[ext_resource type="PackedScene" uid="uid://b66brv3e85ude" path="res://Prefabs/Checkpoint.tscn" id="7_s6q61"]
 
 [node name="World" type="Node3D"]
 
@@ -13,7 +15,7 @@ transform = Transform3D(0.629117, 3.39773e-08, -0.777311, 0.777311, -2.74996e-08
 light_volumetric_fog_energy = 0.0
 
 [node name="SonicPlayer" parent="." instance=ExtResource("1_i6154")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278187, 0.986011, -5.06031)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.986, -5.06)
 
 [node name="Ground" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.173, 7.73211e-07, 0, -2.77392e-07, 8.84451, 0, 0, 0, 103.641, -0.105894, -4.05089, 33.9794)
@@ -21,7 +23,12 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="Ground11" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.173, 7.73211e-07, 0, -2.77392e-07, 8.84451, 0, 0, 0, 59.4492, -0.105894, 7.00589, 117.48)
+transform = Transform3D(3.173, 7.73211e-07, 0, -2.77392e-07, 8.84451, 0, 0, 0, 59.4492, -0.105894, 6.9975, 117.48)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground12" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 3.59711e-06, 0, -2.77392e-07, 41.1462, 0, 0, 0, 26.663, -0.105892, 33.0391, 112.454)
 collision_layer = 3
 collision_mask = 3
 
@@ -203,6 +210,57 @@ transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846
 [node name="SonicRing46" parent="." instance=ExtResource("3_2c8uy")]
 transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.7047, 83.0679)
 
+[node name="SonicRing47" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 99.7345)
+
+[node name="SonicRing48" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 100.969)
+
+[node name="SonicRing51" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 102.385)
+
+[node name="SonicRing52" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 103.808)
+
+[node name="SonicRing53" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 105.167)
+
+[node name="SonicRing54" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 106.654)
+
+[node name="SonicRing55" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 108.043)
+
+[node name="SonicRing56" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 109.793)
+
+[node name="SonicRing57" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 111.493)
+
+[node name="SonicRing58" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 113.101)
+
+[node name="SonicRing59" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 114.797)
+
+[node name="SonicRing60" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 116.58)
+
+[node name="SonicRing61" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 118.381)
+
+[node name="SonicRing62" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 120.277)
+
+[node name="SonicRing63" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 121.754)
+
+[node name="SonicRing64" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 123.275)
+
+[node name="SonicRing65" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 125.076)
+
 [node name="DamageSpikes" parent="." instance=ExtResource("4_15leg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0662505, 1.91639, 35.7942)
 
@@ -238,13 +296,34 @@ text = "Use S To
 Roll"
 font_size = 124
 
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 4.49077, 39.3005)
+modulate = Color(1, 0, 0, 1)
+text = "Spikes Make You
+Lose All Your Rings"
+font_size = 124
+
 [node name="Label3D5" type="Label3D" parent="."]
 transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 13.1658, 78.3004)
 modulate = Color(0, 1, 0, 1)
 text = "GREAT WORK!"
 font_size = 124
 
+[node name="Label3D6" type="Label3D" parent="."]
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 13.7465, 91.4581)
+modulate = Color(0, 1, 0, 1)
+text = "Free Checkpoint
+v"
+font_size = 124
+
 [node name="Spring" parent="." instance=ExtResource("5_iqvhm")]
 transform = Transform3D(0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0, 1, -0.340653, 2.57255, 83.1324)
-MaxSpringSpeed = 18
-MinSpringSpeed = 18.0
+MaxSpringSpeed = 20
+MinSpringSpeed = 20.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2k6v6")
+autoplay = true
+
+[node name="Checkpoint" parent="." instance=ExtResource("7_s6q61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000362635, 11.4173, 91.4519)

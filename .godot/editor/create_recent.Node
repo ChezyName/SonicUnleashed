@@ -1,9 +1,11 @@
 AudioStreamPlayer3D
+CollisionShape3D
+Area3D
+AudioStreamPlayer
+GPUParticles3D
 Node3D
 VisibleOnScreenNotifier2D
 WorldEnvironment
-CollisionShape3D
-Area3D
 Label3D
 Sprite3D
 RigidBody3D

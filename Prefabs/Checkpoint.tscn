@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b66brv3e85ude"]
+
+[ext_resource type="Script" path="res://Checkpoint/Checkpoint.gd" id="1_hnpdv"]
+[ext_resource type="PackedScene" uid="uid://dmtivjw77w8lh" path="res://Checkpoint/Checkpoint.glb" id="1_ykicq"]
+[ext_resource type="AudioStream" uid="uid://cisjs33jh8nak" path="res://Checkpoint/Checkpoint.wav" id="2_ea45u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tt2kk"]
+size = Vector3(2.40121, 1.29193, 0.400209)
+
+[node name="Checkpoint" type="Area3D"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+script = ExtResource("1_hnpdv")
+
+[node name="RCheckpointM" parent="." instance=ExtResource("1_ykicq")]
+transform = Transform3D(-1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, -1, 0, 0)
+
+[node name="LCheckpointM" parent="." instance=ExtResource("1_ykicq")]
+transform = Transform3D(-1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 1, 0, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.640311, 0)
+shape = SubResource("BoxShape3D_tt2kk")
+
+[node name="CheckpointSFX" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875154, 0)
+stream = ExtResource("2_ea45u")

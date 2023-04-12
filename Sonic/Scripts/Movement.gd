@@ -3,7 +3,7 @@ extends RigidBody3D
 #Editable Vars
 const SpinSpeed = 16;
 const GroundSpeed = 16;
-const AirSpeed = 14;
+const AirSpeed = 8;
 const SlowDownPercentage = 0.75;
 const AirControlPercentage = 0.6;
 const SpeedForSuper = 120;
@@ -93,6 +93,11 @@ func PlayAnimation(velocity,OnGround) -> void:
 func CameraZoom(speed):
 	$Camera3D.fov = lerp($Camera3D.fov,75 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
 	$Camera3D.size = lerp($Camera3D.size,15 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
+	if(Input.is_action_just_pressed("CameraSwap")):
+		if $Camera3D.projection == $Camera3D.PROJECTION_ORTHOGONAL:
+			$Camera3D.projection = $Camera3D.PROJECTION_PERSPECTIVE
+		else:
+			$Camera3D.projection = $Camera3D.PROJECTION_ORTHOGONAL
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
