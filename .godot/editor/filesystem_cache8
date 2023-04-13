@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1681367251
+::res://::1681379341
 export_presets.cfg::TextFile::-1::1681222788::0::1::::<><>::
 icon.svg::CompressedTexture2D::5395367413076328724::1680573645::1680573661::1::::<><>::
 README.md::TextFile::-1::1680641135::0::1::::<><>::
@@ -23,11 +23,11 @@ Checkpoint.wav::AudioStreamWAV::5372091027616636374::1681338118::1681338118::1::
 Checkpoint_sonic checkpoint sign.png::CompressedTexture2D::4226166688733820422::1681337904::1681337916::1::::<><>::
 ::res://Fonts/::1680659789
 Torch.ttf::FontFile::1519383486673194938::1680659778::1680659789::1::::<><>::
-::res://Levels/::1681367478
-Test.tscn::PackedScene::1582643839295527640::1681367478::0::1::::<><>::uid://dbbkrlmaf07ed<>uid://ds68hs5k2m60l<>uid://bk8ped43jas31<>uid://dsaev41c2k82l<>uid://ddya7fjyslxx<>uid://kysic4ixjc4r<>uid://b66brv3e85ude<>uid://dxqb1na64kvhy
+::res://Levels/::1681371805
+Test.tscn::PackedScene::1582643839295527640::1681371805::0::1::::<><>::uid://dbbkrlmaf07ed<>uid://ds68hs5k2m60l<>uid://bk8ped43jas31<>uid://dsaev41c2k82l<>uid://ddya7fjyslxx<>uid://kysic4ixjc4r<>uid://b66brv3e85ude<>uid://dxqb1na64kvhy
 ::res://Music/::1681336920
 GreenHillZone.mp3::AudioStreamMP3::752540844939398507::1681336909::1681336920::1::::<><>::
-::res://Prefabs/::1681367251
+::res://Prefabs/::1681370551
 Checkpoint.tscn::PackedScene::4626362768809027514::1681338671::0::1::::<><>::res://Checkpoint/Checkpoint.gd<>uid://dmtivjw77w8lh<>uid://cisjs33jh8nak
 DistructableRock.tscn::PackedScene::8806743330704519514::1681348033::0::1::::<><>::res://Rock/distructablerock.gd<>uid://cl88jlm7l6l67<>uid://bu5gsm45rwq6f
 Ground.tscn::PackedScene::8488674100513745449::1680586611::0::1::::<><>::
@@ -36,8 +36,6 @@ SonicPlayer.tscn::PackedScene::7232153397197649187::1681366862::0::1::::<><>::re
 SonicRing.tscn::PackedScene::3157351687678133226::1681214129::0::1::::<><>::res://Rings/Ring.gd<>uid://btftxfjjsy7pc<>uid://d1g3su2c6t2r6
 Spikes.tscn::PackedScene::8422943169676407781::1681350828::0::1::::<><>::uid://dqygiukxj4s2d<>res://Spikes/SpikeDamage.gd<>uid://bugf5pe4a7k2t
 Spring.tscn::PackedScene::218218560915610177::1681263646::0::1::::<><>::res://Spring/SpringRebounce.gd<>uid://clfs3at6idcp4<>uid://dvye2dno22npk
-::res://Prefabs/VFX/::1681369847
-SpeedBoost.tscn::PackedScene::472610224684889407::1681369847::0::1::::<><>::
 ::res://Rings/::1681367384
 Ring.gd::GDScript::-1::1681214003::0::1::::<>Area3D<>::
 RingOnDropped.gd::GDScript::-1::1681222680::0::1::::<>RigidBody3D<>::
@@ -75,8 +73,8 @@ sc_stumble_run.res::Animation::659549296893454233::1680749077::0::1::::<><>::
 chr_classicsonic_body.tres::StandardMaterial3D::1906929440762629038::1681367384::0::1::::<><>::uid://ccgo4kar3ys1
 chr_classicsonic_eye.tres::StandardMaterial3D::6015671834455664101::1681367384::0::1::::<><>::uid://bikgxhp0jld81
 chr_classicsonic_mouth.tres::StandardMaterial3D::1655392265467061380::1681367384::0::1::::<><>::uid://ch22k44a43gtn
-::res://Sonic/Scripts/::1681361110
-Movement.gd::GDScript::-1::1681361110::0::1::::<>RigidBody3D<>::
+::res://Sonic/Scripts/::1681371705
+Movement.gd::GDScript::-1::1681371705::0::1::::<>RigidBody3D<>::
 ::res://Sonic/SFX/::1681221940
 Boost.wav::AudioStreamWAV::4217232725779389840::1681221916::1681221940::1::::<><>::
 Jump.wav::AudioStreamWAV::1846403341681385196::1681220965::1681220799::1::::<><>::
@@ -101,3 +99,6 @@ SpringSFX.wav::AudioStreamWAV::8683064096307677508::1681212881::1681212881::1:::
 ::res://Util/::1681196746
 FPS.gd::GDScript::-1::1681196746::0::1::::<>Control<>::
 FPSCounter.tscn::PackedScene::1963055364057719207::1681196697::0::1::::<><>::res://Util/FPS.gd<>uid://vwaa215ubcbi
+::res://VFX/::1681371805
+SpeedBoost.tscn::PackedScene::472610224684889407::1681371805::0::1::::<><>::res://VFX/VFXPlayer.gd
+VFXPlayer.gd::GDScript::-1::1681371423::0::1::::<>GPUParticles3D<>::
