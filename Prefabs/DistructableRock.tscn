@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxqb1na64kvhy"]
+
+[ext_resource type="Script" path="res://Rock/distructablerock.gd" id="1_nd32i"]
+[ext_resource type="PackedScene" uid="uid://cl88jlm7l6l67" path="res://Rock/Rock.glb" id="1_x63be"]
+[ext_resource type="AudioStream" uid="uid://bu5gsm45rwq6f" path="res://Rock/RockBreak.wav" id="3_lbtar"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_seu5x"]
+size = Vector3(2.37107, 2.25438, 2.12008)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8pree"]
+size = Vector3(2.12106, 2.11643, 1.87)
+
+[node name="DistructableRock" type="Area3D"]
+script = ExtResource("1_nd32i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0784531, 0)
+shape = SubResource("BoxShape3D_seu5x")
+
+[node name="RockCollider" type="StaticBody3D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockCollider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.083436, 0)
+shape = SubResource("BoxShape3D_8pree")
+
+[node name="Rock" parent="RockCollider" instance=ExtResource("1_x63be")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.211823, 0, 0.0663934)
+
+[node name="BreakSFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_lbtar")

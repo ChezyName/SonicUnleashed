@@ -1,5 +1,6 @@
 AudioStreamPlayer3D
 CollisionShape3D
+StaticBody3D
 Area3D
 AudioStreamPlayer
 GPUParticles3D
@@ -9,7 +10,6 @@ WorldEnvironment
 Label3D
 Sprite3D
 RigidBody3D
-StaticBody3D
 Node
 RichTextLabel
 TextEdit

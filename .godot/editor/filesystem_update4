@@ -1,4 +1,4 @@
-res://Prefabs/Checkpoint.tscn
+res://Levels/Test.tscn
 res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
@@ -8,7 +8,5 @@ res://Spikes/Plate.tres
 res://Spikes/Spike.tres
 res://Spring/Material.001.tres
 res://Spring/Spring.tres
-res://Levels/Test.tscn
-res://Checkpoint/Checkpoint.gd
-res://Sonic/Scripts/Movement.gd
-res://Prefabs/SonicPlayer.tscn
+res://Prefabs/DistructableRock.tscn
+res://Rock/distructablerock.gd

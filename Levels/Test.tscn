@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wsv6bg6tnnqm"]
+[gd_scene load_steps=9 format=3 uid="uid://wsv6bg6tnnqm"]
 
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="1_i6154"]
 [ext_resource type="PackedScene" uid="uid://ds68hs5k2m60l" path="res://Prefabs/Ground.tscn" id="2_dhjbc"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ddya7fjyslxx" path="res://Prefabs/Spring.tscn" id="5_iqvhm"]
 [ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="6_2k6v6"]
 [ext_resource type="PackedScene" uid="uid://b66brv3e85ude" path="res://Prefabs/Checkpoint.tscn" id="7_s6q61"]
+[ext_resource type="PackedScene" uid="uid://dxqb1na64kvhy" path="res://Prefabs/DistructableRock.tscn" id="8_51wvq"]
 
 [node name="World" type="Node3D"]
 
@@ -210,12 +211,6 @@ transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846
 [node name="SonicRing46" parent="." instance=ExtResource("3_2c8uy")]
 transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.7047, 83.0679)
 
-[node name="SonicRing47" parent="." instance=ExtResource("3_2c8uy")]
-transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 99.7345)
-
-[node name="SonicRing48" parent="." instance=ExtResource("3_2c8uy")]
-transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 100.969)
-
 [node name="SonicRing51" parent="." instance=ExtResource("3_2c8uy")]
 transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 102.385)
 
@@ -316,6 +311,15 @@ text = "Free Checkpoint
 v"
 font_size = 124
 
+[node name="Label3D7" type="Label3D" parent="."]
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 13.6917, 97.272)
+text = "Use Spin Dash
+To Destroy The Rock,
+You Can
+Charge Spin Dash
+-->"
+font_size = 64
+
 [node name="Spring" parent="." instance=ExtResource("5_iqvhm")]
 transform = Transform3D(0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0, 1, -0.340653, 2.57255, 83.1324)
 MaxSpringSpeed = 20
@@ -327,3 +331,6 @@ autoplay = true
 
 [node name="Checkpoint" parent="." instance=ExtResource("7_s6q61")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000362635, 11.4173, 91.4519)
+
+[node name="DistructableRock" parent="." instance=ExtResource("8_51wvq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.9344, 100.155)
