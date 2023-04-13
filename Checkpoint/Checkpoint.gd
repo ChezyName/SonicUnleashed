@@ -14,5 +14,7 @@ func _process(delta):
 		if(body.name == "SonicPlayer"):
 			$CheckpointSFX.play()
 			body.onCheckpoint(self.position)
+			$RCheckpointM/FX.emitting = true
+			$LCheckpointM/FX.emitting = true
 			did = true
 	pass

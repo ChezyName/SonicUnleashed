@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b66brv3e85ude"]
+[gd_scene load_steps=6 format=3 uid="uid://b66brv3e85ude"]
 
 [ext_resource type="Script" path="res://Checkpoint/Checkpoint.gd" id="1_hnpdv"]
 [ext_resource type="PackedScene" uid="uid://dmtivjw77w8lh" path="res://Checkpoint/Checkpoint.glb" id="1_ykicq"]
 [ext_resource type="AudioStream" uid="uid://cisjs33jh8nak" path="res://Checkpoint/Checkpoint.wav" id="2_ea45u"]
+[ext_resource type="PackedScene" uid="uid://dbuycvl12x5od" path="res://VFX/CheckpointVFX.tscn" id="3_s251y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tt2kk"]
 size = Vector3(2.40121, 1.29193, 0.400209)
@@ -14,8 +15,16 @@ script = ExtResource("1_hnpdv")
 [node name="RCheckpointM" parent="." instance=ExtResource("1_ykicq")]
 transform = Transform3D(-1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, -1, 0, 0)
 
+[node name="FX" parent="RCheckpointM" instance=ExtResource("3_s251y")]
+transform = Transform3D(0.0816275, 1.11022e-16, 4.44089e-16, 0, 0.0768268, -0.0275806, -1.11022e-15, 0.0275806, 0.0768268, 0, 0.300507, 0)
+speed_scale = 12.0
+
 [node name="LCheckpointM" parent="." instance=ExtResource("1_ykicq")]
 transform = Transform3D(-1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 1, 0, 0)
+
+[node name="FX" parent="LCheckpointM" instance=ExtResource("3_s251y")]
+transform = Transform3D(0.0816275, 1.11022e-16, 4.44089e-16, 0, 0.0768268, -0.0275806, -1.11022e-15, 0.0275806, 0.0768268, 0, 0.300507, 0)
+speed_scale = 12.0
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.640311, 0)

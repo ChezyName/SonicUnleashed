@@ -1,6 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://gy626qnmqpbb"]
-
-[ext_resource type="Script" path="res://VFX/VFXPlayer.gd" id="1_wgwfu"]
+[gd_scene load_steps=9 format=3 uid="uid://6bxe5eij80q2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipksm"]
 
@@ -20,7 +18,7 @@ curve = SubResource("Curve_7p3ch")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_trq64"]
 direction = Vector3(0, 0, -1)
-spread = 29.7
+spread = 15.0
 gravity = Vector3(0, 0, 0)
 initial_velocity_min = 2.5
 initial_velocity_max = 5.0
@@ -45,13 +43,11 @@ transform = Transform3D(1, 0, 0, 0, 0.941188, -0.337884, 0, 0.337884, 0.941188, 
 layers = 7
 material_override = SubResource("StandardMaterial3D_ipksm")
 gi_mode = 0
-amount = 100
+amount = 200
 speed_scale = 1.5
-explosiveness = 1.0
 randomness = 1.0
 collision_base_size = 0.05
 trail_lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_trq64")
 draw_pass_1 = SubResource("SphereMesh_yiuts")
 draw_skin = SubResource("Skin_byt36")
-script = ExtResource("1_wgwfu")

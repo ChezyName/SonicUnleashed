@@ -1,4 +1,4 @@
-res://Levels/Test.tscn
+res://VFX/SpeedBoost.tscn
 res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
@@ -8,4 +8,12 @@ res://Spikes/Plate.tres
 res://Spikes/Spike.tres
 res://Spring/Material.001.tres
 res://Spring/Spring.tres
-res://VFX/SpeedBoost.tscn
+res://Levels/Test.tscn
+res://Sonic/Scripts/Movement.gd
+res://VFX/SpeedCharge.tscn
+res://Prefabs/SonicPlayer.tscn
+res://Rock/distructablerock.gd
+res://VFX/Checkpoint.tscn
+res://VFX/CheckpointVFX.tscn
+res://Prefabs/Checkpoint.tscn
+res://Checkpoint/Checkpoint.gd

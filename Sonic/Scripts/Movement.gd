@@ -85,6 +85,7 @@ func _ready():
 	CollisionBody = get_node("Collision")
 	RingsCounter = get_node("HUD/Rings")
 	CheckpointLocation = self.position
+	$VFX/SpeedBurst.emitting = false
 	pass # Replace with function body.
 
 # process velocity and play animation based on that
@@ -133,6 +134,8 @@ func _process(delta):
 		$SoundFXs/Boost.play()
 		var Boost = SpeedBoostVFX.instantiate()
 		Boost.position = self.position
+		Boost.rotation_degrees.y = SonicMesh.rotation_degrees.y
+		print(Boost.rotation_degrees.y)
 		get_tree().current_scene.add_child(Boost)
 		justSpun = true
 		SpinDashing = false
@@ -143,7 +146,11 @@ func _process(delta):
 		var speedMulti = (1 - clamp(SpinDashCharge/400,0,1))
 		SpinDashCharge += (speedMulti*speedMulti) * 25 * delta
 		SpinDashCharge = clamp(SpinDashCharge,0,100)
-	else: SpinDashCharge = 0
+		$VFX/SpeedBurst.emitting = true
+		$VFX/SpeedBurst.rotation_degrees.y = SonicMesh.rotation_degrees.y
+	else:
+		SpinDashCharge = 0
+		$VFX/SpeedBurst.emitting = false
 	
 	var c_Vel = self.linear_velocity;
 	
