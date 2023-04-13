@@ -53,11 +53,6 @@ transform = Transform3D(3.17299, 0, 0, 0, 5.61736, 3.89879, 0, -0.886888, 24.694
 collision_layer = 3
 collision_mask = 3
 
-[node name="Ground5" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.17299, 0, 0, 0, -2.48584e-07, 15.775, 0, -5.68694, -6.89549e-07, -0.105894, 3.54142, 87.0508)
-collision_layer = 3
-collision_mask = 3
-
 [node name="SonicRing" parent="." instance=ExtResource("3_2c8uy")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.486277, 0.919109, 44.822)
 
@@ -207,19 +202,19 @@ transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846
 transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 12.0439, 77.1667)
 
 [node name="SonicRing42" parent="." instance=ExtResource("3_2c8uy")]
-transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 5.05521, 83.0679)
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 5.35254, 85.093)
 
 [node name="SonicRing43" parent="." instance=ExtResource("3_2c8uy")]
-transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 6.62115, 83.0679)
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 6.91848, 85.093)
 
 [node name="SonicRing44" parent="." instance=ExtResource("3_2c8uy")]
-transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 8.41402, 83.0679)
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 8.71135, 85.093)
 
 [node name="SonicRing45" parent="." instance=ExtResource("3_2c8uy")]
-transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 10.0707, 83.0679)
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 10.368, 85.093)
 
 [node name="SonicRing46" parent="." instance=ExtResource("3_2c8uy")]
-transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.7047, 83.0679)
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 12.002, 85.093)
 
 [node name="SonicRing51" parent="." instance=ExtResource("3_2c8uy")]
 transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 11.9009, 102.385)
@@ -364,7 +359,7 @@ Charge Spin Dash
 font_size = 64
 
 [node name="Spring" parent="." instance=ExtResource("5_iqvhm")]
-transform = Transform3D(0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0, 1, -0.340653, 2.57255, 83.1324)
+transform = Transform3D(0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0, 1, -0.340653, 2.86988, 85.1575)
 MaxSpringSpeed = 20
 MinSpringSpeed = 20.0
 
@@ -377,7 +372,7 @@ autoplay = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000362635, 11.4173, 91.4519)
 
 [node name="DistructableRock" parent="." instance=ExtResource("8_51wvq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.9344, 100.155)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.6858, 100.895)
 
 [node name="DamageSpikes5" parent="." instance=ExtResource("4_15leg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.692, 127.29)

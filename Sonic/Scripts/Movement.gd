@@ -24,7 +24,7 @@ var Animator:AnimationPlayer;
 var Spedometer:RichTextLabel;
 var RingsCounter:RichTextLabel;
 var CollisionBody:CollisionShape3D;
-var TotalRings:int;
+var TotalRings:int = 250
 
 var SpinDashing:bool = false
 var SpinDashCharge = 0
@@ -47,10 +47,17 @@ func onRing():
 			else: self.linear_velocity.z -= speed;
 	TotalRings += 1
 
-func takeDamage(goThruRoll,instaKill = false) -> bool:
-	if(!goThruRoll and Rolling) or Invinciblity > 0: return false
+func takeDamage(goThruRoll,instaKill = false,ringLose=false) -> bool:
+	if(!instaKill): if(!goThruRoll and Rolling) or Invinciblity > 0: return false
 	if(TotalRings <= 0 or instaKill):
 		$SoundFXs/Death.play()
+		if(ringLose):
+			if(TotalRings > 100): TotalRings = 100
+			for i in TotalRings:
+				var newRing:RigidBody3D = RingPrefab.instantiate()
+				newRing.position = self.position
+				get_tree().current_scene.add_child(newRing)
+				TotalRings -= 1;
 		self.linear_velocity = Vector3()
 		self.position = CheckpointLocation
 		TotalRings = 0
@@ -58,6 +65,7 @@ func takeDamage(goThruRoll,instaKill = false) -> bool:
 	else:
 		Invinciblity = 5
 		$SoundFXs/RingDamage.play()
+		if(TotalRings > 100): TotalRings = 100
 		for i in TotalRings:
 			var newRing:RigidBody3D = RingPrefab.instantiate()
 			newRing.position = self.position
@@ -109,7 +117,7 @@ func CameraZoom(speed):
 func _process(delta):
 	#Restart Level
 	Invinciblity -= delta
-	if(Input.is_action_pressed("Restart")): get_tree().reload_current_scene()
+	if(Input.is_action_pressed("Restart")): takeDamage(false,true,true)
 		
 	var MoveInput:Vector2 = Input.get_vector("Left","Right","Backward","Forward");
 	var isOnGround:bool = GroundCheck.is_colliding() or $GroundCheck2.is_colliding() or $GroundCheck3.is_colliding()
