@@ -33,6 +33,9 @@ var Invinciblity = 5;
 @export var SpeedMS:int = 0;
 @onready var RingPrefab:Resource = load("res://Prefabs/SonicDroppedRing.tscn")
 
+# EFFECTS
+@onready var SpeedBoostVFX:Resource = load("res://VFX/SpeedBoost.tscn")
+
 func onCheckpoint(pos):
 	CheckpointLocation = pos
 
@@ -128,6 +131,9 @@ func _process(delta):
 		if(facingForward): self.linear_velocity.z += SpinDashCharge
 		else: self.linear_velocity.z -= SpinDashCharge
 		$SoundFXs/Boost.play()
+		var Boost = SpeedBoostVFX.instantiate()
+		Boost.position = self.position
+		get_tree().current_scene.add_child(Boost)
 		justSpun = true
 		SpinDashing = false
 	

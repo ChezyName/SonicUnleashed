@@ -1,10 +1,11 @@
+GPUParticles3D
+GPUParticles2D
+Node3D
 AudioStreamPlayer3D
 CollisionShape3D
 StaticBody3D
 Area3D
 AudioStreamPlayer
-GPUParticles3D
-Node3D
 VisibleOnScreenNotifier2D
 WorldEnvironment
 Label3D

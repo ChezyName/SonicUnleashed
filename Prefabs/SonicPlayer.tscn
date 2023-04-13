@@ -131,3 +131,5 @@ stream = ExtResource("8_4wj67")
 
 [node name="Boost" type="AudioStreamPlayer3D" parent="SoundFXs"]
 stream = ExtResource("9_dvj8m")
+
+[node name="VFX" type="Node3D" parent="."]
