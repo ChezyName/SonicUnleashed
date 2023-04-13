@@ -33,6 +33,11 @@ transform = Transform3D(3.173, 7.73211e-07, 0, -2.77392e-07, 8.84451, 0, 0, 0, 6
 collision_layer = 3
 collision_mask = 3
 
+[node name="Ground15" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 1.33848e-06, 0, -2.77392e-07, 15.3104, 0, 0, 0, 28.8799, -0.108281, 7.2125, 167.083)
+collision_layer = 3
+collision_mask = 3
+
 [node name="Ground14" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.173, 2.36103e-07, 0, -2.77392e-07, 2.7007, 0, 0, 0, 37.6846, -0.105894, 2.3413, 134.22)
 collision_layer = 3
