@@ -12,7 +12,7 @@ const CameraFOVSpeed = 0.15;
 
 
 
-
+var CheckpointLocation:Vector3
 var facingForward = true;
 var Rolling = false;
 var ForceGravity = 0;
@@ -33,6 +33,9 @@ var Invinciblity = 5;
 @export var SpeedMS:int = 0;
 @onready var RingPrefab:Resource = load("res://Prefabs/SonicDroppedRing.tscn")
 
+func onCheckpoint(pos):
+	CheckpointLocation = pos
+
 func Rebounce(velocity):
 	self.linear_velocity = velocity
 
@@ -44,11 +47,13 @@ func onRing():
 			else: self.linear_velocity.z -= speed;
 	TotalRings += 1
 
-func takeDamage(goThruRoll) -> bool:
+func takeDamage(goThruRoll,instaKill = false) -> bool:
 	if(!goThruRoll and Rolling) or Invinciblity > 0: return false
-	if(TotalRings <= 0):
-		print("DEATH NOISES!")
+	if(TotalRings <= 0 or instaKill):
 		$SoundFXs/Death.play()
+		self.linear_velocity = Vector3()
+		self.position = CheckpointLocation
+		TotalRings = 0
 		return true
 	else:
 		Invinciblity = 5
@@ -68,6 +73,7 @@ func _ready():
 	MeshHolder = get_node("MeshHolder")
 	CollisionBody = get_node("Collision")
 	RingsCounter = get_node("HUD/Rings")
+	CheckpointLocation = self.position
 	pass # Replace with function body.
 
 # process velocity and play animation based on that

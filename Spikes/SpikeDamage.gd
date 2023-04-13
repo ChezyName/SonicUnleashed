@@ -1,5 +1,6 @@
 extends Area3D
 
+@export var oneShot:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,6 +10,6 @@ func _ready():
 func _process(delta):
 	for body in get_overlapping_bodies():
 		if(body.name == "SonicPlayer"):
-			if(body.takeDamage(true)):
+			if(body.takeDamage(true,oneShot)):
 				$SpikesSFX.play()
 	pass
