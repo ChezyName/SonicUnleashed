@@ -1,9 +1,10 @@
+MeshInstance3D
+CollisionShape3D
+StaticBody3D
 GPUParticles3D
 GPUParticles2D
 Node3D
 AudioStreamPlayer3D
-CollisionShape3D
-StaticBody3D
 Area3D
 AudioStreamPlayer
 VisibleOnScreenNotifier2D
@@ -16,6 +17,5 @@ RichTextLabel
 TextEdit
 Control
 RayCast3D
-MeshInstance3D
 Camera3D
 DirectionalLight3D

@@ -24,7 +24,7 @@ var Animator:AnimationPlayer;
 var Spedometer:RichTextLabel;
 var RingsCounter:RichTextLabel;
 var CollisionBody:CollisionShape3D;
-var TotalRings:int = 250
+var TotalRings:int = 0
 
 var SpinDashing:bool = false
 var SpinDashCharge = 0
