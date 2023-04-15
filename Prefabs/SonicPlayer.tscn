@@ -90,6 +90,15 @@ theme_override_fonts/normal_font = ExtResource("3_xt0np")
 theme_override_font_sizes/normal_font_size = 50
 text = "Rings:"
 
+[node name="Timer" type="RichTextLabel" parent="HUD"]
+layout_mode = 1
+offset_top = 62.0
+offset_right = 407.0
+offset_bottom = 124.0
+theme_override_fonts/normal_font = ExtResource("3_xt0np")
+theme_override_font_sizes/normal_font_size = 35
+text = "TIME: 1:00"
+
 [node name="FPS" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15

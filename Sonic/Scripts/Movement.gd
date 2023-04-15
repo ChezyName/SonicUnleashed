@@ -9,9 +9,6 @@ const AirControlPercentage = 0.6;
 const SpeedForSuper = 120;
 const CameraFOVSpeed = 0.15;
 
-
-
-
 var CheckpointLocation:Vector3
 var facingForward = true;
 var Rolling = false;
@@ -120,6 +117,7 @@ func CameraZoom(speed):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#Restart Level
+	$HUD/Timer.text = "TIME: " + $"/root/SpeedrunTimer".TimeToString();
 	Invinciblity -= delta
 	if(Input.is_action_pressed("Restart")): takeDamage(false,true,true)
 		

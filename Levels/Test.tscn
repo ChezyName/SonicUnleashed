@@ -39,6 +39,26 @@ transform = Transform3D(3.173, 7.73211e-07, 0, -2.77392e-07, 8.84451, 0, 0, 0, 6
 collision_layer = 3
 collision_mask = 3
 
+[node name="Ground18" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 7.73211e-07, 0, -2.77392e-07, 8.84451, 0, 0, 0, 6.8751, -0.10828, 15.7703, 171.871)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground19" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 4.24253e-08, 0, -2.77392e-07, 0.485289, 0, 0, 0, 12.5095, -0.10828, 20.21, 169.049)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground16" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 1.98918e-06, 0, -1.70974e-07, 14.0245, 1.62417, 2.18436e-07, -17.9176, 1.27127, -0.10828, -5.04773, 174.195)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground17" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 0, 0, 0, -9.94591e-07, 2.06253, 0, -22.7536, -9.01561e-08, -0.10828, -11.4127, 192.916)
+collision_layer = 3
+collision_mask = 3
+
 [node name="Ground14" parent="." instance=ExtResource("2_dhjbc")]
 transform = Transform3D(3.173, 2.36103e-07, 0, -2.77392e-07, 2.7007, 0, 0, 0, 37.6846, -0.105894, 2.3413, 134.22)
 collision_layer = 3
@@ -373,6 +393,13 @@ text = "Free Checkpoint
 v"
 font_size = 124
 
+[node name="Label3D8" type="Label3D" parent="."]
+transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 15.2648, 129.832)
+modulate = Color(1, 0, 0, 1)
+text = "Insta Death Spikes
+v"
+font_size = 124
+
 [node name="Label3D7" type="Label3D" parent="."]
 transform = Transform3D(-2.98023e-08, -0.0185343, -0.999828, 0, 0.999828, -0.0185343, 1, 0, 2.98023e-08, 1.25772, 13.6917, 97.272)
 text = "Use Spin Dash
@@ -440,3 +467,18 @@ oneShot = true
 
 [node name="Bridge" parent="." instance=ExtResource("9_dv1g8")]
 transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.15, -0.108, 11.3768, 156.361)
+
+[node name="Spring2" parent="." instance=ExtResource("5_iqvhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.58, 164.998)
+MaxSpringSpeed = 20
+MinSpringSpeed = 20.0
+
+[node name="Spring3" parent="." instance=ExtResource("5_iqvhm")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.103043, 19.1066, 165.568)
+MaxSpringSpeed = 500
+MinSpringSpeed = 500.0
+
+[node name="Spring4" parent="." instance=ExtResource("5_iqvhm")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.103043, 19.1066, 167.481)
+MaxSpringSpeed = 500
+MinSpringSpeed = 500.0
