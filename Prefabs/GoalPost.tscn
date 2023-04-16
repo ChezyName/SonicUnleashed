@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bghipnpfqyevp"]
+
+[ext_resource type="PackedScene" uid="uid://cesft2r0f6dup" path="res://LevelEnd/SonicGoal.glb" id="1_1wsw3"]
+[ext_resource type="Script" path="res://LevelEnd/LevelEnder.gd" id="1_17xg7"]
+[ext_resource type="AudioStream" uid="uid://cfo0hs3u565it" path="res://LevelEnd/LevelEndSFX.wav" id="3_7p8us"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q2j3n"]
+size = Vector3(1.8916, 1.90615, 1.8796)
+
+[node name="GoalPost" type="Area3D"]
+script = ExtResource("1_17xg7")
+
+[node name="SonicGoal" parent="." instance=ExtResource("1_1wsw3")]
+transform = Transform3D(-7.43094e-08, 0, 1.7, 0, 1.7, 0, -1.7, 0, -7.43094e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95134, 0)
+shape = SubResource("BoxShape3D_q2j3n")
+
+[node name="LevelEndSFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_7p8us")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopLayer" type="Panel" parent="HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -700.0
+offset_bottom = -700.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimeRingText" type="RichTextLabel" parent="HUD/TopLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 140
+text = "RINGS: 25
+TIME: 0:125"
+scroll_active = false

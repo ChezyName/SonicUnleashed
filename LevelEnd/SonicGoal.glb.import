@@ -1,0 +1,79 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cesft2r0f6dup"
+path="res://.godot/imported/SonicGoal.glb-ae08f7bf967b6549935b8e3981ca1f4d.scn"
+
+[deps]
+
+source_file="res://LevelEnd/SonicGoal.glb"
+dest_files=["res://.godot/imported/SonicGoal.glb-ae08f7bf967b6549935b8e3981ca1f4d.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"cmn_obj_goalplate_HD_back": {
+"use_external/enabled": true,
+"use_external/path": "res://LevelEnd/Materials/cmn_obj_goalplate_HD_back.tres"
+},
+"cmn_obj_goalplate_HD_metal": {
+"use_external/enabled": true,
+"use_external/path": "res://LevelEnd/Materials/cmn_obj_goalplate_HD_metal.tres"
+},
+"cmn_obj_goalplate_s_body": {
+"use_external/enabled": true,
+"use_external/path": "res://LevelEnd/Materials/cmn_obj_goalplate_s_body.tres"
+},
+"cmn_obj_goalplate_s_eyeL": {
+"use_external/enabled": true,
+"use_external/path": "res://LevelEnd/Materials/cmn_obj_goalplate_s_eyeL.tres"
+},
+"cmn_obj_goalplate_s_eyeR": {
+"use_external/enabled": true,
+"use_external/path": "res://LevelEnd/Materials/cmn_obj_goalplate_s_eyeR.tres"
+},
+"cmn_obj_goalplate_s_nose": {
+"use_external/enabled": true,
+"use_external/path": "res://LevelEnd/Materials/cmn_obj_goalplate_s_nose.tres"
+},
+"cmn_obj_goleplate_e_beard": {
+"use_external/enabled": true,
+"use_external/path": "res://LevelEnd/Materials/cmn_obj_goleplate_e_beard.tres"
+},
+"cmn_obj_goleplate_e_body": {
+"use_external/enabled": true,
+"use_external/path": "res://LevelEnd/Materials/cmn_obj_goleplate_e_body.tres"
+},
+"cmn_obj_goleplate_e_glass": {
+"use_external/enabled": true,
+"use_external/path": "res://LevelEnd/Materials/cmn_obj_goleplate_e_glass.tres"
+},
+"cmn_obj_goleplate_e_glassref": {
+"use_external/enabled": true,
+"use_external/path": "res://LevelEnd/Materials/cmn_obj_goleplate_e_glassref.tres"
+},
+"stu__obj_base": {
+"use_external/enabled": true,
+"use_external/path": "res://LevelEnd/Materials/stu__obj_base.tres"
+}
+}
+}
+gltf/embedded_image_handling=1

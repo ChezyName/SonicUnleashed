@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://wsv6bg6tnnqm"]
+[gd_scene load_steps=11 format=3 uid="uid://wsv6bg6tnnqm"]
 
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="1_i6154"]
 [ext_resource type="PackedScene" uid="uid://ds68hs5k2m60l" path="res://Prefabs/Ground.tscn" id="2_dhjbc"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b66brv3e85ude" path="res://Prefabs/Checkpoint.tscn" id="7_s6q61"]
 [ext_resource type="PackedScene" uid="uid://dxqb1na64kvhy" path="res://Prefabs/DistructableRock.tscn" id="8_51wvq"]
 [ext_resource type="PackedScene" uid="uid://dmmlsuqpcstn8" path="res://Maps/GreenHillZone/PREF-Bridge.tscn" id="9_dv1g8"]
+[ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="10_hpn2r"]
 
 [node name="World" type="Node3D"]
 
@@ -49,13 +50,53 @@ transform = Transform3D(3.173, 4.24253e-08, 0, -2.77392e-07, 0.485289, 0, 0, 0, 
 collision_layer = 3
 collision_mask = 3
 
-[node name="Ground16" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.173, 1.98918e-06, 0, -1.70974e-07, 14.0245, 1.62417, 2.18436e-07, -17.9176, 1.27127, -0.10828, -5.04773, 174.195)
+[node name="Ground17" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 0, 0, 0, -2.67474e-06, 5.87384, 0, -61.1911, -2.56754e-07, -0.10828, 1.82153, 182.71)
 collision_layer = 3
 collision_mask = 3
 
-[node name="Ground17" parent="." instance=ExtResource("2_dhjbc")]
-transform = Transform3D(3.173, 0, 0, 0, -9.94591e-07, 2.06253, 0, -22.7536, -9.01561e-08, -0.10828, -11.4127, 192.916)
+[node name="Ground20" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 0, 0, 0, -5.34949e-07, 8.45637, 0, -12.2382, -3.6964e-07, -0.10828, 2.56479, 207.21)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground26" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 0, 0, 0, -4.88311, 0.407667, 0, -11.2218, -0.177394, -0.10828, 4.14764, 195.588)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground22" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 0, 0, 0, -5.34949e-07, 8.45637, 0, -12.2382, -3.6964e-07, -0.10828, 2.56479, 219.101)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground21" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 0, 0, 0, -5.34949e-07, 8.45637, 0, -12.2382, -3.6964e-07, -0.10828, 15.3489, 207.21)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground27" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 0, 0, 0, -1.46066e-06, 8.45637, 0, -33.4161, -3.6964e-07, -0.10828, 2.56479, 239.407)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground25" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 0, 0, 0, -5.34949e-07, 8.45637, 0, -12.2382, -3.6964e-07, -0.10828, 15.3489, 231.317)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground29" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 0, 0, 0, -5.34949e-07, 8.45637, 0, -12.2382, -3.6964e-07, -0.10828, 15.3614, 242.132)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground30" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 0, 0, 0, -6.81674e-08, 8.45637, 0, -1.55949, -3.6964e-07, -0.10828, 12.9947, 238.258)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Ground23" parent="." instance=ExtResource("2_dhjbc")]
+transform = Transform3D(3.173, 0, 0, 0, -5.34949e-07, 8.45637, 0, -12.2382, -3.6964e-07, -0.10828, 12.3457, 219.182)
 collision_layer = 3
 collision_mask = 3
 
@@ -425,6 +466,57 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000362635, 11.4173, 91.4519
 [node name="DistructableRock" parent="." instance=ExtResource("8_51wvq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.6858, 100.895)
 
+[node name="SonicRing83" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.47266, 215.77)
+
+[node name="SonicRing92" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 5.2292, 195.657)
+
+[node name="SonicRing93" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 5.78402, 197.017)
+
+[node name="SonicRing94" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 6.46387, 198.525)
+
+[node name="SonicRing95" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.11247, 199.986)
+
+[node name="SonicRing96" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.54226, 201.268)
+
+[node name="SonicRing97" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.45547, 202.772)
+
+[node name="SonicRing98" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 5.24542, 194.337)
+
+[node name="SonicRing84" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.47266, 217.193)
+
+[node name="SonicRing85" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.47266, 218.552)
+
+[node name="SonicRing86" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.47266, 219.857)
+
+[node name="SonicRing87" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.47266, 221.28)
+
+[node name="SonicRing88" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.47266, 222.639)
+
+[node name="SonicRing89" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.47266, 223.98)
+
+[node name="SonicRing90" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.47266, 225.403)
+
+[node name="SonicRing91" parent="." instance=ExtResource("3_2c8uy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.799846, 0.015693, 0, -0.015693, 0.799846, -0.486277, 7.47266, 226.762)
+
+[node name="DistructableRock2" parent="." instance=ExtResource("8_51wvq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35428, 213.976)
+
 [node name="DamageSpikes5" parent="." instance=ExtResource("4_15leg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.692, 127.29)
 oneShot = true
@@ -465,6 +557,18 @@ oneShot = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.692, 145.16)
 oneShot = true
 
+[node name="DamageSpikes15" parent="." instance=ExtResource("4_15leg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.58428, 158.133)
+oneShot = true
+
+[node name="DamageSpikes16" parent="." instance=ExtResource("4_15leg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.58428, 156.144)
+oneShot = true
+
+[node name="DamageSpikes17" parent="." instance=ExtResource("4_15leg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.58428, 154.191)
+oneShot = true
+
 [node name="Bridge" parent="." instance=ExtResource("9_dv1g8")]
 transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.15, -0.108, 11.3768, 156.361)
 
@@ -482,3 +586,14 @@ MinSpringSpeed = 500.0
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.103043, 19.1066, 167.481)
 MaxSpringSpeed = 500
 MinSpringSpeed = 500.0
+
+[node name="Spring6" parent="." instance=ExtResource("5_iqvhm")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.103043, 5.6066, 166.677)
+MaxSpringSpeed = 125
+MinSpringSpeed = 125.0
+
+[node name="GoalPost" parent="." instance=ExtResource("10_hpn2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.196532, 6.75131, 238.246)
+
+[node name="GoalPost2" parent="." instance=ExtResource("10_hpn2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12768, 0.371365, 4.01793)

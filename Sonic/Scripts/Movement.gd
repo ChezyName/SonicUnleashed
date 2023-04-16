@@ -105,6 +105,13 @@ func PlayAnimation(velocity,OnGround) -> void:
 	
 	#print(velocity)
 
+var levelEnded:bool = false
+func onLevelEnded() -> int:
+	levelEnded = true
+	$Camera3D.reparent(get_tree().current_scene)
+	remove_child($HUD)
+	return TotalRings
+
 func CameraZoom(speed):
 	$Camera3D.fov = lerp($Camera3D.fov,75 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
 	$Camera3D.size = lerp($Camera3D.size,15 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
@@ -117,7 +124,7 @@ func CameraZoom(speed):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#Restart Level
-	$HUD/Timer.text = "TIME: " + $"/root/SpeedrunTimer".TimeToString();
+	if(!levelEnded): $HUD/Timer.text = "TIME: " + $"/root/SpeedrunTimer".TimeToString();
 	Invinciblity -= delta
 	if(Input.is_action_pressed("Restart")): takeDamage(false,true,true)
 		
@@ -159,19 +166,20 @@ func _process(delta):
 	else: SonicMesh.rotation_degrees.y = 180;
 	
 	var XInput = MoveInput.x;
-	if(abs(MoveInput.x) > 0):
-		if((c_Vel.z > 2 and MoveInput.x <= -0.5) or (c_Vel.z < -2 and MoveInput.x >= 0.5)):
+	if(!levelEnded):
+		if(abs(MoveInput.x) > 0):
+			if((c_Vel.z > 2 and MoveInput.x <= -0.5) or (c_Vel.z < -2 and MoveInput.x >= 0.5)):
+				XInput = -((c_Vel.z * SlowDownPercentage) * 2);
+				if(!$SoundFXs/Skid.playing and isOnGround): $SoundFXs/Skid.play()
+			elif(c_Vel.z <= 0.5 and MoveInput.x <= -0.5):
+				XInput = -1;
+				facingForward = false;
+			else: facingForward = true;
+		elif (MoveInput.x == 0 and abs(c_Vel.z) > 0):
 			XInput = -((c_Vel.z * SlowDownPercentage) * 2);
-			if(!$SoundFXs/Skid.playing and isOnGround): $SoundFXs/Skid.play()
-		elif(c_Vel.z <= 0.5 and MoveInput.x <= -0.5):
-			XInput = -1;
-			facingForward = false;
-		else: facingForward = true;
-	elif (MoveInput.x == 0 and abs(c_Vel.z) > 0):
-		XInput = -((c_Vel.z * SlowDownPercentage) * 2);
-	elif(MoveInput.x == 0 and abs(c_Vel.z) == 0):
-		c_Vel.z = 0;
-		XInput = 0
+		elif(MoveInput.x == 0 and abs(c_Vel.z) == 0):
+			c_Vel.z = 0;
+			XInput = 0
 	
 	if($RoofCheck.is_colliding() and abs(c_Vel.z) <= 15): XInput = MoveInput.x;
 	
@@ -188,24 +196,29 @@ func _process(delta):
 		c_Vel.y -= 12.8 * delta;
 	
 	c_Vel.z = clamp(c_Vel.z,-400,400)
-	if(!SpinDashing and !justSpun):
-		if(isOnGround and !Rolling): 
-			if(abs(c_Vel.z) <= 0.05): c_Vel.z = c_Vel.z * 2;
-			self.linear_velocity = c_Vel;
-		else:
-			self.linear_velocity.y = c_Vel.y;
-			self.linear_velocity.z += (XInput * delta * AirSpeed);
-	elif(justSpun):
-		self.linear_velocity.z += SpinDashCharge
+	if(!levelEnded):
+		if(!SpinDashing and !justSpun):
+			if(isOnGround and !Rolling): 
+				if(abs(c_Vel.z) <= 0.05): c_Vel.z = c_Vel.z * 2;
+				self.linear_velocity = c_Vel;
+			else:
+				self.linear_velocity.y = c_Vel.y;
+				self.linear_velocity.z += (XInput * delta * AirSpeed);
+		elif(justSpun):
+			self.linear_velocity.z += SpinDashCharge
+	else:
+		var dir = 1 if facingForward else -1
+		self.linear_velocity.z += (dir * GroundSpeed * delta);
 	
 	self.linear_velocity.x = 0
 	
 	# Visuals
 	if(SpinDashing): Spedometer.text = str(int(abs(SpinDashCharge))) + "m/s";
 	else: Spedometer.text = str(int(abs(c_Vel.z))) + "m/s";
-	RingsCounter.text = "Rings: " + str(TotalRings)
+	if(!levelEnded): RingsCounter.text = "Rings: " + str(TotalRings)
 	PlayAnimation(c_Vel,isOnGround)
-	CameraZoom(abs(self.linear_velocity.z))
+	
+	if(!levelEnded): CameraZoom(abs(self.linear_velocity.z))
 	
 	if(Rolling or !isOnGround or SpinDashing): CollisionBody.shape.height = 1;
 	else: CollisionBody.shape.height = 1.25;
