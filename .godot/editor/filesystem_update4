@@ -1,4 +1,4 @@
-res://Prefabs/GoalPost.tscn
+res://Levels/Test.tscn
 res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
@@ -19,5 +19,5 @@ res://LevelEnd/Materials/cmn_obj_goleplate_e_body.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_glass.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_glassref.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_beard.tres
+res://Prefabs/GoalPost.tscn
 res://LevelEnd/LevelEnder.gd
-res://Levels/Test.tscn

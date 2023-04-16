@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c843a1k2m3bmi"]
 
-[sub_resource type="Image" id="Image_4jp7j"]
+[sub_resource type="Image" id="Image_o7typ"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "format": "Lum8",
@@ -11,7 +11,7 @@ data = {
 
 [sub_resource type="ImageTexture" id="ImageTexture_0xfdj"]
 resource_name = "cmn_obj_goalplate_s_body_metallicRoughness"
-image = SubResource("Image_4jp7j")
+image = SubResource("Image_o7typ")
 
 [resource]
 resource_name = "cmn_obj_goleplate_e_glass"

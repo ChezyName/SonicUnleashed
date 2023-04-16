@@ -9,8 +9,8 @@ func _ready():
 var levelEnded:bool = false
 var ringsObtained:int = 0
 
-var currentTime:int = 0
-var currentRings:int = 0
+var currentTime:float = 0
+var currentRings:float = 0
 
 func NumberToTime(number):
 	var minutes = floor(number / 60)
@@ -40,8 +40,11 @@ func _process(delta):
 			else:
 				#RING AND TIME DISPLAY
 				if(currentRings != ringsObtained or currentTime != $"/root/SpeedrunTimer".getTime()):
-					currentRings = lerp(currentRings,ringsObtained,0.15)
-					currentTime = lerp(currentTime,$"/root/SpeedrunTimer".getTime(),0.18)
-					print(str(currentRings) + " / " + str(ringsObtained))
-					$HUD/TopLayer/TimeRingText.text = "RINGS: " + str(currentRings) + "\nTIME: " + NumberToTime(currentTime);
+					if(ringsObtained > 0 and currentTime < ringsObtained):
+						var r_speed = clamp(1-(currentTime/ringsObtained),0.2,1)
+						currentRings += (r_speed*15) * delta
+					if(currentTime < $"/root/SpeedrunTimer".getTime()):
+						var t_speed = clamp(1-(currentTime/$"/root/SpeedrunTimer".getTime()),0.2,1)
+						currentTime += (t_speed*60) * delta
+					$HUD/TopLayer/TimeRingText.text = "RINGS: " + str(int(currentRings)) + "\nTIME: " + NumberToTime(int(currentTime));
 	pass
