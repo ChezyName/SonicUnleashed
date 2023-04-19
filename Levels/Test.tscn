@@ -594,6 +594,3 @@ MinSpringSpeed = 125.0
 
 [node name="GoalPost" parent="." instance=ExtResource("10_hpn2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.196532, 6.75131, 238.246)
-
-[node name="GoalPost2" parent="." instance=ExtResource("10_hpn2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12768, 0.371365, 4.01793)

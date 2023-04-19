@@ -40,11 +40,13 @@ func _process(delta):
 			else:
 				#RING AND TIME DISPLAY
 				if(currentRings != ringsObtained or currentTime != $"/root/SpeedrunTimer".getTime()):
-					if(ringsObtained > 0 and currentTime < ringsObtained):
-						var r_speed = clamp(1-(currentTime/ringsObtained),0.2,1)
+					if(ringsObtained > 0 and currentRings < ringsObtained):
+						var r_speed = clamp(1-(currentRings/ringsObtained),0.2,1)
 						currentRings += (r_speed*15) * delta
 					if(currentTime < $"/root/SpeedrunTimer".getTime()):
 						var t_speed = clamp(1-(currentTime/$"/root/SpeedrunTimer".getTime()),0.2,1)
 						currentTime += (t_speed*60) * delta
 					$HUD/TopLayer/TimeRingText.text = "RINGS: " + str(int(currentRings)) + "\nTIME: " + NumberToTime(int(currentTime));
+				else:
+					print("LOADING NEXT LEVEL!")
 	pass

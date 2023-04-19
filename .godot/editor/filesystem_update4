@@ -19,5 +19,4 @@ res://LevelEnd/Materials/cmn_obj_goleplate_e_body.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_glass.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_glassref.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_beard.tres
-res://Prefabs/GoalPost.tscn
 res://LevelEnd/LevelEnder.gd
