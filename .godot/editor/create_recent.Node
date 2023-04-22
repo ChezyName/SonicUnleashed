@@ -1,3 +1,4 @@
+DirectionalLight3D
 RichTextLabel
 Label
 Panel
@@ -21,4 +22,3 @@ Node
 TextEdit
 RayCast3D
 Camera3D
-DirectionalLight3D

@@ -1,3 +1,112 @@
-[gd_scene format=3 uid="uid://cmga7rhhqcioi"]
+[gd_scene load_steps=6 format=3 uid="uid://cmga7rhhqcioi"]
 
-[node name="1" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://brsw8j673hjf8" path="res://Maps/GreenHillZone/PREF-PLATFORM.tscn" id="1_4w21u"]
+[ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="1_u3j35"]
+[ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/SonicRing.tscn" id="3_b44j5"]
+[ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="4_p1c2q"]
+[ext_resource type="PackedScene" uid="uid://dsaev41c2k82l" path="res://Prefabs/Spikes.tscn" id="5_1tytc"]
+
+[node name="1A - Green Hill Zone" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.902375, 0.00368551, -0.430936, 0.430952, -0.00771712, 0.902342, -2.77556e-17, -0.999963, -0.00855201, 0, 0, 0)
+
+[node name="SonicPlayer" parent="." instance=ExtResource("1_u3j35")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278187, 0.691276, -2.12508)
+
+[node name="Platform" parent="." instance=ExtResource("1_4w21u")]
+
+[node name="Platform2" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.15, 0, 0, 6.01178)
+
+[node name="Platform3" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.15, 0, 0, 12.0266)
+
+[node name="Platform4" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.15, 0, 0, 18.0384)
+
+[node name="Platform5" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(0.09, 0, 0, 0, 0.18, 0, 0, 0, 0.15, 0, 1.6939, 24.0777)
+
+[node name="Platform13" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(0.09, 0, 0, 0, 0.352538, 0, 0, 0, 0.15, -0.148753, 4.74102, 39.2844)
+
+[node name="Platform11" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(0.09, 0, 0, 0, 0.18, 0, 0, 0, 0.15, 0, -1.10899, 30.0809)
+
+[node name="Platform12" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(0.09, 0, 0, 0, 0.18, 0, 0, 0, 0.15, 0, -1.10899, 36.2096)
+
+[node name="Platform6" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(-0.09, 0, -7.00318e-08, 0, 0.505383, 0, 7.86805e-09, 0, -0.801071, 0.226725, 7.91897, -18.9892)
+
+[node name="Platform10" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(-0.09, 0.00017119, 0.000259332, 1.96714e-05, 0.789502, 0.00114213, -5.64723e-05, 0.00218397, -0.4129, 0.0731049, 22.2035, -27.5907)
+
+[node name="Platform7" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(-0.0899999, 0, -4.80143e-08, 6.87846e-16, -0.505382, -4.80143e-08, -7.86804e-09, -4.41819e-08, 0.54922, 0.226725, -11.0418, -12.254)
+
+[node name="Platform8" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(-0.0899999, 0, -4.80143e-08, 6.87846e-16, -0.505382, -4.80143e-08, -7.86804e-09, -4.41819e-08, 0.54922, 0.226725, -11.0418, 9.56164)
+
+[node name="Platform9" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(-0.0899999, 0, -4.80143e-08, 6.87846e-16, -0.505382, -4.80143e-08, -7.86804e-09, -4.41819e-08, 0.54922, 0.226725, -11.0418, 31.2937)
+
+[node name="SonicRingGrab" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.562456, 0.740796)
+
+[node name="SonicRingGrab2" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.562456, 2.7408)
+
+[node name="SonicRingGrab3" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.562456, 4.7408)
+
+[node name="SonicRingGrab4" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.562456, 6.7408)
+
+[node name="SonicRingGrab5" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.562456, 8.7408)
+
+[node name="SonicRingGrab6" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.562456, 10.7408)
+
+[node name="SonicRingGrab7" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.562456, 12.7408)
+
+[node name="SonicRingGrab8" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.562456, 14.7408)
+
+[node name="SonicRingGrab9" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.562456, 16.7408)
+
+[node name="SonicRingGrab10" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.56246, 18.7408)
+
+[node name="SonicRingGrab11" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 2.56246, 20.7408)
+
+[node name="SonicRingGrab12" parent="." instance=ExtResource("3_b44j5")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 2.56246, 22.7408)
+
+[node name="GoalPost" parent="." instance=ExtResource("4_p1c2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.88503, -6.295)
+
+[node name="DamageSpikes" parent="." instance=ExtResource("5_1tytc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 28.0687)
+oneShot = true
+
+[node name="DamageSpikes2" parent="." instance=ExtResource("5_1tytc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 29.8712)
+oneShot = true
+
+[node name="DamageSpikes3" parent="." instance=ExtResource("5_1tytc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 31.6986)
+oneShot = true
+
+[node name="DamageSpikes4" parent="." instance=ExtResource("5_1tytc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 33.5094)
+oneShot = true
+
+[node name="DamageSpikes5" parent="." instance=ExtResource("5_1tytc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 35.287)
+oneShot = true

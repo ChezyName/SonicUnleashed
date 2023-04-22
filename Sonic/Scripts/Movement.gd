@@ -159,7 +159,7 @@ func _process(delta):
 	
 	var c_Vel = self.linear_velocity;
 	
-	Rolling = (isOnGround and Input.is_action_pressed("Backward") and int(abs(c_Vel.z)) > 0) or ($RoofCheck.is_colliding())
+	Rolling = (isOnGround and Input.is_action_pressed("Backward") and int(abs(c_Vel.z)) > 0) or ($RoofCheck.is_colliding()) or ($RoofCheck2.is_colliding()) or ($RoofCheck3.is_colliding())
 	
 		#Flip Character Based On facingForward
 	if(facingForward): SonicMesh.rotation_degrees.y = 0;

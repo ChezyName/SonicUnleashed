@@ -42,7 +42,7 @@ func _process(delta):
 				if(currentRings != ringsObtained or currentTime != $"/root/SpeedrunTimer".getTime()):
 					if(ringsObtained > 0 and currentRings < ringsObtained):
 						var r_speed = clamp(1-(currentRings/ringsObtained),0.2,1)
-						currentRings += (r_speed*15) * delta
+						currentRings += (r_speed*60) * delta
 					if(currentTime < $"/root/SpeedrunTimer".getTime()):
 						var t_speed = clamp(1-(currentTime/$"/root/SpeedrunTimer".getTime()),0.2,1)
 						currentTime += (t_speed*60) * delta

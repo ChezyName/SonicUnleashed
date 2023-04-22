@@ -1,3 +1,4 @@
+res://Maps/GreenHillZone/PREF-REG-PLATFORM.tscn
 res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
@@ -18,3 +19,9 @@ res://LevelEnd/Materials/cmn_obj_goleplate_e_body.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_glass.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_glassref.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_beard.tres
+res://Maps/GreenHillZone/PREF-PLATFORM.tscn
+res://Levels/1.tscn
+res://Prefabs/SonicPlayer.tscn
+res://Levels/Tutorial.tscn
+res://Sonic/Scripts/Movement.gd
+res://LevelEnd/LevelEnder.gd

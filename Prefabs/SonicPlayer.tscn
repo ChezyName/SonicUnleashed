@@ -11,7 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://b1c4hbd7wra4o" path="res://Sonic/SFX/Boost.wav" id="9_dvj8m"]
 [ext_resource type="PackedScene" uid="uid://6bxe5eij80q2" path="res://VFX/SpeedCharge.tscn" id="10_cqr7k"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_2avpm"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ucqkn"]
+radius = 0.35
 height = 1.25
 
 [node name="SonicPlayer" type="RigidBody3D"]
@@ -31,7 +32,7 @@ far = 400000.0
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0150785, 0)
-shape = SubResource("CylinderShape3D_2avpm")
+shape = SubResource("CapsuleShape3D_ucqkn")
 
 [node name="Forward" type="Node3D" parent="."]
 
@@ -50,13 +51,23 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.3
 target_position = Vector3(0, -0.5, 0)
 debug_shape_thickness = 5
 
+[node name="RoofCheck2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.346804, 0.348374)
+target_position = Vector3(0, -0.5, 0)
+debug_shape_thickness = 5
+
+[node name="RoofCheck3" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.346804, -0.350651)
+target_position = Vector3(0, -0.5, 0)
+debug_shape_thickness = 5
+
 [node name="GroundCheck2" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.217895, 0.512573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.217895, 0.348113)
 target_position = Vector3(0, -0.5, 0)
 debug_shape_thickness = 5
 
 [node name="GroundCheck3" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.217895, -0.495937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.217895, -0.349451)
 target_position = Vector3(0, -0.5, 0)
 debug_shape_thickness = 5
 
