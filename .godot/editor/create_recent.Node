@@ -1,3 +1,7 @@
+StaticBody3D
+Node3D
+CollisionShape3D
+Area3D
 DirectionalLight3D
 RichTextLabel
 Label
@@ -5,13 +9,9 @@ Panel
 ColorRect
 Control
 AudioStreamPlayer3D
-CollisionShape3D
-Area3D
 MeshInstance3D
-StaticBody3D
 GPUParticles3D
 GPUParticles2D
-Node3D
 AudioStreamPlayer
 VisibleOnScreenNotifier2D
 WorldEnvironment

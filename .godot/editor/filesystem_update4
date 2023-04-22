@@ -25,3 +25,8 @@ res://Prefabs/SonicPlayer.tscn
 res://Levels/Tutorial.tscn
 res://Sonic/Scripts/Movement.gd
 res://LevelEnd/LevelEnder.gd
+res://Prefabs/MovingPlatform.tscn
+res://Maps/GreenHillZone/MovingPlatform.gd
+res://Maps/GreenHillZone/Scripts/PlatformLineGizmo.gd
+res://Maps/GreenHillZone/Scripts/MovingPlatform.gd
+res://Maps/GreenHillZone/Scripts/PlayerStickyPlatform.gd

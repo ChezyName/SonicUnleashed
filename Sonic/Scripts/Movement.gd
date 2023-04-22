@@ -130,7 +130,7 @@ func _process(delta):
 		
 	var MoveInput:Vector2 = Input.get_vector("Left","Right","Backward","Forward");
 	var isOnGround:bool = GroundCheck.is_colliding() or $GroundCheck2.is_colliding() or $GroundCheck3.is_colliding()
-	
+
 	var justSpun = false
 	if(SpinDashing and (!Input.is_action_pressed("Jump") or !Input.is_action_pressed("Backward")) and SpinDashCharge >= 5):
 		#Was Spindashing

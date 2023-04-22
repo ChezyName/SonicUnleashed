@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmga7rhhqcioi"]
+[gd_scene load_steps=7 format=3 uid="uid://caqgywmvaxg0u"]
 
 [ext_resource type="PackedScene" uid="uid://brsw8j673hjf8" path="res://Maps/GreenHillZone/PREF-PLATFORM.tscn" id="1_4w21u"]
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="1_u3j35"]
 [ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/SonicRing.tscn" id="3_b44j5"]
 [ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="4_p1c2q"]
 [ext_resource type="PackedScene" uid="uid://dsaev41c2k82l" path="res://Prefabs/Spikes.tscn" id="5_1tytc"]
+[ext_resource type="PackedScene" uid="uid://dbtvih4j565h2" path="res://Prefabs/MovingPlatform.tscn" id="6_m2y6k"]
 
 [node name="1A - Green Hill Zone" type="Node3D"]
 
@@ -110,3 +111,7 @@ oneShot = true
 [node name="DamageSpikes5" parent="." instance=ExtResource("5_1tytc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 35.287)
 oneShot = true
+
+[node name="MovingPlatform" parent="." instance=ExtResource("6_m2y6k")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 2.59726, 2.7379)
+Distance = 100.0
