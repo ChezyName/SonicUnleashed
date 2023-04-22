@@ -30,3 +30,6 @@ res://Maps/GreenHillZone/MovingPlatform.gd
 res://Maps/GreenHillZone/Scripts/PlatformLineGizmo.gd
 res://Maps/GreenHillZone/Scripts/MovingPlatform.gd
 res://Maps/GreenHillZone/Scripts/PlayerStickyPlatform.gd
+res://Prefabs/DistructableRock.tscn
+res://Rock/distructablerock.gd
+res://Prefabs/GoalPost.tscn

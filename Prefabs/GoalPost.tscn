@@ -46,6 +46,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 140
-text = "RINGS: 25
-TIME: 0:125"
+text = "RINGS: 0
+TIME: 0:00"
 scroll_active = false

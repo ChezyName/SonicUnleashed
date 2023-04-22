@@ -13,6 +13,11 @@
 
 [node name="0A - Tutorial  GreyBoxTesting" type="Node3D"]
 
+[node name="GreenHillZoneTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lya8r")
+volume_db = -8.0
+autoplay = true
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.629117, 3.39773e-08, -0.777311, 0.777311, -2.74996e-08, 0.629117, 0, -1, -4.37114e-08, 0, 2.52606, 0)
 light_volumetric_fog_energy = 0.0
@@ -454,11 +459,6 @@ font_size = 64
 transform = Transform3D(0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0, 1, -0.340653, 2.86988, 85.1575)
 MaxSpringSpeed = 20
 MinSpringSpeed = 20.0
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_lya8r")
-volume_db = -8.0
-autoplay = true
 
 [node name="Checkpoint" parent="." instance=ExtResource("7_khtcp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000362635, 11.4173, 91.4519)

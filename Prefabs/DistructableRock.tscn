@@ -8,7 +8,7 @@
 size = Vector3(2.37107, 2.25438, 2.12008)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8pree"]
-size = Vector3(2.12106, 2.11643, 1.87)
+size = Vector3(1.62468, 1.81522, 1.48005)
 
 [node name="DistructableRock" type="Area3D"]
 script = ExtResource("1_nd32i")

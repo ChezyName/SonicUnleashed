@@ -20,7 +20,7 @@ func updatePosition():
 var lastAngle = 0
 var lastDist = 0
 
-var going = true
+var going = false
 var delay = 0
 
 func createMesh():
@@ -50,7 +50,7 @@ func updateMesh():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	startingPos = self.position
+	startingPos = MovingPlatform.position
 	delay = StillTime
 	updatePosition()
 	if(Engine.is_editor_hint()): createMesh()
@@ -72,28 +72,28 @@ func _process(delta):
 		lastDist = Distance
 	elif(!Engine.is_editor_hint()):
 		if(going):
-			if(!MoveTo(endingPos,delta)):
+			if(!MoveTo(endingPos,delta,startingPos)):
 				if(delay < 0):
-					print("COUNTDOWN ENDED!")
+					#print("COUNTDOWN ENDED!")
 					going = false
 				else:
 					delay -= delta
-					print("COUNTDOWN: " + str(delay))
+					#print("COUNTDOWN: " + str(delay))
 		else:
-			if(!MoveTo(startingPos,delta)):
+			if(!MoveTo(startingPos,delta,endingPos)):
 				if(delay < 0):
-					print("F COUNTDOWN ENDED!")
+					#print("F COUNTDOWN ENDED!")
 					going = true
 				else:
 					delay -= delta
-					print("F COUNTDOWN: " + str(delay))
+					#print("F COUNTDOWN: " + str(delay))
 	pass
 
-func MoveTo(moveToPos:Vector3,delta:float) -> bool:
-	var maxDist = moveToPos.distance_to(startingPos)
+func MoveTo(moveToPos:Vector3,delta:float,otherPos:Vector3) -> bool:
+	var maxDist = moveToPos.distance_to(otherPos)
 	if(abs(MovingPlatform.position.distance_to(moveToPos)) > abs(maxDist * 0.15)):
 		MovingPlatform.position = lerpVector3(MovingPlatform.position,moveToPos,0.75 * delta)
-		print(str(MovingPlatform.position) + " / " + str(moveToPos))
+		#print(str(abs(MovingPlatform.position.distance_to(moveToPos))) + " / " + str(abs(maxDist * 0.15)))
 		delay = StillTime
 		return true
 	else: return false

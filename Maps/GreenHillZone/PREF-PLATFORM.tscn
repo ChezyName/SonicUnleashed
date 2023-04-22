@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://brsw8j673hjf8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ew56f"]
-size = Vector3(36.7636, 18.3208, 40.2069)
+size = Vector3(36.7636, 19.6492, 40.2069)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sew3r"]
 resource_name = "VoxMaterial_230"
