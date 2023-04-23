@@ -22,6 +22,7 @@ func spin(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	self.position.x = 0
+	self.linear_velocity.x = 0
 	cantPickupTime -= delta;
 	if(cantPickupTime < 0):
 		spin(delta)

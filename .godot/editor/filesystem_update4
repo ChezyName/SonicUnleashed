@@ -23,3 +23,8 @@ res://LevelEnd/LevelEnder.gd
 res://Levels/Tutorial.tscn
 res://Sonic/Scripts/Movement.gd
 res://Maps/GreenHillZone/Scripts/PlayerStickyPlatform.gd
+res://Rock/distructablerock.gd
+res://Rings/RingOnDropped.gd
+res://Prefabs/SonicDroppedRing.tscn
+res://Maps/GreenHillZone/PREF-PLATFORM.tscn
+res://Maps/GreenHillZone/PREF-Bridge.tscn

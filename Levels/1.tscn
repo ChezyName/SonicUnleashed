@@ -52,6 +52,12 @@ transform = Transform3D(0.09, 0, 0, 0, 1.37412, 0, 0, 0, 0.725784, -0.148753, 23
 [node name="Platform21" parent="." instance=ExtResource("1_4w21u")]
 transform = Transform3D(0.09, 0, 0, 0, 1.37412, 0, 0, 0, 0.725784, -0.148753, 23.5759, 135.536)
 
+[node name="Platform22" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(0.09, 0, 0, 0, 1.37412, 0, 0, 0, 0.725784, -0.877511, 46.6346, 135.536)
+
+[node name="Platform23" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(0.09, 0, 0, 0, 1.37412, 0, 0, 0, 0.725784, -0.877511, 46.6346, -68.0236)
+
 [node name="Platform11" parent="." instance=ExtResource("1_4w21u")]
 transform = Transform3D(0.09, 0, 0, 0, 0.18, 0, 0, 0, 0.15, 0, -1.10899, 30.0809)
 
@@ -71,7 +77,10 @@ transform = Transform3D(-0.0899911, 0.000102336, 0.000259008, -1.96695e-05, -0.4
 transform = Transform3D(-0.0899911, 0.000102336, 0.000259008, 1.96695e-05, 0.47196, 0.00114077, -5.64667e-05, 0.00130565, -0.412384, -0.21164, 18.5624, -23.2248)
 
 [node name="Platform17" parent="." instance=ExtResource("1_4w21u")]
-transform = Transform3D(-0.0899943, 1.55019e-05, 0.000101738, 1.96702e-05, 0.0714923, 0.000448093, -5.64687e-05, 0.000197779, -0.161983, -0.21164, 20.8579, 30.6501)
+transform = Transform3D(-0.0899943, 1.55019e-05, 0.000101738, 1.96702e-05, 0.0714923, 0.000448093, -5.64687e-05, 0.000197779, -0.161983, -0.21164, 20.8579, 33.5645)
+
+[node name="Platform24" parent="." instance=ExtResource("1_4w21u")]
+transform = Transform3D(-0.0899943, 1.55019e-05, 0.000101738, 1.96702e-05, 0.0714923, 0.000448093, -5.64687e-05, 0.000197779, -0.161983, -0.21164, 22.8657, 38.4187)
 
 [node name="Platform18" parent="." instance=ExtResource("1_4w21u")]
 transform = Transform3D(-0.0899943, 1.55019e-05, 0.000101738, 1.96702e-05, 0.0714923, 0.000448093, -5.64687e-05, 0.000197779, -0.161983, -0.21164, 18.1847, 20.7004)
@@ -237,37 +246,35 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 19.6615, -29.5062)
 
 [node name="DamageSpikes" parent="." instance=ExtResource("5_1tytc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 28.0687)
-oneShot = true
 
 [node name="DamageSpikes2" parent="." instance=ExtResource("5_1tytc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 29.8712)
-oneShot = true
 
 [node name="DamageSpikes3" parent="." instance=ExtResource("5_1tytc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 31.6986)
-oneShot = true
 
 [node name="DamageSpikes4" parent="." instance=ExtResource("5_1tytc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 33.5094)
-oneShot = true
 
 [node name="DamageSpikes5" parent="." instance=ExtResource("5_1tytc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 35.287)
-oneShot = true
 
 [node name="MovingPlatform" parent="." instance=ExtResource("6_m2y6k")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.308, 31.52)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -1.45516, 31.52)
 Angle = 90.0
-Distance = 60.0
+Distance = 70.0
+StillTime = 1.5
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("6_m2y6k")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 8.30848, 1.80309)
 Distance = 180.0
+StillTime = 1.5
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("6_m2y6k")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 17.8265, -11.8392)
 Angle = 8.0
 Distance = 325.0
+StillTime = 1.5
 
 [node name="DistructableRock" parent="." instance=ExtResource("7_rffcs")]
 transform = Transform3D(1, 0, 0, 0, 0.0283578, -0.999598, 0, 0.999598, 0.0283578, -0.494855, 8.44201, -15.7093)

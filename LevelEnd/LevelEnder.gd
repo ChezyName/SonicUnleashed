@@ -28,6 +28,8 @@ func NumberToTime(number):
 	var remaining_seconds = fmod(number,60)
 	return str(minutes) + ":" + str(int(remaining_seconds)).pad_zeros(2)
 
+var delaySceneLoad = 2.75
+
 func _process(delta):
 	if(!levelEnded):
 		for body in get_overlapping_bodies():
@@ -60,5 +62,6 @@ func _process(delta):
 					$HUD/TopLayer/TimeRingText.text = "RINGS: " + str(int(currentRings)) + "\nTIME: " + NumberToTime(int(currentTime));
 				else:
 					#print(str(currentRings) + " / " + str(ringsObtained) + " - " + str(currentTime) + " / " + str($"/root/SpeedrunTimer".getTime()))
-					load_next_scene()
+					if(delaySceneLoad < 0): load_next_scene()
+					else: delaySceneLoad -= delta
 	pass

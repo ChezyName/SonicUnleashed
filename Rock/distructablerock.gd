@@ -12,7 +12,7 @@ func _process(delta):
 	if(destroying == true): return
 	for body in get_overlapping_bodies():
 		if(body.name == "SonicPlayer"):
-			if(abs(body.linear_velocity.z) > 12 and body.Rolling):
+			if(abs(body.linear_velocity.z) > 25 and body.Rolling):
 				destroying = true
 				$RockCollider.queue_free()
 				$BreakSFX.play()
