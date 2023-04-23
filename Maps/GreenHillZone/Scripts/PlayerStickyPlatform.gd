@@ -12,7 +12,7 @@ func _process(delta):
 	var sonicTouched = false
 	for body in get_overlapping_bodies():
 		if(body.name == "SonicPlayer"):
-			print("SONIC BE TOUCHING ;)")
+			#print("SONIC BE TOUCHING ;)")
 			sonicTouched = true
 			sonic = body
 			sonic.reparent(self)

@@ -115,12 +115,13 @@ func onLevelEnded() -> int:
 func CameraZoom(speed):
 	$Camera3D.fov = lerp($Camera3D.fov,75 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
 	$Camera3D.size = lerp($Camera3D.size,15 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
+	''' CAMERA CHANGE FROM 2D -> 3D
 	if(Input.is_action_just_pressed("CameraSwap")):
 		if $Camera3D.projection == $Camera3D.PROJECTION_ORTHOGONAL:
 			$Camera3D.projection = $Camera3D.PROJECTION_PERSPECTIVE
 		else:
 			$Camera3D.projection = $Camera3D.PROJECTION_ORTHOGONAL
-
+	'''
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#Restart Level

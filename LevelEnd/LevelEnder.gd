@@ -5,12 +5,23 @@ extends Area3D
 func _ready():
 	pass # Replace with function body.
 
+@export var NextLevel:PackedScene
 
 var levelEnded:bool = false
 var ringsObtained:int = 0
 
 var currentTime:float = 0
 var currentRings:float = 0
+
+var sceneLoaded = false
+func load_next_scene():
+	if(NextLevel == null): 
+		push_warning(self.name + " has no 'scene' loaded.")
+		return
+	if(sceneLoaded): return
+	get_tree().change_scene_to_packed(NextLevel)
+	sceneLoaded = true
+	queue_free()
 
 func NumberToTime(number):
 	var minutes = floor(number / 60)
@@ -39,7 +50,7 @@ func _process(delta):
 					$HUD/TopLayer.position.y += moveAmount
 			else:
 				#RING AND TIME DISPLAY
-				if(currentRings != ringsObtained or currentTime != $"/root/SpeedrunTimer".getTime()):
+				if(currentRings < ringsObtained or currentTime < $"/root/SpeedrunTimer".getTime()):
 					if(ringsObtained > 0 and currentRings < ringsObtained):
 						var r_speed = clamp(1-(currentRings/ringsObtained),0.2,1)
 						currentRings += (r_speed*60) * delta
@@ -48,5 +59,6 @@ func _process(delta):
 						currentTime += (t_speed*60) * delta
 					$HUD/TopLayer/TimeRingText.text = "RINGS: " + str(int(currentRings)) + "\nTIME: " + NumberToTime(int(currentTime));
 				else:
-					print("LOADING NEXT LEVEL!")
+					#print(str(currentRings) + " / " + str(ringsObtained) + " - " + str(currentTime) + " / " + str($"/root/SpeedrunTimer".getTime()))
+					load_next_scene()
 	pass
