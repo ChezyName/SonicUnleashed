@@ -37,7 +37,7 @@ func _process(delta):
 		for body in get_overlapping_bodies():
 			if(body.name == "SonicPlayer"):
 				levelEnded = true
-				ringsObtained = body.onLevelEnded()
+				ringsObtained = body.onLevelEnded(self)
 				$LevelEndSFX.play()
 				$"/root/SpeedrunTimer".onLevelFinished()
 				print("Level Endeed With:" + str(ringsObtained) + " RINGS.");
@@ -46,7 +46,7 @@ func _process(delta):
 			print($SonicGoal.get_rotation())
 			var newRotation = $SonicGoal.get_rotation()
 			newRotation.y += clamp((1 - ($LevelEndSFX.get_playback_position() / 1.84)),0.25,1) * delta * 650;
-			if(newRotation.y >= -90): newRotation.y = -76
+			if(newRotation.y >= -90): newRotation.y = -90
 			$SonicGoal.set_rotation(newRotation)
 		else:
 			if($HUD/TopLayer.position.y != 0):

@@ -108,11 +108,21 @@ func PlayAnimation(velocity,OnGround) -> void:
 	#print(velocity)
 
 var levelEnded:bool = false
-func onLevelEnded() -> int:
+var Camera:Camera3D;
+var LevelEndNode:Node3D;
+func onLevelEnded(LevelEnder:Node3D) -> int:
 	levelEnded = true
+	LevelEndNode = LevelEnder
+	Camera = $Camera3D
 	$Camera3D.reparent(get_tree().current_scene)
 	remove_child($HUD)
 	return TotalRings
+
+func CameraLerpEnd():
+	#Camera.position.x = lerpf(Camera.position.x,LevelEndNode.position.x + 20,0.15)
+	Camera.position.y = lerpf(Camera.position.y,LevelEndNode.position.y,0.15)
+	Camera.position.z = lerpf(Camera.position.z,LevelEndNode.position.z,0.15)
+	Camera.size = lerpf(Camera.size,12,0.15)
 
 func CameraZoom(speed):
 	if $Camera3D.projection == $Camera3D.PROJECTION_ORTHOGONAL:
@@ -230,6 +240,7 @@ func _process(delta):
 	PlayAnimation(c_Vel,isOnGround)
 	
 	if(!levelEnded): CameraZoom(abs(self.linear_velocity.z))
+	else: CameraLerpEnd()
 	
 	if(Rolling or !isOnGround or SpinDashing): CollisionBody.shape.height = 1;
 	else: CollisionBody.shape.height = 1.25;
