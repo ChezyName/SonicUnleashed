@@ -149,52 +149,52 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 6.56246, 31.5408)
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 8.12748, 31.5408)
 
 [node name="SonicRingGrab19" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 28.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 9.59099, 28.4991)
 
 [node name="SonicRingGrab34" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 31.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 9.35045, 31.4895)
 
 [node name="SonicRingGrab20" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 26.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 9.75135, 26.5056)
 
 [node name="SonicRingGrab21" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 24.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 9.91172, 24.512)
 
 [node name="SonicRingGrab22" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 22.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 10.0721, 22.5185)
 
 [node name="SonicRingGrab23" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 20.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 10.2324, 20.5249)
 
 [node name="SonicRingGrab24" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 18.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 10.3928, 18.5313)
 
 [node name="SonicRingGrab25" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 16.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 10.5532, 16.5378)
 
 [node name="SonicRingGrab26" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 14.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 10.7135, 14.5442)
 
 [node name="SonicRingGrab27" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 12.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 10.8739, 12.5507)
 
 [node name="SonicRingGrab28" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 10.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 11.0343, 10.5571)
 
 [node name="SonicRingGrab29" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 8.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 11.1946, 8.56354)
 
 [node name="SonicRingGrab30" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 6.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 11.355, 6.56998)
 
 [node name="SonicRingGrab31" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 4.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 11.5153, 4.57642)
 
 [node name="SonicRingGrab32" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 2.5408)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 11.5757, 2.58286)
 
 [node name="SonicRingGrab33" parent="." instance=ExtResource("3_b44j5")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 9.56246, 0.540802)
+transform = Transform3D(0.8, 0, 0, 0, 0.797424, -0.0641452, 0, 0.0641452, 0.797424, 0, 11.4934, 0.589299)
 
 [node name="SonicRingGrab35" parent="." instance=ExtResource("3_b44j5")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 8.62342, -17.631)
@@ -263,12 +263,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 35.287)
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -1.45516, 31.52)
 Angle = 90.0
 Distance = 70.0
-StillTime = 1.5
+StillTime = 1.75
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("6_m2y6k")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 8.30848, 1.80309)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 9.72515, 1.80309)
+Angle = -3.0
 Distance = 180.0
-StillTime = 1.5
+StillTime = 1.75
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("6_m2y6k")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 17.8265, -11.8392)

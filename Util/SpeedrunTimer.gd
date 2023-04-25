@@ -18,6 +18,9 @@ func TimeToString() -> String:
 	# Format the time as a string
 	return str(minutes) + ":" + str(seconds).pad_zeros(2) + "." + str(milliseconds).pad_zeros(3)
 
+func Reset():
+	Clock = 0
+
 func getTime():
 	return Clock
 

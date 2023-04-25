@@ -74,6 +74,8 @@ func takeDamage(goThruRoll,instaKill = false,ringLose=false) -> bool:
 		return true
 
 func _ready():
+	# Reset Timer
+	$"/root/SpeedrunTimer".Reset();
 	SonicMesh = get_node("MeshHolder/SonicMesh");
 	GroundCheck = get_node("GroundCheck")
 	Animator = get_node("MeshHolder/SonicMesh/AnimationPlayer")
@@ -97,11 +99,11 @@ func PlayAnimation(velocity,OnGround) -> void:
 		Animator.speed_scale = 0;
 		Animator.play("sc_jump_ball");
 		if(SpinDashing):
-			if(facingForward): MeshHolder.rotation_degrees.x += 250 * clamp(SpinDashCharge/20,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
-			else: MeshHolder.rotation_degrees.x -= 250 * clamp(SpinDashCharge/20,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
+			if(facingForward): MeshHolder.rotation_degrees.x += 12 * clamp(SpinDashCharge/20,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
+			else: MeshHolder.rotation_degrees.x -= 12 * clamp(SpinDashCharge/20,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
 		else:
-			if(facingForward): MeshHolder.rotation_degrees.x += 250 * clamp(Animator.speed_scale,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
-			else: MeshHolder.rotation_degrees.x -= 250 * clamp(Animator.speed_scale,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
+			if(facingForward): MeshHolder.rotation_degrees.x += 12 * clamp(Animator.speed_scale,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
+			else: MeshHolder.rotation_degrees.x -= 12 * clamp(Animator.speed_scale,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
 	
 	#print(velocity)
 
@@ -130,7 +132,9 @@ func _process(delta):
 	
 	if(!levelEnded): $HUD/Timer.text = "TIME: " + $"/root/SpeedrunTimer".TimeToString();
 	Invinciblity -= delta
-	if(Input.is_action_pressed("Restart")): takeDamage(false,true,true)
+	if(Input.is_action_pressed("Restart")):
+		get_tree().reload_current_scene()
+		$"/root/SpeedrunTimer".Reset();
 		
 	var MoveInput:Vector2 = Input.get_vector("Left","Right","Backward","Forward");
 	var isOnGround:bool = GroundCheck.is_colliding() or $GroundCheck2.is_colliding() or $GroundCheck3.is_colliding()
