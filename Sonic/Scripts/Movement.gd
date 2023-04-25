@@ -25,7 +25,7 @@ var TotalRings:int = 0
 
 var SpinDashing:bool = false
 var SpinDashCharge = 0
-var Invinciblity = 5;
+var Invinciblity = 0;
 
 @export var SpeedMS:int = 0;
 @onready var RingPrefab:Resource = load("res://Prefabs/SonicDroppedRing.tscn")
@@ -63,7 +63,7 @@ func takeDamage(goThruRoll,instaKill = false,ringLose=false) -> bool:
 		TotalRings = 0
 		return true
 	else:
-		Invinciblity = 5
+		Invinciblity = 1.25
 		$SoundFXs/RingDamage.play()
 		if(TotalRings > 100): TotalRings = 100
 		for i in TotalRings:
@@ -115,8 +115,11 @@ func onLevelEnded() -> int:
 	return TotalRings
 
 func CameraZoom(speed):
-	$Camera3D.fov = lerp($Camera3D.fov,75 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
-	$Camera3D.size = lerp($Camera3D.size,15 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
+	if $Camera3D.projection == $Camera3D.PROJECTION_ORTHOGONAL:
+		$Camera3D.size = lerp($Camera3D.size,15 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
+	else:
+		$Camera3D.fov = lerp($Camera3D.fov,75 * clamp((speed / 25) + 0.2,0.8,1.6),CameraFOVSpeed)
+		
 	''' CAMERA CHANGE FROM 2D -> 3D
 	if(Input.is_action_just_pressed("CameraSwap")):
 		if $Camera3D.projection == $Camera3D.PROJECTION_ORTHOGONAL:

@@ -3,6 +3,7 @@ extends Area3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$SonicGoal.rotation.y = -620
 	pass # Replace with function body.
 
 @export var NextLevel:PackedScene
@@ -41,9 +42,12 @@ func _process(delta):
 				$"/root/SpeedrunTimer".onLevelFinished()
 				print("Level Endeed With:" + str(ringsObtained) + " RINGS.");
 	else:
-		if($LevelEndSFX.playing): 
-			var newRot = clamp((1 - ($LevelEndSFX.get_playback_position() / 1.84)),0,1) * delta * 127.25;
-			$SonicGoal.rotate_y(newRot)
+		if($LevelEndSFX.playing):
+			print($SonicGoal.get_rotation())
+			var newRotation = $SonicGoal.get_rotation()
+			newRotation.y += clamp((1 - ($LevelEndSFX.get_playback_position() / 1.84)),0.25,1) * delta * 650;
+			if(newRotation.y >= -90): newRotation.y = -76
+			$SonicGoal.set_rotation(newRotation)
 		else:
 			if($HUD/TopLayer.position.y != 0):
 				if($HUD/TopLayer.position.y > 0):

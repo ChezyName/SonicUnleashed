@@ -1,4 +1,4 @@
-res://Levels/Tutorial.tscn
+res://Levels/1.tscn
 res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
@@ -19,7 +19,7 @@ res://Spikes/Plate.tres
 res://Spikes/Spike.tres
 res://Spring/Material.001.tres
 res://Spring/Spring.tres
-res://Sonic/Scripts/Movement.gd
-res://Levels/1.tscn
-res://Util/SpeedrunTimer.gd
 res://LevelEnd/LevelEnder.gd
+res://Prefabs/GoalPost.tscn
+res://Sonic/Scripts/Movement.gd
+res://Prefabs/SonicPlayer.tscn

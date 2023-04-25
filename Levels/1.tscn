@@ -263,13 +263,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 35.287)
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -1.45516, 31.52)
 Angle = 90.0
 Distance = 70.0
-StillTime = 1.75
+StillTime = 2.0
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("6_m2y6k")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 9.72515, 1.80309)
 Angle = -3.0
 Distance = 180.0
-StillTime = 1.75
+StillTime = 2.0
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("6_m2y6k")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 17.8265, -11.8392)

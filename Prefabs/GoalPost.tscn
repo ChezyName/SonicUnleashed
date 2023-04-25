@@ -11,7 +11,7 @@ size = Vector3(1.8916, 1.90615, 1.8796)
 script = ExtResource("1_17xg7")
 
 [node name="SonicGoal" parent="." instance=ExtResource("1_1wsw3")]
-transform = Transform3D(-7.43094e-08, 0, 1.7, 0, 1.7, 0, -1.7, 0, -7.43094e-08, 0, 0, 0)
+transform = Transform3D(-0.295202, 0, 1.67417, 0, 1.7, 0, -1.67417, 0, -0.295202, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95134, 0)
