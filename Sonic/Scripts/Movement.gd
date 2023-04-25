@@ -97,11 +97,11 @@ func PlayAnimation(velocity,OnGround) -> void:
 		Animator.speed_scale = 0;
 		Animator.play("sc_jump_ball");
 		if(SpinDashing):
-			if(facingForward): MeshHolder.rotation_degrees.x += 250 * clamp(SpinDashCharge/20,1,20);
-			else: MeshHolder.rotation_degrees.x -= 250 * clamp(SpinDashCharge/20,1,20);
+			if(facingForward): MeshHolder.rotation_degrees.x += 250 * clamp(SpinDashCharge/20,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
+			else: MeshHolder.rotation_degrees.x -= 250 * clamp(SpinDashCharge/20,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
 		else:
-			if(facingForward): MeshHolder.rotation_degrees.x += 250 * clamp(Animator.speed_scale,1,20);
-			else: MeshHolder.rotation_degrees.x -= 250 * clamp(Animator.speed_scale,1,20);
+			if(facingForward): MeshHolder.rotation_degrees.x += 250 * clamp(Animator.speed_scale,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
+			else: MeshHolder.rotation_degrees.x -= 250 * clamp(Animator.speed_scale,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
 	
 	#print(velocity)
 
@@ -125,6 +125,9 @@ func CameraZoom(speed):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#Restart Level
+	if(Input.is_action_pressed("SlowMo")): Engine.time_scale = 0.25
+	else: Engine.time_scale = 1
+	
 	if(!levelEnded): $HUD/Timer.text = "TIME: " + $"/root/SpeedrunTimer".TimeToString();
 	Invinciblity -= delta
 	if(Input.is_action_pressed("Restart")): takeDamage(false,true,true)

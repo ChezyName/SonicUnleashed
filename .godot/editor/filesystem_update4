@@ -1,4 +1,4 @@
-res://Levels/1.tscn
+res://Levels/Tutorial.tscn
 res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
@@ -19,12 +19,7 @@ res://Spikes/Plate.tres
 res://Spikes/Spike.tres
 res://Spring/Material.001.tres
 res://Spring/Spring.tres
-res://LevelEnd/LevelEnder.gd
-res://Levels/Tutorial.tscn
 res://Sonic/Scripts/Movement.gd
-res://Maps/GreenHillZone/Scripts/PlayerStickyPlatform.gd
-res://Rock/distructablerock.gd
-res://Rings/RingOnDropped.gd
-res://Prefabs/SonicDroppedRing.tscn
-res://Maps/GreenHillZone/PREF-PLATFORM.tscn
-res://Maps/GreenHillZone/PREF-Bridge.tscn
+res://Levels/1.tscn
+res://Util/SpeedrunTimer.gd
+res://LevelEnd/LevelEnder.gd

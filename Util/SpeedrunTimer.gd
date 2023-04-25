@@ -2,24 +2,27 @@ extends Node
 
 @export var Clock:float = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-	
 var levelDone:bool = false
+
+func _ready():
+	pass
+
 func onLevelFinished():
 	levelDone = true
 
-func TimeToString():
+func TimeToString() -> String:
 	var minutes = floor(Clock / 60)
-	var remaining_seconds = fmod(Clock,60)
-	return str(minutes) + ":" + str(int(remaining_seconds)).pad_zeros(2)
+	var seconds = floor(fmod(Clock,60))
+	var milliseconds = int(fmod(Clock,1) * 1000)
+
+	# Format the time as a string
+	return str(minutes) + ":" + str(seconds).pad_zeros(2) + "." + str(milliseconds).pad_zeros(3)
 
 func getTime():
-	return int(Clock)
+	return Clock
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(!levelDone): Clock += delta
+	var timeScale:float = abs(1-Engine.time_scale) + 1
+	if(!levelDone): Clock += delta * timeScale
 	#print(TimeToString())
 	pass

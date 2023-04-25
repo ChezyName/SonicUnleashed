@@ -23,10 +23,11 @@ func load_next_scene():
 	sceneLoaded = true
 	queue_free()
 
-func NumberToTime(number):
-	var minutes = floor(number / 60)
-	var remaining_seconds = fmod(number,60)
-	return str(minutes) + ":" + str(int(remaining_seconds)).pad_zeros(2)
+func NumberToTime(Clock):
+	var minutes = floor(Clock / 60)
+	var seconds = floor(fmod(Clock,60))
+	var milliseconds = int(fmod(Clock,1) * 1000)
+	return str(minutes) + ":" + str(seconds).pad_zeros(2) + "." + str(milliseconds).pad_zeros(3)
 
 var delaySceneLoad = 2.75
 
@@ -59,7 +60,7 @@ func _process(delta):
 					if(currentTime < $"/root/SpeedrunTimer".getTime()):
 						var t_speed = clamp(1-(currentTime/$"/root/SpeedrunTimer".getTime()),0.2,1)
 						currentTime += (t_speed*60) * delta
-					$HUD/TopLayer/TimeRingText.text = "RINGS: " + str(int(currentRings)) + "\nTIME: " + NumberToTime(int(currentTime));
+					$HUD/TopLayer/TimeRingText.text = "RINGS: " + str(int(currentRings)) + "\nTIME: " + NumberToTime(currentTime);
 				else:
 					#print(str(currentRings) + " / " + str(ringsObtained) + " - " + str(currentTime) + " / " + str($"/root/SpeedrunTimer".getTime()))
 					if(delaySceneLoad < 0): load_next_scene()
