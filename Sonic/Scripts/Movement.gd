@@ -91,7 +91,7 @@ func _ready():
 func PlayAnimation(velocity,OnGround) -> void:
 	var isFRRolling = (Rolling and abs(velocity.z) > 0.5)
 	if(OnGround and !isFRRolling and !SpinDashing):
-		Animator.speed_scale = clamp(abs(velocity.z) / 10,0,40);
+		Animator.speed_scale = clamp(abs(velocity.z) / 10,0,60);
 		MeshHolder.rotation_degrees.x = 0
 		if(abs(velocity.z) > SpeedForSuper): Animator.play("sc_boost");
 		else: Animator.play("sc_run");
@@ -217,7 +217,9 @@ func _process(delta):
 	elif(!isOnGround):
 		c_Vel.y -= 12.8 * delta;
 	
-	c_Vel.z = clamp(c_Vel.z,-400,400)
+	#SPEED CAP
+	#c_Vel.z = clamp(c_Vel.z,-400,400)
+	
 	if(!levelEnded):
 		if(!SpinDashing and !justSpun):
 			if(isOnGround and !Rolling): 
