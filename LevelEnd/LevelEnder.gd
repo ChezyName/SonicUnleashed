@@ -40,10 +40,11 @@ func _process(delta):
 				ringsObtained = body.onLevelEnded(self)
 				$LevelEndSFX.play()
 				$"/root/SpeedrunTimer".onLevelFinished()
+				$"/root/SpeedrunSave".Save(get_tree().current_scene.name,$"/root/SpeedrunTimer".getTime())
 				print("Level Endeed With:" + str(ringsObtained) + " RINGS.");
 	else:
 		if($LevelEndSFX.playing):
-			print($SonicGoal.get_rotation())
+			#print($SonicGoal.get_rotation())
 			var newRotation = $SonicGoal.get_rotation()
 			newRotation.y += clamp((1 - ($LevelEndSFX.get_playback_position() / 1.84)),0.25,1) * delta * 650;
 			if(newRotation.y >= -90): newRotation.y = -90
