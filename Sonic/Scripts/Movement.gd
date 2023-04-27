@@ -120,9 +120,10 @@ func onLevelEnded(LevelEnder:Node3D) -> int:
 
 func CameraLerpEnd():
 	#Camera.position.x = lerpf(Camera.position.x,LevelEndNode.position.x + 20,0.15)
-	Camera.position.y = lerpf(Camera.position.y,LevelEndNode.position.y,0.15)
-	Camera.position.z = lerpf(Camera.position.z,LevelEndNode.position.z,0.15)
-	Camera.size = lerpf(Camera.size,12,0.15)
+	const camSpeed = 0.05;
+	Camera.position.y = lerpf(Camera.position.y,LevelEndNode.position.y,camSpeed)
+	Camera.position.z = lerpf(Camera.position.z,LevelEndNode.position.z,camSpeed)
+	Camera.size = lerpf(Camera.size,12,camSpeed)
 
 func CameraZoom(speed):
 	if $Camera3D.projection == $Camera3D.PROJECTION_ORTHOGONAL:
