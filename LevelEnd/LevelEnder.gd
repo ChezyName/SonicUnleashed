@@ -4,6 +4,7 @@ extends Area3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$SonicGoal.rotation.y = -620
+	$"/root/SpeedrunTimer".Reset()
 	pass # Replace with function body.
 
 @export var NextLevel:PackedScene

@@ -20,6 +20,7 @@ func TimeToString() -> String:
 
 func Reset():
 	Clock = 0
+	levelDone = false
 
 func getTime():
 	return Clock
