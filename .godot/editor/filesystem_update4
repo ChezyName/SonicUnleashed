@@ -19,5 +19,3 @@ res://Spikes/Plate.tres
 res://Spikes/Spike.tres
 res://Spring/Material.001.tres
 res://Spring/Spring.tres
-res://LevelEnd/LevelEnder.gd
-res://Util/SpeedrunTimer.gd
