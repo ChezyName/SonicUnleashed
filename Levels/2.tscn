@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba6vu74jfe2n"]
+
+[ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="1_cgjdo"]
+[ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="2_ce28a"]
+[ext_resource type="PackedScene" uid="uid://brsw8j673hjf8" path="res://Maps/GreenHillZone/PREF-PLATFORM.tscn" id="3_xsl26"]
+[ext_resource type="PackedScene" uid="uid://dsaev41c2k82l" path="res://Prefabs/Spikes.tscn" id="5_sgk2g"]
+[ext_resource type="PackedScene" uid="uid://dbtvih4j565h2" path="res://Prefabs/MovingPlatform.tscn" id="6_u23b7"]
+
+[node name="1A - Green Hill Zone" type="Node3D"]
+
+[node name="GreenHillZoneTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_cgjdo")
+volume_db = -8.0
+autoplay = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.629117, 3.39773e-08, -0.777311, 0.777311, -2.74996e-08, 0.629117, 0, -1, -4.37114e-08, 0, 2.52606, 0)
+light_volumetric_fog_energy = 0.0
+
+[node name="SonicPlayer" parent="." instance=ExtResource("2_ce28a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278187, 0.691276, -2.12508)
+
+[node name="Platform" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.159824, 0, 0, -0.159434)
+
+[node name="Platform2" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.159824, 0, 0, 6.01171)
+
+[node name="Platform3" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.159824, 0, 0, 12.2047)
+
+[node name="Platform4" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.156937, 0, 0, 18.0384)
+
+[node name="Platform5" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(0.09, 0, 0, 0, 0.18, 0, 0, 0, 0.15, 0, 1.6939, 24.0777)
+
+[node name="Platform20" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(0.09, 0, 0, 0, 1.37412, 0, 0, 0, 0.725784, -0.148753, 23.5759, 107.681)
+
+[node name="Platform21" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(0.09, 0, 0, 0, 1.37412, 0, 0, 0, 0.725784, -0.148753, 23.5759, 135.536)
+
+[node name="Platform22" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(0.09, 0, 0, 0, 1.37412, 0, 0, 0, 0.725784, -0.877511, 46.6346, 135.536)
+
+[node name="Platform11" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(0.09, 0, 0, 0, 0.18, 0, 0, 0, 0.15, 0, -1.10899, 30.0809)
+
+[node name="Platform12" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(0.09, 0, 0, 0, 0.18, 0, 0, 0, 0.15, 0, -1.10899, 36.2096)
+
+[node name="Platform7" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(-0.0899999, 0, -4.80143e-08, 6.87846e-16, -0.505382, -4.80143e-08, -7.86804e-09, -4.41819e-08, 0.54922, 0.226725, -11.0418, -12.254)
+
+[node name="Platform8" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(-0.0899999, 0, -4.80143e-08, 6.87846e-16, -0.505382, -4.80143e-08, -7.86804e-09, -4.41819e-08, 0.54922, 0.226725, -11.0418, 9.56164)
+
+[node name="Platform9" parent="." instance=ExtResource("3_xsl26")]
+transform = Transform3D(-0.0899999, 0, -4.80143e-08, 6.87846e-16, -0.505382, -4.80143e-08, -7.86804e-09, -4.41819e-08, 0.54922, 0.226725, -11.0418, 31.2937)
+
+[node name="DamageSpikes" parent="." instance=ExtResource("5_sgk2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 28.0687)
+
+[node name="DamageSpikes2" parent="." instance=ExtResource("5_sgk2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 29.8712)
+
+[node name="DamageSpikes3" parent="." instance=ExtResource("5_sgk2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 31.6986)
+
+[node name="DamageSpikes4" parent="." instance=ExtResource("5_sgk2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 33.5094)
+
+[node name="DamageSpikes5" parent="." instance=ExtResource("5_sgk2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1242, 35.287)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("6_u23b7")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -1.45516, 31.52)
+Angle = 90.0
+Distance = 70.0
+StillTime = 2.0
