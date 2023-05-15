@@ -95,9 +95,11 @@ func PlayAnimation(velocity,OnGround) -> void:
 		MeshHolder.rotation_degrees.x = 0
 		if(abs(velocity.z) > SpeedForSuper): Animator.play("sc_boost");
 		else: Animator.play("sc_run");
+		$VFX/Trail.emitting = false;
 	else:
 		Animator.speed_scale = 0;
 		Animator.play("sc_jump_ball");
+		$VFX/Trail.emitting = true;
 		if(SpinDashing):
 			if(facingForward): MeshHolder.rotation_degrees.x += 12 * clamp(SpinDashCharge/20,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);
 			else: MeshHolder.rotation_degrees.x -= 12 * clamp(SpinDashCharge/20,1,20) * (Engine.time_scale*Engine.time_scale*Engine.time_scale);

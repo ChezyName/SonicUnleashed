@@ -1,9 +1,12 @@
-res://Levels/1.tscn
+res://Prefabs/SonicPlayer.tscn
 res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
 res://Sonic/Animations/sc_jump_ball.res
-res://Rings/SonicRing.tres
+res://Spikes/Plate.tres
+res://Spikes/Spike.tres
+res://Spring/Material.001.tres
+res://Spring/Spring.tres
 res://LevelEnd/Materials/stu__obj_base.tres
 res://LevelEnd/Materials/cmn_obj_goalplate_HD_metal.tres
 res://LevelEnd/Materials/cmn_obj_goalplate_HD_back.tres
@@ -15,9 +18,6 @@ res://LevelEnd/Materials/cmn_obj_goleplate_e_body.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_glass.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_glassref.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_beard.tres
-res://Spikes/Plate.tres
-res://Spikes/Spike.tres
-res://Spring/Material.001.tres
-res://Spring/Spring.tres
+res://Rings/SonicRing.tres
 res://Levels/2.tscn
-res://Levels/Tutorial.tscn
+res://Sonic/Scripts/Movement.gd
