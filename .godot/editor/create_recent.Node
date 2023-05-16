@@ -1,8 +1,8 @@
+CollisionShape3D
+Area3D
 Camera3D
 StaticBody3D
 Node3D
-CollisionShape3D
-Area3D
 DirectionalLight3D
 RichTextLabel
 Label

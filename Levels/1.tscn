@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://caqgywmvaxg0u"]
+[gd_scene load_steps=12 format=3 uid="uid://caqgywmvaxg0u"]
 
 [ext_resource type="PackedScene" uid="uid://brsw8j673hjf8" path="res://Maps/GreenHillZone/PREF-PLATFORM.tscn" id="1_4w21u"]
 [ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="1_74hjr"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dxqb1na64kvhy" path="res://Prefabs/DistructableRock.tscn" id="7_rffcs"]
 [ext_resource type="PackedScene" uid="uid://b66brv3e85ude" path="res://Prefabs/Checkpoint.tscn" id="8_7i3h6"]
 [ext_resource type="PackedScene" uid="uid://ddya7fjyslxx" path="res://Prefabs/Spring.tscn" id="9_eb8ou"]
+[ext_resource type="PackedScene" uid="uid://ba6vu74jfe2n" path="res://Levels/2.tscn" id="11_bs3qj"]
 
 [node name="1A - Green Hill Zone" type="Node3D"]
 
@@ -306,3 +307,4 @@ MinSpringSpeed = 60.0
 
 [node name="GoalPost" parent="." instance=ExtResource("4_p1c2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.915, 41.2589)
+NextLevel = ExtResource("11_bs3qj")

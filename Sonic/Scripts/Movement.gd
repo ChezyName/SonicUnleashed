@@ -47,6 +47,9 @@ func onRing():
 			else: self.linear_velocity.z -= speed;
 	TotalRings += 1
 
+func Speedboost(newVel):
+		self.linear_velocity = newVel
+
 func takeDamage(goThruRoll,instaKill = false,ringLose=false) -> bool:
 	if(!instaKill): if(!goThruRoll and Rolling) or Invinciblity > 0: return false
 	if(TotalRings <= 0 or instaKill):

@@ -1,4 +1,4 @@
-res://Prefabs/SonicPlayer.tscn
+res://Levels/3.tscn
 res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
@@ -19,5 +19,8 @@ res://LevelEnd/Materials/cmn_obj_goleplate_e_glass.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_glassref.tres
 res://LevelEnd/Materials/cmn_obj_goleplate_e_beard.tres
 res://Rings/SonicRing.tres
-res://Levels/2.tscn
+res://Speedboost/RedBoost.tres
+res://Speedboost/Base.tres
+res://Prefabs/Speedboost.tscn
 res://Sonic/Scripts/Movement.gd
+res://Speedboost/Speedbooster.gd
