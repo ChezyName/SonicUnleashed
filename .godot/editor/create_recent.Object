@@ -1,6 +1,7 @@
+Node3D
+MeshInstance3D
 Area3D
 EditorNode3DGizmoPlugin
-Node3D
 GPUParticles3D
 Control
 RigidBody3D

@@ -125,7 +125,7 @@ MaxSpringSpeed = 50
 MinSpringSpeed = 50.0
 
 [node name="MovingPlatformParent" parent="." instance=ExtResource("6_xo2rt")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.0170958, 6.45083, -4.06252)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.0170958, 6.45083, -2.76804)
 Angle = 5.0
 Distance = 250.0
 
@@ -171,5 +171,44 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.0409819, 8.29394, -7
 [node name="SonicRingGrab11" parent="." instance=ExtResource("9_rkblr")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.0409819, 5.35528, -7.56233)
 
-[node name="SpeedbostC" parent="." instance=ExtResource("10_k751a")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0862516, 0.0222265, 12.9248)
+[node name="SpeedbostC2" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 48.276)
+
+[node name="SpeedbostC3" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 53.5176)
+
+[node name="SpeedbostC4" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 58.5337)
+
+[node name="SpeedbostC5" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 63.5006)
+
+[node name="SpeedbostC6" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 68.5231)
+
+[node name="SpeedbostC7" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 73.5354)
+
+[node name="SpeedbostC8" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 78.638)
+
+[node name="SpeedbostC9" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 83.7585)
+
+[node name="SpeedbostC10" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 89.1823)
+
+[node name="SpeedbostC11" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 94.8088)
+
+[node name="SpeedbostC12" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 99.7314)
+
+[node name="SpeedbostC13" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 104.478)
+
+[node name="SpeedbostC14" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 109.922)
+
+[node name="SpeedbostC15" parent="." instance=ExtResource("10_k751a")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.72974, 8.04569, 115.186)
