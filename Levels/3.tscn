@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://we3o1rjn4sht"]
+[gd_scene load_steps=12 format=3 uid="uid://we3o1rjn4sht"]
 
 [ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="1_5bavr"]
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="2_uvu3c"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ddya7fjyslxx" path="res://Prefabs/Spring.tscn" id="5_62qws"]
 [ext_resource type="PackedScene" uid="uid://dbtvih4j565h2" path="res://Prefabs/MovingPlatform.tscn" id="6_xo2rt"]
 [ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="7_tsshy"]
+[ext_resource type="PackedScene" uid="uid://c163u8ppgbocv" path="res://Levels/4.tscn" id="8_31xw8"]
 [ext_resource type="PackedScene" uid="uid://b66brv3e85ude" path="res://Prefabs/Checkpoint.tscn" id="8_exo03"]
 [ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/SonicRing.tscn" id="9_rkblr"]
 [ext_resource type="PackedScene" uid="uid://dj41f62uo4e23" path="res://Prefabs/Speedboost.tscn" id="10_k751a"]
@@ -131,6 +132,7 @@ Distance = 250.0
 
 [node name="GoalPost" parent="." instance=ExtResource("7_tsshy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.059, 114.676)
+NextLevel = ExtResource("8_31xw8")
 
 [node name="Checkpoint" parent="." instance=ExtResource("8_exo03")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.615781, 8.059, 42.13)

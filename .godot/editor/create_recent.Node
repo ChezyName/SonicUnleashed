@@ -1,9 +1,10 @@
-MeshInstance3D
+AudioStreamPlayer3D
+Node3D
+StaticBody3D
 GridMap
+MeshInstance3D
 CSGBox3D
 CollisionShape3D
-StaticBody3D
-Node3D
 Area3D
 Control
 CanvasGroup
@@ -13,7 +14,6 @@ RichTextLabel
 Label
 Panel
 ColorRect
-AudioStreamPlayer3D
 GPUParticles3D
 GPUParticles2D
 AudioStreamPlayer

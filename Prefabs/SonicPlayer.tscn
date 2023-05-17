@@ -16,7 +16,6 @@ radius = 0.35
 height = 1.25
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bl0yx"]
-transparency = 1
 albedo_color = Color(0, 0.509804, 1, 1)
 
 [sub_resource type="Curve" id="Curve_u8p0i"]
@@ -173,11 +172,14 @@ stream = ExtResource("9_dvj8m")
 
 [node name="SpeedBurst" parent="VFX" instance=ExtResource("10_cqr7k")]
 transform = Transform3D(1, 0, 0, 0, 0.941188, -0.337884, 0, 0.337884, 0.941188, 0, -0.406639, 0)
+emitting = false
 visibility_aabb = AABB(-0.23421, -0.222996, -0.256318, 0.468421, 0.445993, 0.512635)
 
 [node name="Trail" parent="VFX" instance=ExtResource("10_cqr7k")]
-transform = Transform3D(1, 0, 0, 0, 0.941188, -0.337884, 0, 0.337884, 0.941188, 0, -0.090631, -0.049468)
 material_override = SubResource("StandardMaterial3D_bl0yx")
+emitting = false
 amount = 5000
 visibility_aabb = AABB(-0.23421, -0.222996, -0.256318, 0.468421, 0.445993, 0.512635)
+trail_enabled = true
+trail_lifetime = 0.25
 process_material = SubResource("ParticleProcessMaterial_uescs")

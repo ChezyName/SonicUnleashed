@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj41f62uo4e23"]
+[gd_scene load_steps=5 format=3 uid="uid://dj41f62uo4e23"]
 
 [ext_resource type="PackedScene" uid="uid://ry4le6q260ru" path="res://Speedboost/Speedboost.glb" id="1_nx0kj"]
 [ext_resource type="Script" path="res://Speedboost/Speedbooster.gd" id="1_xllw3"]
+[ext_resource type="AudioStream" uid="uid://bvd363js5lw3d" path="res://Speedboost/SpeedBoostSFX.wav" id="3_lujpc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2erjn"]
 size = Vector3(5.95639, 2.50875, 9.99299)
@@ -15,3 +16,6 @@ script = ExtResource("1_xllw3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.397424, 0)
 shape = SubResource("BoxShape3D_2erjn")
+
+[node name="BoostSFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_lujpc")
