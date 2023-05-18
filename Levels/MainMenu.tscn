@@ -1,0 +1,157 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0eojfirgv6sg"]
+
+[ext_resource type="Texture2D" uid="uid://cxojjrr3w8gxa" path="res://Levels/MENU/MainMenu.png" id="1_d5u1o"]
+[ext_resource type="FontFile" uid="uid://d71vidvkila0" path="res://Util/NiseSegaSonic.TTF" id="2_44x6r"]
+[ext_resource type="Script" path="res://Levels/MENU/onHoverButtons.gd" id="3_lwmqa"]
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="HUD"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_d5u1o")
+expand_mode = 1
+
+[node name="PLAY" type="Button" parent="HUD"]
+offset_left = 963.0
+offset_top = 204.0
+offset_right = 1085.0
+offset_bottom = 259.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.870588, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 35
+text = "PLAY"
+flat = true
+alignment = 2
+script = ExtResource("3_lwmqa")
+
+[node name="OnSelect" type="ColorRect" parent="HUD/PLAY"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.572549, 1, 1, 1)
+
+[node name="TUTORIAL" type="Button" parent="HUD"]
+offset_left = 861.0
+offset_top = 270.0
+offset_right = 1085.0
+offset_bottom = 325.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.870588, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 35
+text = "TUTORIAL"
+flat = true
+alignment = 2
+script = ExtResource("3_lwmqa")
+
+[node name="OnSelect" type="ColorRect" parent="HUD/TUTORIAL"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.572549, 1, 1, 1)
+
+[node name="LVLSELECT" type="Button" parent="HUD"]
+offset_left = 795.0
+offset_top = 339.0
+offset_right = 1085.0
+offset_bottom = 394.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.870588, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 35
+text = "LEVEL SELCT"
+flat = true
+alignment = 2
+script = ExtResource("3_lwmqa")
+
+[node name="OnSelect" type="ColorRect" parent="HUD/LVLSELECT"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.572549, 1, 1, 1)
+
+[node name="Settings" type="Button" parent="HUD"]
+offset_left = 872.0
+offset_top = 409.0
+offset_right = 1085.0
+offset_bottom = 464.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.870588, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 35
+text = "SETTINGS"
+flat = true
+alignment = 2
+script = ExtResource("3_lwmqa")
+
+[node name="OnSelect" type="ColorRect" parent="HUD/Settings"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.572549, 1, 1, 1)
+
+[node name="Quit" type="Button" parent="HUD"]
+offset_left = 976.0
+offset_top = 484.0
+offset_right = 1085.0
+offset_bottom = 539.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.870588, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 35
+text = "Quit"
+flat = true
+alignment = 2
+script = ExtResource("3_lwmqa")
+
+[node name="OnSelect" type="ColorRect" parent="HUD/Quit"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.572549, 1, 1, 1)
