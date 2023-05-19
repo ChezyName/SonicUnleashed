@@ -3,8 +3,6 @@ res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
 res://Sonic/Animations/sc_jump_ball.res
-res://Levels/MENU/onHoverButtons.gd
-res://Levels/MENU/OpenSceneOnClick.gd
 res://Rings/SonicRing.tres
 res://LevelEnd/Materials/stu__obj_base.tres
 res://LevelEnd/Materials/cmn_obj_goalplate_HD_metal.tres
@@ -23,4 +21,4 @@ res://Spring/Material.001.tres
 res://Spring/Spring.tres
 res://Speedboost/Base.tres
 res://Speedboost/RedBoost.tres
-res://Levels/MENU/CloseGameOnClick.gd
+res://Levels/5.tscn

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sonic Unleashed"
-run/main_scene="res://Levels/Tutorial.tscn"
+run/main_scene="res://Levels/MainMenu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"

@@ -26,10 +26,11 @@ texture = ExtResource("1_d5u1o")
 expand_mode = 1
 
 [node name="PLAY" type="Button" parent="Main"]
-offset_left = 963.0
-offset_top = 204.0
-offset_right = 1085.0
-offset_bottom = 259.0
+layout_mode = 0
+offset_left = 950.0
+offset_top = 200.0
+offset_right = 1072.0
+offset_bottom = 255.0
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
@@ -54,10 +55,11 @@ grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
 [node name="TUTORIAL" type="Button" parent="Main"]
-offset_left = 861.0
-offset_top = 270.0
-offset_right = 1085.0
-offset_bottom = 325.0
+layout_mode = 0
+offset_left = 848.0
+offset_top = 266.0
+offset_right = 1072.0
+offset_bottom = 321.0
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
@@ -82,10 +84,11 @@ grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
 [node name="LVLSELECT" type="Button" parent="Main"]
-offset_left = 795.0
-offset_top = 339.0
-offset_right = 1085.0
-offset_bottom = 394.0
+layout_mode = 0
+offset_left = 782.0
+offset_top = 335.0
+offset_right = 1072.0
+offset_bottom = 390.0
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
@@ -108,38 +111,12 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
-[node name="Settings" type="Button" parent="Main"]
-offset_left = 872.0
-offset_top = 409.0
-offset_right = 1085.0
-offset_bottom = 464.0
-focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.870588, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_44x6r")
-theme_override_font_sizes/font_size = 35
-text = "SETTINGS"
-flat = true
-alignment = 2
-script = ExtResource("3_lwmqa")
-
-[node name="OnSelect" type="ColorRect" parent="Main/Settings"]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 8.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.572549, 1, 1, 1)
-
 [node name="Quit" type="Button" parent="Main"]
-offset_left = 976.0
-offset_top = 484.0
-offset_right = 1085.0
-offset_bottom = 539.0
+layout_mode = 0
+offset_left = 963.0
+offset_top = 414.0
+offset_right = 1072.0
+offset_bottom = 469.0
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
