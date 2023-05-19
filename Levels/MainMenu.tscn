@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0eojfirgv6sg"]
+[gd_scene load_steps=8 format=3 uid="uid://c0eojfirgv6sg"]
 
 [ext_resource type="Texture2D" uid="uid://cxojjrr3w8gxa" path="res://Levels/MENU/MainMenu.png" id="1_d5u1o"]
 [ext_resource type="FontFile" uid="uid://d71vidvkila0" path="res://Util/NiseSegaSonic.TTF" id="2_44x6r"]
 [ext_resource type="Script" path="res://Levels/MENU/onHoverButtons.gd" id="3_lwmqa"]
+[ext_resource type="Script" path="res://Levels/MENU/OpenSceneOnClick.gd" id="3_piby8"]
+[ext_resource type="PackedScene" uid="uid://caqgywmvaxg0u" path="res://Levels/1.tscn" id="4_f6eu1"]
+[ext_resource type="PackedScene" uid="uid://wsv6bg6tnnqm" path="res://Levels/Tutorial.tscn" id="5_oy5tr"]
+[ext_resource type="Script" path="res://Levels/MENU/CloseGameOnClick.gd" id="7_upnt7"]
 
 [node name="MainMenu" type="Node3D"]
 
-[node name="HUD" type="Control" parent="."]
+[node name="Main" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,14 +18,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="TextureRect" parent="HUD"]
+[node name="BG" type="TextureRect" parent="Main"]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_d5u1o")
 expand_mode = 1
 
-[node name="PLAY" type="Button" parent="HUD"]
+[node name="PLAY" type="Button" parent="Main"]
 offset_left = 963.0
 offset_top = 204.0
 offset_right = 1085.0
@@ -35,9 +39,10 @@ theme_override_font_sizes/font_size = 35
 text = "PLAY"
 flat = true
 alignment = 2
-script = ExtResource("3_lwmqa")
+script = ExtResource("3_piby8")
+Scene = ExtResource("4_f6eu1")
 
-[node name="OnSelect" type="ColorRect" parent="HUD/PLAY"]
+[node name="OnSelect" type="ColorRect" parent="Main/PLAY"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -48,7 +53,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
-[node name="TUTORIAL" type="Button" parent="HUD"]
+[node name="TUTORIAL" type="Button" parent="Main"]
 offset_left = 861.0
 offset_top = 270.0
 offset_right = 1085.0
@@ -62,9 +67,10 @@ theme_override_font_sizes/font_size = 35
 text = "TUTORIAL"
 flat = true
 alignment = 2
-script = ExtResource("3_lwmqa")
+script = ExtResource("3_piby8")
+Scene = ExtResource("5_oy5tr")
 
-[node name="OnSelect" type="ColorRect" parent="HUD/TUTORIAL"]
+[node name="OnSelect" type="ColorRect" parent="Main/TUTORIAL"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -75,7 +81,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
-[node name="LVLSELECT" type="Button" parent="HUD"]
+[node name="LVLSELECT" type="Button" parent="Main"]
 offset_left = 795.0
 offset_top = 339.0
 offset_right = 1085.0
@@ -91,7 +97,7 @@ flat = true
 alignment = 2
 script = ExtResource("3_lwmqa")
 
-[node name="OnSelect" type="ColorRect" parent="HUD/LVLSELECT"]
+[node name="OnSelect" type="ColorRect" parent="Main/LVLSELECT"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -102,7 +108,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
-[node name="Settings" type="Button" parent="HUD"]
+[node name="Settings" type="Button" parent="Main"]
 offset_left = 872.0
 offset_top = 409.0
 offset_right = 1085.0
@@ -118,7 +124,7 @@ flat = true
 alignment = 2
 script = ExtResource("3_lwmqa")
 
-[node name="OnSelect" type="ColorRect" parent="HUD/Settings"]
+[node name="OnSelect" type="ColorRect" parent="Main/Settings"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -129,7 +135,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
-[node name="Quit" type="Button" parent="HUD"]
+[node name="Quit" type="Button" parent="Main"]
 offset_left = 976.0
 offset_top = 484.0
 offset_right = 1085.0
@@ -143,9 +149,9 @@ theme_override_font_sizes/font_size = 35
 text = "Quit"
 flat = true
 alignment = 2
-script = ExtResource("3_lwmqa")
+script = ExtResource("7_upnt7")
 
-[node name="OnSelect" type="ColorRect" parent="HUD/Quit"]
+[node name="OnSelect" type="ColorRect" parent="Main/Quit"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -155,3 +161,7 @@ offset_right = 8.0
 grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
+
+[connection signal="pressed" from="Main/PLAY" to="Main/PLAY" method="_button_pressed"]
+[connection signal="pressed" from="Main/TUTORIAL" to="Main/TUTORIAL" method="_button_pressed"]
+[connection signal="pressed" from="Main/Quit" to="Main/Quit" method="_button_pressed"]
