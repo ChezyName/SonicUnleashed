@@ -1,10 +1,12 @@
+ColorRect
+CanvasLayer
+WorldEnvironment
 AudioStreamPlayer
 VBoxContainer
 HBoxContainer
 Camera3D
 Node3D
 Button
-ColorRect
 TextureRect
 Camera2D
 Control
@@ -24,9 +26,7 @@ Panel
 GPUParticles3D
 GPUParticles2D
 VisibleOnScreenNotifier2D
-WorldEnvironment
 Label3D
 Sprite3D
 RigidBody3D
 Node
-TextEdit

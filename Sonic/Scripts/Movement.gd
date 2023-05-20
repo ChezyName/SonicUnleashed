@@ -147,8 +147,12 @@ func CameraZoom(speed):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#Restart Level
-	if(Input.is_action_pressed("SlowMo")): Engine.time_scale = 0.25
-	else: Engine.time_scale = 1
+	if(Input.is_action_pressed("SlowMo")): 
+		Engine.time_scale = 0.25
+		$"B&W".visible = true
+	else: 
+		Engine.time_scale = 1
+		$"B&W".visible = false
 	
 	if(!levelEnded): $HUD/Timer.text = "TIME: " + $"/root/SpeedrunTimer".TimeToString();
 	Invinciblity -= delta

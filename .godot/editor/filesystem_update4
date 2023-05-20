@@ -22,3 +22,6 @@ res://Spring/Spring.tres
 res://Speedboost/Base.tres
 res://Speedboost/RedBoost.tres
 res://Levels/7.tscn
+res://Prefabs/SonicPlayer.tscn
+res://Sonic/BlackAndWhite.gdshader
+res://Sonic/Scripts/Movement.gd

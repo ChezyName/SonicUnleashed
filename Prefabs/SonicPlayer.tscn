@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbbkrlmaf07ed"]
+[gd_scene load_steps=18 format=3 uid="uid://dbbkrlmaf07ed"]
 
 [ext_resource type="Script" path="res://Sonic/Scripts/Movement.gd" id="1_dv7wy"]
 [ext_resource type="PackedScene" uid="uid://cp6161uxbc6ao" path="res://Sonic/Sonic.gltf" id="2_y1scu"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bwoi05x5ic3hh" path="res://Sonic/SFX/Skid.wav" id="8_4wj67"]
 [ext_resource type="AudioStream" uid="uid://b1c4hbd7wra4o" path="res://Sonic/SFX/Boost.wav" id="9_dvj8m"]
 [ext_resource type="PackedScene" uid="uid://6bxe5eij80q2" path="res://VFX/SpeedCharge.tscn" id="10_cqr7k"]
+[ext_resource type="Shader" path="res://Sonic/BlackAndWhite.gdshader" id="11_qh4th"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ucqkn"]
 radius = 0.35
@@ -29,6 +30,9 @@ curve = SubResource("Curve_u8p0i")
 gravity = Vector3(0, 0, 0)
 scale_min = 0.0
 scale_curve = SubResource("CurveTexture_onl33")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_plh4x"]
+shader = ExtResource("11_qh4th")
 
 [node name="SonicPlayer" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278187, 2.52538, -1.33322)
@@ -183,3 +187,14 @@ visibility_aabb = AABB(-0.23421, -0.222996, -0.256318, 0.468421, 0.445993, 0.512
 trail_enabled = true
 trail_lifetime = 0.25
 process_material = SubResource("ParticleProcessMaterial_uescs")
+
+[node name="B&W" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="B&W" type="ColorRect" parent="B&W"]
+material = SubResource("ShaderMaterial_plh4x")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
