@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cb742iagf7hb7"]
+[gd_scene load_steps=9 format=3 uid="uid://cb742iagf7hb7"]
 
 [ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="1_dtj0v"]
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="2_bysa5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://exwqb53akl46" path="res://Maps/Dirt.tscn" id="4_u88g5"]
 [ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="6_8bvkm"]
 [ext_resource type="PackedScene" uid="uid://dj41f62uo4e23" path="res://Prefabs/Speedboost.tscn" id="7_yjn0j"]
+[ext_resource type="PackedScene" uid="uid://b30qponckjb6d" path="res://Levels/7.tscn" id="8_o4vvg"]
 [ext_resource type="PackedScene" uid="uid://ddya7fjyslxx" path="res://Prefabs/Spring.tscn" id="8_w265r"]
 
 [node name="4A - Green Hill Zone" type="Node3D"]
@@ -321,3 +322,4 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.199615, 9.31739, 7.51
 
 [node name="GoalPost" parent="." instance=ExtResource("6_8bvkm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010192, 9.21998, -7.64043)
+NextLevel = ExtResource("8_o4vvg")

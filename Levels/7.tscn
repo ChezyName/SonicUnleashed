@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b30qponckjb6d"]
+[gd_scene load_steps=10 format=3 uid="uid://b30qponckjb6d"]
 
 [ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="1_sia0o"]
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="2_7qirr"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ddya7fjyslxx" path="res://Prefabs/Spring.tscn" id="5_dvsj3"]
 [ext_resource type="PackedScene" uid="uid://dsaev41c2k82l" path="res://Prefabs/Spikes.tscn" id="6_gxj6g"]
 [ext_resource type="PackedScene" uid="uid://dj41f62uo4e23" path="res://Prefabs/Speedboost.tscn" id="6_uyv5e"]
+[ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="9_vlb6q"]
 
 [node name="4A - Green Hill Zone" type="Node3D"]
 
@@ -423,6 +424,24 @@ transform = Transform3D(0.428, 0, 0, 0, 9.069, 0, 0, 0, 10.57, 0, -6.46658, 314.
 [node name="Dirt29" parent="." instance=ExtResource("4_0f7yk")]
 transform = Transform3D(0.428, 0, 0, 0, 9.069, 0, 0, 0, 10.57, 0, -23.932, 314.068)
 
+[node name="Grass27" parent="." instance=ExtResource("3_vneeh")]
+transform = Transform3D(0.504083, 0, 0, 0, 0.779411, 0, 0, 0, 10.5791, 0, 38.0349, 328.163)
+
+[node name="Dirt34" parent="." instance=ExtResource("4_0f7yk")]
+transform = Transform3D(0.428, 0, 0, 0, 9.069, 0, 0, 0, 10.57, 0, 28.1844, 328.057)
+
+[node name="Dirt35" parent="." instance=ExtResource("4_0f7yk")]
+transform = Transform3D(2.07563, 0, 0, 0, 9.069, 0, 0, 0, 10.57, 0, 10.7189, 328.057)
+
+[node name="Grass28" parent="." instance=ExtResource("3_vneeh")]
+transform = Transform3D(0.504083, 0, 0, 0, 0.779411, 0, 0, 0, 10.5791, 0, 3.03495, 328.163)
+
+[node name="Dirt36" parent="." instance=ExtResource("4_0f7yk")]
+transform = Transform3D(0.428, 0, 0, 0, 9.069, 0, 0, 0, 10.57, 0, -6.81563, 328.057)
+
+[node name="Dirt37" parent="." instance=ExtResource("4_0f7yk")]
+transform = Transform3D(0.428, 0, 0, 0, 9.069, 0, 0, 0, 10.57, 0, -24.2811, 328.057)
+
 [node name="Dirt30" parent="." instance=ExtResource("4_0f7yk")]
 transform = Transform3D(0.428, 0, 0, 0, 9.069, 0, 0, 0, 10.57, 0, -23.755, 209.742)
 
@@ -568,3 +587,99 @@ MinSpringSpeed = 200.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.146838, -13.6568, 261.405)
 MaxSpringSpeed = 30
 MinSpringSpeed = 30.0
+
+[node name="GoalPost" parent="." instance=ExtResource("9_vlb6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.132468, 4.16341, 298.819)
+
+[node name="SonicRingGrab50" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 264.88)
+
+[node name="SonicRingGrab51" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 267.254)
+
+[node name="SonicRingGrab52" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 270.032)
+
+[node name="SonicRingGrab53" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 272.891)
+
+[node name="SonicRingGrab54" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 275.891)
+
+[node name="SonicRingGrab55" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 277.891)
+
+[node name="SonicRingGrab56" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 280.391)
+
+[node name="SonicRingGrab57" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 282.765)
+
+[node name="SonicRingGrab58" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 285.543)
+
+[node name="SonicRingGrab59" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 288.403)
+
+[node name="SonicRingGrab60" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 291.403)
+
+[node name="SonicRingGrab61" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 293.403)
+
+[node name="SonicRingGrab62" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 169.667)
+
+[node name="SonicRingGrab63" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 172.041)
+
+[node name="SonicRingGrab64" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 174.819)
+
+[node name="SonicRingGrab65" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 177.678)
+
+[node name="SonicRingGrab66" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 180.678)
+
+[node name="SonicRingGrab67" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 182.678)
+
+[node name="SonicRingGrab68" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 153.667)
+
+[node name="SonicRingGrab69" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 156.041)
+
+[node name="SonicRingGrab70" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 158.819)
+
+[node name="SonicRingGrab71" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 161.678)
+
+[node name="SonicRingGrab72" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 164.678)
+
+[node name="SonicRingGrab73" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 166.678)
+
+[node name="SonicRingGrab74" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 137.331)
+
+[node name="SonicRingGrab75" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 139.704)
+
+[node name="SonicRingGrab76" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 142.482)
+
+[node name="SonicRingGrab77" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 145.342)
+
+[node name="SonicRingGrab78" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 148.342)
+
+[node name="SonicRingGrab79" parent="." instance=ExtResource("5_aj36j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 150.342)
+
+[node name="GoalPost2" parent="." instance=ExtResource("9_vlb6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.132468, 4.22722, 525.554)
