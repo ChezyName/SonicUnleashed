@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b30qponckjb6d" path="res://Levels/7.tscn" id="8_o4vvg"]
 [ext_resource type="PackedScene" uid="uid://ddya7fjyslxx" path="res://Prefabs/Spring.tscn" id="8_w265r"]
 
-[node name="4A - Green Hill Zone" type="Node3D"]
+[node name="6" type="Node3D"]
 
 [node name="GreenHillZoneTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_dtj0v")

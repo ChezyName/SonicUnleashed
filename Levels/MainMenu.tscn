@@ -1,14 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0eojfirgv6sg"]
+[gd_scene load_steps=18 format=3 uid="uid://c0eojfirgv6sg"]
 
 [ext_resource type="Texture2D" uid="uid://cxojjrr3w8gxa" path="res://Levels/MENU/MainMenu.png" id="1_d5u1o"]
 [ext_resource type="FontFile" uid="uid://d71vidvkila0" path="res://Util/NiseSegaSonic.TTF" id="2_44x6r"]
 [ext_resource type="Script" path="res://Levels/MENU/onHoverButtons.gd" id="3_lwmqa"]
 [ext_resource type="Script" path="res://Levels/MENU/OpenSceneOnClick.gd" id="3_piby8"]
-[ext_resource type="PackedScene" path="res://Levels/1.tscn" id="4_f6eu1"]
-[ext_resource type="PackedScene" path="res://Levels/Tutorial.tscn" id="5_oy5tr"]
+[ext_resource type="PackedScene" uid="uid://brynondw6a232" path="res://Levels/1.tscn" id="4_f6eu1"]
+[ext_resource type="PackedScene" uid="uid://0xa4c7f0gk7b" path="res://Levels/Tutorial.tscn" id="5_oy5tr"]
 [ext_resource type="Script" path="res://Levels/MENU/CloseGameOnClick.gd" id="7_upnt7"]
 [ext_resource type="AudioStream" uid="uid://bih3n67e7b8im" path="res://Levels/MENU/MainMenu OST.mp3" id="8_dk4ha"]
 [ext_resource type="Texture2D" uid="uid://bjfedcwwbhh6n" path="res://Levels/MENU/LevelSelectBG.png" id="8_lhedh"]
+[ext_resource type="Script" path="res://Levels/MENU/LevelSelectButton.gd" id="9_e06vl"]
+[ext_resource type="PackedScene" uid="uid://bvekfl5o726uq" path="res://Levels/2.tscn" id="10_5nj7w"]
+[ext_resource type="PackedScene" uid="uid://b0mbiptt75dw5" path="res://Levels/3.tscn" id="11_jvj7f"]
+[ext_resource type="PackedScene" uid="uid://dvlnpvv0c6cw5" path="res://Levels/4.tscn" id="12_wvyss"]
+[ext_resource type="PackedScene" uid="uid://cig5ic2744pbs" path="res://Levels/5.tscn" id="13_oj350"]
+[ext_resource type="PackedScene" uid="uid://cb742iagf7hb7" path="res://Levels/6.tscn" id="14_b1pg4"]
+[ext_resource type="PackedScene" uid="uid://b30qponckjb6d" path="res://Levels/7.tscn" id="15_6m4wa"]
+
+[sub_resource type="Theme" id="Theme_2nv7a"]
 
 [node name="MainMenu" type="Node3D"]
 
@@ -165,8 +174,7 @@ grow_vertical = 2
 texture = ExtResource("8_lhedh")
 expand_mode = 1
 
-[node name="Scroll" type="HScrollBar" parent="LevelSelect/BG"]
-custom_minimum_size = Vector2(500, 0)
+[node name="VBox" type="VBoxContainer" parent="LevelSelect/BG"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -174,21 +182,164 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Level_1" type="HBoxContainer" parent="LevelSelect/BG/Scroll"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 75.0
-grow_horizontal = 2
+[node name="Level_Tutorial" type="HBoxContainer" parent="LevelSelect/BG/VBox"]
+layout_mode = 2
+script = ExtResource("9_e06vl")
+Level = ExtResource("5_oy5tr")
 
-[node name="Text" type="RichTextLabel" parent="LevelSelect/BG/Scroll/Level_1"]
+[node name="Text" type="RichTextLabel" parent="LevelSelect/BG/VBox/Level_Tutorial"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Level #1"
+theme = SubResource("Theme_2nv7a")
+theme_override_fonts/normal_font = ExtResource("2_44x6r")
+theme_override_font_sizes/normal_font_size = 50
+text = "Level 1 | 25.255 | 133*"
 
-[node name="Play" type="Button" parent="LevelSelect/BG/Scroll/Level_1"]
+[node name="Play" type="Button" parent="LevelSelect/BG/VBox/Level_Tutorial"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[node name="Level_1" type="HBoxContainer" parent="LevelSelect/BG/VBox"]
+layout_mode = 2
+script = ExtResource("9_e06vl")
+Level = ExtResource("4_f6eu1")
+
+[node name="Text" type="RichTextLabel" parent="LevelSelect/BG/VBox/Level_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2nv7a")
+theme_override_fonts/normal_font = ExtResource("2_44x6r")
+theme_override_font_sizes/normal_font_size = 50
+text = "Level 1 | 25.255 | 133*"
+
+[node name="Play" type="Button" parent="LevelSelect/BG/VBox/Level_1"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[node name="Level_2" type="HBoxContainer" parent="LevelSelect/BG/VBox"]
+layout_mode = 2
+script = ExtResource("9_e06vl")
+Level = ExtResource("10_5nj7w")
+
+[node name="Text" type="RichTextLabel" parent="LevelSelect/BG/VBox/Level_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2nv7a")
+theme_override_fonts/normal_font = ExtResource("2_44x6r")
+theme_override_font_sizes/normal_font_size = 50
+text = "Level 1 | 25.255 | 133*"
+
+[node name="Play" type="Button" parent="LevelSelect/BG/VBox/Level_2"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[node name="Level_3" type="HBoxContainer" parent="LevelSelect/BG/VBox"]
+layout_mode = 2
+script = ExtResource("9_e06vl")
+Level = ExtResource("11_jvj7f")
+
+[node name="Text" type="RichTextLabel" parent="LevelSelect/BG/VBox/Level_3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2nv7a")
+theme_override_fonts/normal_font = ExtResource("2_44x6r")
+theme_override_font_sizes/normal_font_size = 50
+text = "Level 1 | 25.255 | 133*"
+
+[node name="Play" type="Button" parent="LevelSelect/BG/VBox/Level_3"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[node name="Level_4" type="HBoxContainer" parent="LevelSelect/BG/VBox"]
+layout_mode = 2
+script = ExtResource("9_e06vl")
+Level = ExtResource("12_wvyss")
+
+[node name="Text" type="RichTextLabel" parent="LevelSelect/BG/VBox/Level_4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2nv7a")
+theme_override_fonts/normal_font = ExtResource("2_44x6r")
+theme_override_font_sizes/normal_font_size = 50
+text = "Level 1 | 25.255 | 133*"
+
+[node name="Play" type="Button" parent="LevelSelect/BG/VBox/Level_4"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[node name="Level_5" type="HBoxContainer" parent="LevelSelect/BG/VBox"]
+layout_mode = 2
+script = ExtResource("9_e06vl")
+Level = ExtResource("13_oj350")
+
+[node name="Text" type="RichTextLabel" parent="LevelSelect/BG/VBox/Level_5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2nv7a")
+theme_override_fonts/normal_font = ExtResource("2_44x6r")
+theme_override_font_sizes/normal_font_size = 50
+text = "Level 1 | 25.255 | 133*"
+
+[node name="Play" type="Button" parent="LevelSelect/BG/VBox/Level_5"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[node name="Level_6" type="HBoxContainer" parent="LevelSelect/BG/VBox"]
+layout_mode = 2
+script = ExtResource("9_e06vl")
+Level = ExtResource("14_b1pg4")
+
+[node name="Text" type="RichTextLabel" parent="LevelSelect/BG/VBox/Level_6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2nv7a")
+theme_override_fonts/normal_font = ExtResource("2_44x6r")
+theme_override_font_sizes/normal_font_size = 50
+text = "Level 1 | 25.255 | 133*"
+
+[node name="Play" type="Button" parent="LevelSelect/BG/VBox/Level_6"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[node name="Level_7" type="HBoxContainer" parent="LevelSelect/BG/VBox"]
+layout_mode = 2
+script = ExtResource("9_e06vl")
+Level = ExtResource("15_6m4wa")
+
+[node name="Text" type="RichTextLabel" parent="LevelSelect/BG/VBox/Level_7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2nv7a")
+theme_override_fonts/normal_font = ExtResource("2_44x6r")
+theme_override_font_sizes/normal_font_size = 50
+text = "Level 1 | 25.255 | 133*"
+
+[node name="Play" type="Button" parent="LevelSelect/BG/VBox/Level_7"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 40
 text = "PLAY"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
@@ -199,3 +350,11 @@ autoplay = true
 [connection signal="pressed" from="Main/BG/VBoxContainer/PLAY" to="Main/BG/VBoxContainer/PLAY" method="_button_pressed"]
 [connection signal="pressed" from="Main/BG/VBoxContainer/TUTORIAL" to="Main/BG/VBoxContainer/TUTORIAL" method="_button_pressed"]
 [connection signal="pressed" from="Main/BG/VBoxContainer/Quit" to="Main/BG/VBoxContainer/Quit" method="_button_pressed"]
+[connection signal="pressed" from="LevelSelect/BG/VBox/Level_Tutorial/Play" to="LevelSelect/BG/VBox/Level_Tutorial" method="onClicked"]
+[connection signal="pressed" from="LevelSelect/BG/VBox/Level_1/Play" to="LevelSelect/BG/VBox/Level_1" method="onClicked"]
+[connection signal="pressed" from="LevelSelect/BG/VBox/Level_2/Play" to="LevelSelect/BG/VBox/Level_2" method="onClicked"]
+[connection signal="pressed" from="LevelSelect/BG/VBox/Level_3/Play" to="LevelSelect/BG/VBox/Level_3" method="onClicked"]
+[connection signal="pressed" from="LevelSelect/BG/VBox/Level_4/Play" to="LevelSelect/BG/VBox/Level_4" method="onClicked"]
+[connection signal="pressed" from="LevelSelect/BG/VBox/Level_5/Play" to="LevelSelect/BG/VBox/Level_5" method="onClicked"]
+[connection signal="pressed" from="LevelSelect/BG/VBox/Level_6/Play" to="LevelSelect/BG/VBox/Level_6" method="onClicked"]
+[connection signal="pressed" from="LevelSelect/BG/VBox/Level_7/Play" to="LevelSelect/BG/VBox/Level_7" method="onClicked"]

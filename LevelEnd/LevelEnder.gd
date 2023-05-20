@@ -1,5 +1,6 @@
 extends Area3D
 
+var totalLevelRings = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +17,7 @@ var currentTime:float = 0
 var currentRings:float = 0
 
 var sceneLoaded = false
+
 func load_next_scene():
 	if(NextLevel == null): 
 		push_warning(self.name + " has no 'scene' loaded.")
@@ -41,7 +43,11 @@ func _process(delta):
 				ringsObtained = body.onLevelEnded(self)
 				$LevelEndSFX.play()
 				$"/root/SpeedrunTimer".onLevelFinished()
-				$"/root/SpeedrunSave".Save(get_tree().current_scene.name,$"/root/SpeedrunTimer".getTime())
+				var SaveData = LevelData.new();
+				SaveData.levelName = get_tree().current_scene.name;
+				SaveData.RingCount = ringsObtained
+				SaveData.speedTime = $"/root/SpeedrunTimer".getTime()
+				$"/root/SpeedrunSave".Save(SaveData)
 				print("Level Endeed With:" + str(ringsObtained) + " RINGS.");
 	else:
 		if($LevelEndSFX.playing):

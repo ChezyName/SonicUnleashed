@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://bvekfl5o726uq"]
 
 [ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="1_cgjdo"]
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="2_ce28a"]
@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://ddya7fjyslxx" path="res://Prefabs/Spring.tscn" id="6_at7f6"]
 [ext_resource type="PackedScene" uid="uid://dbtvih4j565h2" path="res://Prefabs/MovingPlatform.tscn" id="6_u23b7"]
 [ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="7_v8ghi"]
-[ext_resource type="PackedScene" uid="uid://c163u8ppgbocv" path="res://Levels/3.tscn" id="8_14kow"]
+[ext_resource type="PackedScene" uid="uid://b0mbiptt75dw5" path="res://Levels/3.tscn" id="8_14kow"]
 [ext_resource type="PackedScene" uid="uid://b66brv3e85ude" path="res://Prefabs/Checkpoint.tscn" id="8_qbwod"]
 [ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/Ring.tscn" id="9_o4amt"]
 
-[node name="1A - Green Hill Zone" type="Node3D"]
+[node name="2" type="Node3D"]
 
 [node name="GreenHillZoneTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_cgjdo")

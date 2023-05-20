@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dj41f62uo4e23" path="res://Prefabs/Speedboost.tscn" id="6_uyv5e"]
 [ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="9_vlb6q"]
 
-[node name="4A - Green Hill Zone" type="Node3D"]
+[node name="7" type="Node3D"]
 
 [node name="GreenHillZoneTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_sia0o")

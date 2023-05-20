@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SpeedrunTimer="*res://Util/SpeedrunTimer.gd"
 SpeedrunSave="*res://Util/SpeedrunSave.gd"
+SpeedrunTimer="*res://Util/SpeedrunTimer.gd"
 
 [display]
 

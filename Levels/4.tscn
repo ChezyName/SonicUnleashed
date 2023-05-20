@@ -1,17 +1,17 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://dvlnpvv0c6cw5"]
 
 [ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="1_0b488"]
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="2_1e7yn"]
 [ext_resource type="PackedScene" uid="uid://mvjp0jwvr6u8" path="res://Maps/Grass.tscn" id="3_6hjyf"]
 [ext_resource type="PackedScene" uid="uid://exwqb53akl46" path="res://Maps/Dirt.tscn" id="4_5edr1"]
 [ext_resource type="PackedScene" uid="uid://dj41f62uo4e23" path="res://Prefabs/Speedboost.tscn" id="6_45c5l"]
-[ext_resource type="PackedScene" uid="uid://dmfwilx5wucqk" path="res://Levels/5.tscn" id="7_2ofx6"]
+[ext_resource type="PackedScene" uid="uid://cig5ic2744pbs" path="res://Levels/5.tscn" id="7_2ofx6"]
 [ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/Ring.tscn" id="7_hq2i3"]
 [ext_resource type="PackedScene" uid="uid://ddya7fjyslxx" path="res://Prefabs/Spring.tscn" id="8_aj5sq"]
 [ext_resource type="PackedScene" uid="uid://dxqb1na64kvhy" path="res://Prefabs/DistructableRock.tscn" id="8_hrl0p"]
 [ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="9_qgdrl"]
 
-[node name="4A - Green Hill Zone" type="Node3D"]
+[node name="4" type="Node3D"]
 
 [node name="GreenHillZoneTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_0b488")

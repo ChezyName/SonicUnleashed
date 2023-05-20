@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene load_steps=12 format=3 uid="uid://0xa4c7f0gk7b"]
 
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="1_cknka"]
 [ext_resource type="PackedScene" uid="uid://ds68hs5k2m60l" path="res://Prefabs/Ground.tscn" id="2_6l4bk"]
@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dxqb1na64kvhy" path="res://Prefabs/DistructableRock.tscn" id="8_m7a22"]
 [ext_resource type="PackedScene" uid="uid://dmmlsuqpcstn8" path="res://Maps/GreenHillZone/PREF-Bridge.tscn" id="9_6pegm"]
 [ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="10_ef378"]
-[ext_resource type="PackedScene" uid="uid://caqgywmvaxg0u" path="res://Levels/1.tscn" id="11_0xt25"]
+[ext_resource type="PackedScene" uid="uid://brynondw6a232" path="res://Levels/1.tscn" id="11_0xt25"]
 
-[node name="0A - Tutorial  GreyBoxTesting" type="Node3D"]
+[node name="Tutorial" type="Node3D"]
 
 [node name="GreenHillZoneTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_lya8r")
