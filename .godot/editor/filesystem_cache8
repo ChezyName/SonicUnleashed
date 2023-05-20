@@ -59,19 +59,19 @@ SonicGoal_stu__obj_base_metallicRoughness.png::CompressedTexture2D::221507172861
 MapShower.tscn::PackedScene::4063560804395962189::1684280080::0::1::::<><>::uid://clcb6p0bqyf7m
 ShowUI.gd::GDScript::-1::1684277915::0::1::::<>Node<>::
 SonicLevel_1.png::CompressedTexture2D::5549164306054625664::1684277481::1684277492::1::::<><>::
-::res://Levels/::1684542977
+::res://Levels/::1684543627
 1.tscn::PackedScene::4806279747467886678::1684537759::0::1::::<><>::uid://brsw8j673hjf8<>uid://kysic4ixjc4r<>uid://dbbkrlmaf07ed<>uid://bk8ped43jas31<>uid://bghipnpfqyevp<>uid://dsaev41c2k82l<>uid://dbtvih4j565h2<>uid://dxqb1na64kvhy<>uid://b66brv3e85ude<>uid://ddya7fjyslxx<>uid://ba6vu74jfe2n
 2.tscn::PackedScene::72109673316396171::1684538059::0::1::::<><>::uid://kysic4ixjc4r<>uid://dbbkrlmaf07ed<>uid://brsw8j673hjf8<>uid://dsaev41c2k82l<>uid://ddya7fjyslxx<>uid://dbtvih4j565h2<>uid://bghipnpfqyevp<>uid://c163u8ppgbocv<>uid://b66brv3e85ude<>uid://bk8ped43jas31
 3.tscn::PackedScene::6663484561158682009::1684532634::0::1::::<><>::uid://kysic4ixjc4r<>uid://dbbkrlmaf07ed<>uid://mvjp0jwvr6u8<>uid://exwqb53akl46<>uid://ddya7fjyslxx<>uid://dxqb1na64kvhy<>uid://bghipnpfqyevp<>uid://bb87j781c5gxr<>uid://bk8ped43jas31<>uid://dj41f62uo4e23
 4.tscn::PackedScene::2526694742039707847::1684532620::0::1::::<><>::uid://kysic4ixjc4r<>uid://dbbkrlmaf07ed<>uid://mvjp0jwvr6u8<>uid://exwqb53akl46<>uid://dj41f62uo4e23<>uid://dmfwilx5wucqk<>uid://bk8ped43jas31<>uid://ddya7fjyslxx<>uid://dxqb1na64kvhy<>uid://bghipnpfqyevp
 5.tscn::PackedScene::8013200738378696242::1684537759::0::1::::<><>::uid://kysic4ixjc4r<>uid://dbbkrlmaf07ed<>uid://mvjp0jwvr6u8<>uid://exwqb53akl46<>uid://bk8ped43jas31<>uid://bghipnpfqyevp<>uid://cb742iagf7hb7<>uid://dj41f62uo4e23<>uid://ddya7fjyslxx<>uid://dsaev41c2k82l
 6.tscn::PackedScene::4910899728847168238::1684537759::0::1::::<><>::uid://kysic4ixjc4r<>uid://dbbkrlmaf07ed<>uid://mvjp0jwvr6u8<>uid://exwqb53akl46<>uid://bghipnpfqyevp<>uid://dj41f62uo4e23<>uid://ddya7fjyslxx
-MainMenu.tscn::PackedScene::6536686355153593486::1684542977::0::1::::<><>::uid://cxojjrr3w8gxa<>uid://d71vidvkila0<>res://Levels/MENU/onHoverButtons.gd<>res://Levels/MENU/OpenSceneOnClick.gd<>uid://caqgywmvaxg0u<>uid://wsv6bg6tnnqm<>res://Levels/MENU/CloseGameOnClick.gd<>uid://d1salrpa81hq4
+MainMenu.tscn::PackedScene::6536686355153593486::1684543627::0::1::::<><>::uid://cxojjrr3w8gxa<>uid://d71vidvkila0<>res://Levels/MENU/onHoverButtons.gd<>res://Levels/MENU/OpenSceneOnClick.gd<>uid://caqgywmvaxg0u<>uid://wsv6bg6tnnqm<>res://Levels/MENU/CloseGameOnClick.gd<>uid://bih3n67e7b8im
 Tutorial.tscn::PackedScene::1582643839295527640::1684299620::0::1::::<><>::uid://dbbkrlmaf07ed<>uid://ds68hs5k2m60l<>uid://bk8ped43jas31<>uid://dsaev41c2k82l<>uid://ddya7fjyslxx<>uid://kysic4ixjc4r<>uid://b66brv3e85ude<>uid://dxqb1na64kvhy<>uid://dmmlsuqpcstn8<>uid://bghipnpfqyevp<>uid://caqgywmvaxg0u
-::res://Levels/MENU/::1684543385
+::res://Levels/MENU/::1684544073
 CloseGameOnClick.gd::GDScript::-1::1684457005::0::1::::<>Button<>::
-MainMenu OST.mp3::AudioStreamMP3::2964107046076181160::1684543385::1684543385::1::::<><>::
-MainMenu.png::CompressedTexture2D::6416649505159349582::1684453030::1684453031::1::::<><>::
+MainMenu OST.mp3::AudioStreamMP3::2964107046076181160::1684543385::1684543395::1::::<><>::
+MainMenu.png::CompressedTexture2D::6416649505159349582::1684544073::1684544074::1::::<><>::
 onHoverButtons.gd::GDScript::-1::1684453782::0::1::::<>Button<>::
 OpenSceneOnClick.gd::GDScript::-1::1684457022::0::1::::<>Button<>::
 SonicAngerART.png::CompressedTexture2D::1998261381169759975::1684452518::1684452530::1::::<><>::
@@ -92,10 +92,10 @@ MovingPlatform.gd::GDScript::-1::1682154289::0::1::::<>Node3D<>::
 PlayerStickyPlatform.gd::GDScript::-1::1682290434::0::1::::<>Area3D<>::
 ::res://Music/::1681336920
 GreenHillZone.mp3::AudioStreamMP3::752540844939398507::1681336909::1681336920::1::::<><>::
-::res://Prefabs/::1684542910
+::res://Prefabs/::1684543626
 Checkpoint.tscn::PackedScene::4626362768809027514::1681381962::0::1::::<><>::res://Checkpoint/Checkpoint.gd<>uid://dmtivjw77w8lh<>uid://cisjs33jh8nak<>uid://dbuycvl12x5od
 DistructableRock.tscn::PackedScene::8806743330704519514::1682154794::0::1::::<><>::res://Rock/distructablerock.gd<>uid://cl88jlm7l6l67<>uid://bu5gsm45rwq6f
-GoalPost.tscn::PackedScene::2822517618875544201::1684542910::0::1::::<><>::uid://cesft2r0f6dup<>res://LevelEnd/LevelEnder.gd<>uid://cfo0hs3u565it
+GoalPost.tscn::PackedScene::2822517618875544201::1684543626::0::1::::<><>::uid://cesft2r0f6dup<>res://LevelEnd/LevelEnder.gd<>uid://cfo0hs3u565it
 Ground.tscn::PackedScene::8488674100513745449::1680586611::0::1::::<><>::
 MovingPlatform.tscn::PackedScene::7269963828156847545::1682154289::0::1::::<><>::res://Maps/GreenHillZone/Scripts/MovingPlatform.gd<>res://Maps/GreenHillZone/Scripts/PlayerStickyPlatform.gd
 SonicDroppedRing.tscn::PackedScene::692931866033744787::1682291525::0::1::::<><>::res://Rings/RingOnDropped.gd<>uid://btftxfjjsy7pc<>uid://d1g3su2c6t2r6
