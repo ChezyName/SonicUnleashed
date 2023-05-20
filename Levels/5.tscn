@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmfwilx5wucqk"]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="1_3fi7v"]
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="2_nubl3"]
 [ext_resource type="PackedScene" uid="uid://mvjp0jwvr6u8" path="res://Maps/Grass.tscn" id="3_jm3wo"]
 [ext_resource type="PackedScene" uid="uid://exwqb53akl46" path="res://Maps/Dirt.tscn" id="4_r31s0"]
-[ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/SonicRing.tscn" id="5_1dhts"]
+[ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/Ring.tscn" id="5_1dhts"]
 [ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="6_kmq5w"]
 [ext_resource type="PackedScene" uid="uid://cb742iagf7hb7" path="res://Levels/6.tscn" id="7_6endt"]
 [ext_resource type="PackedScene" uid="uid://dj41f62uo4e23" path="res://Prefabs/Speedboost.tscn" id="7_xbgrb"]

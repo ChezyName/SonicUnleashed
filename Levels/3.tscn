@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c163u8ppgbocv"]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="1_5bavr"]
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="2_uvu3c"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dxqb1na64kvhy" path="res://Prefabs/DistructableRock.tscn" id="5_82nb4"]
 [ext_resource type="PackedScene" uid="uid://bghipnpfqyevp" path="res://Prefabs/GoalPost.tscn" id="7_tsshy"]
 [ext_resource type="PackedScene" uid="uid://bb87j781c5gxr" path="res://Levels/4.tscn" id="8_31xw8"]
-[ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/SonicRing.tscn" id="9_rkblr"]
+[ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/Ring.tscn" id="9_rkblr"]
 [ext_resource type="PackedScene" uid="uid://dj41f62uo4e23" path="res://Prefabs/Speedboost.tscn" id="10_k751a"]
 
 [node name="4A - Green Hill Zone" type="Node3D"]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://wsv6bg6tnnqm"]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="PackedScene" uid="uid://dbbkrlmaf07ed" path="res://Prefabs/SonicPlayer.tscn" id="1_cknka"]
 [ext_resource type="PackedScene" uid="uid://ds68hs5k2m60l" path="res://Prefabs/Ground.tscn" id="2_6l4bk"]
-[ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/SonicRing.tscn" id="3_hcw40"]
+[ext_resource type="PackedScene" uid="uid://bk8ped43jas31" path="res://Prefabs/Ring.tscn" id="3_hcw40"]
 [ext_resource type="PackedScene" uid="uid://dsaev41c2k82l" path="res://Prefabs/Spikes.tscn" id="4_pndxi"]
 [ext_resource type="PackedScene" uid="uid://ddya7fjyslxx" path="res://Prefabs/Spring.tscn" id="5_ng2te"]
 [ext_resource type="AudioStream" uid="uid://kysic4ixjc4r" path="res://Music/GreenHillZone.mp3" id="6_lya8r"]
