@@ -1,12 +1,14 @@
-ColorRect
+RichTextLabel
+Button
+HBoxContainer
+HScrollBar
 CanvasLayer
+ColorRect
 WorldEnvironment
 AudioStreamPlayer
 VBoxContainer
-HBoxContainer
 Camera3D
 Node3D
-Button
 TextureRect
 Camera2D
 Control
@@ -20,7 +22,6 @@ CollisionShape3D
 Area3D
 CanvasGroup
 DirectionalLight3D
-RichTextLabel
 Label
 Panel
 GPUParticles3D
@@ -29,4 +30,3 @@ VisibleOnScreenNotifier2D
 Label3D
 Sprite3D
 RigidBody3D
-Node

@@ -1,17 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0eojfirgv6sg"]
+[gd_scene load_steps=10 format=3 uid="uid://c0eojfirgv6sg"]
 
 [ext_resource type="Texture2D" uid="uid://cxojjrr3w8gxa" path="res://Levels/MENU/MainMenu.png" id="1_d5u1o"]
 [ext_resource type="FontFile" uid="uid://d71vidvkila0" path="res://Util/NiseSegaSonic.TTF" id="2_44x6r"]
 [ext_resource type="Script" path="res://Levels/MENU/onHoverButtons.gd" id="3_lwmqa"]
 [ext_resource type="Script" path="res://Levels/MENU/OpenSceneOnClick.gd" id="3_piby8"]
-[ext_resource type="PackedScene" uid="uid://caqgywmvaxg0u" path="res://Levels/1.tscn" id="4_f6eu1"]
-[ext_resource type="PackedScene" uid="uid://wsv6bg6tnnqm" path="res://Levels/Tutorial.tscn" id="5_oy5tr"]
+[ext_resource type="PackedScene" path="res://Levels/1.tscn" id="4_f6eu1"]
+[ext_resource type="PackedScene" path="res://Levels/Tutorial.tscn" id="5_oy5tr"]
 [ext_resource type="Script" path="res://Levels/MENU/CloseGameOnClick.gd" id="7_upnt7"]
 [ext_resource type="AudioStream" uid="uid://bih3n67e7b8im" path="res://Levels/MENU/MainMenu OST.mp3" id="8_dk4ha"]
+[ext_resource type="Texture2D" uid="uid://bjfedcwwbhh6n" path="res://Levels/MENU/LevelSelectBG.png" id="8_lhedh"]
 
 [node name="MainMenu" type="Node3D"]
 
 [node name="Main" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -142,6 +144,35 @@ offset_right = 8.0
 grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
+
+[node name="LevelSelect" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BG" type="TextureRect" parent="LevelSelect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_lhedh")
+expand_mode = 1
+
+[node name="Scroll" type="HScrollBar" parent="LevelSelect/BG"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_dk4ha")
