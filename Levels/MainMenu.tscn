@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0eojfirgv6sg"]
+[gd_scene load_steps=9 format=3 uid="uid://c0eojfirgv6sg"]
 
 [ext_resource type="Texture2D" uid="uid://cxojjrr3w8gxa" path="res://Levels/MENU/MainMenu.png" id="1_d5u1o"]
 [ext_resource type="FontFile" uid="uid://d71vidvkila0" path="res://Util/NiseSegaSonic.TTF" id="2_44x6r"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://caqgywmvaxg0u" path="res://Levels/1.tscn" id="4_f6eu1"]
 [ext_resource type="PackedScene" uid="uid://wsv6bg6tnnqm" path="res://Levels/Tutorial.tscn" id="5_oy5tr"]
 [ext_resource type="Script" path="res://Levels/MENU/CloseGameOnClick.gd" id="7_upnt7"]
+[ext_resource type="AudioStream" uid="uid://bih3n67e7b8im" path="res://Levels/MENU/MainMenu OST.mp3" id="8_dk4ha"]
 
 [node name="MainMenu" type="Node3D"]
 
@@ -17,20 +18,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="BG" type="TextureRect" parent="Main"]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_d5u1o")
 expand_mode = 1
 
-[node name="PLAY" type="Button" parent="Main"]
-layout_mode = 0
-offset_left = 950.0
-offset_top = 200.0
-offset_right = 1072.0
-offset_bottom = 255.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/BG"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -359.0
+offset_right = -68.9999
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(300, 0)
+alignment = 1
+
+[node name="PLAY" type="Button" parent="Main/BG/VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
@@ -43,7 +59,7 @@ alignment = 2
 script = ExtResource("3_piby8")
 Scene = ExtResource("4_f6eu1")
 
-[node name="OnSelect" type="ColorRect" parent="Main/PLAY"]
+[node name="OnSelect" type="ColorRect" parent="Main/BG/VBoxContainer/PLAY"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -54,12 +70,8 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
-[node name="TUTORIAL" type="Button" parent="Main"]
-layout_mode = 0
-offset_left = 848.0
-offset_top = 266.0
-offset_right = 1072.0
-offset_bottom = 321.0
+[node name="TUTORIAL" type="Button" parent="Main/BG/VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
@@ -72,7 +84,7 @@ alignment = 2
 script = ExtResource("3_piby8")
 Scene = ExtResource("5_oy5tr")
 
-[node name="OnSelect" type="ColorRect" parent="Main/TUTORIAL"]
+[node name="OnSelect" type="ColorRect" parent="Main/BG/VBoxContainer/TUTORIAL"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -83,12 +95,8 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
-[node name="LVLSELECT" type="Button" parent="Main"]
-layout_mode = 0
-offset_left = 782.0
-offset_top = 335.0
-offset_right = 1072.0
-offset_bottom = 390.0
+[node name="LVLSELECT" type="Button" parent="Main/BG/VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
@@ -100,7 +108,7 @@ flat = true
 alignment = 2
 script = ExtResource("3_lwmqa")
 
-[node name="OnSelect" type="ColorRect" parent="Main/LVLSELECT"]
+[node name="OnSelect" type="ColorRect" parent="Main/BG/VBoxContainer/LVLSELECT"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -111,12 +119,8 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
-[node name="Quit" type="Button" parent="Main"]
-layout_mode = 0
-offset_left = 963.0
-offset_top = 414.0
-offset_right = 1072.0
-offset_bottom = 469.0
+[node name="Quit" type="Button" parent="Main/BG/VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
@@ -128,7 +132,7 @@ flat = true
 alignment = 2
 script = ExtResource("7_upnt7")
 
-[node name="OnSelect" type="ColorRect" parent="Main/Quit"]
+[node name="OnSelect" type="ColorRect" parent="Main/BG/VBoxContainer/Quit"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -139,6 +143,11 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
-[connection signal="pressed" from="Main/PLAY" to="Main/PLAY" method="_button_pressed"]
-[connection signal="pressed" from="Main/TUTORIAL" to="Main/TUTORIAL" method="_button_pressed"]
-[connection signal="pressed" from="Main/Quit" to="Main/Quit" method="_button_pressed"]
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_dk4ha")
+volume_db = 1.5
+autoplay = true
+
+[connection signal="pressed" from="Main/BG/VBoxContainer/PLAY" to="Main/BG/VBoxContainer/PLAY" method="_button_pressed"]
+[connection signal="pressed" from="Main/BG/VBoxContainer/TUTORIAL" to="Main/BG/VBoxContainer/TUTORIAL" method="_button_pressed"]
+[connection signal="pressed" from="Main/BG/VBoxContainer/Quit" to="Main/BG/VBoxContainer/Quit" method="_button_pressed"]

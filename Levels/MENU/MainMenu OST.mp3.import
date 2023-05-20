@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bih3n67e7b8im"
+path="res://.godot/imported/MainMenu OST.mp3-5eb7fd65cfa3df301056c0ef435230c3.mp3str"
+
+[deps]
+
+source_file="res://Levels/MENU/MainMenu OST.mp3"
+dest_files=["res://.godot/imported/MainMenu OST.mp3-5eb7fd65cfa3df301056c0ef435230c3.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

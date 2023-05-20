@@ -1,7 +1,11 @@
+AudioStreamPlayer
+VBoxContainer
+HBoxContainer
+Camera3D
+Node3D
 Button
 ColorRect
 TextureRect
-Node3D
 Camera2D
 Control
 Sprite2D
@@ -13,14 +17,12 @@ CSGBox3D
 CollisionShape3D
 Area3D
 CanvasGroup
-Camera3D
 DirectionalLight3D
 RichTextLabel
 Label
 Panel
 GPUParticles3D
 GPUParticles2D
-AudioStreamPlayer
 VisibleOnScreenNotifier2D
 WorldEnvironment
 Label3D
@@ -28,4 +30,3 @@ Sprite3D
 RigidBody3D
 Node
 TextEdit
-RayCast3D
