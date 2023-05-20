@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cxojjrr3w8gxa" path="res://Levels/MENU/MainMenu.png" id="1_d5u1o"]
 [ext_resource type="FontFile" uid="uid://d71vidvkila0" path="res://Util/NiseSegaSonic.TTF" id="2_44x6r"]
-[ext_resource type="Script" path="res://Levels/MENU/onHoverButtons.gd" id="3_lwmqa"]
 [ext_resource type="Script" path="res://Levels/MENU/OpenSceneOnClick.gd" id="3_piby8"]
 [ext_resource type="PackedScene" uid="uid://brynondw6a232" path="res://Levels/1.tscn" id="4_f6eu1"]
 [ext_resource type="PackedScene" uid="uid://0xa4c7f0gk7b" path="res://Levels/Tutorial.tscn" id="5_oy5tr"]
+[ext_resource type="Script" path="res://Levels/MENU/HidenShow.gd" id="6_d221e"]
 [ext_resource type="Script" path="res://Levels/MENU/CloseGameOnClick.gd" id="7_upnt7"]
 [ext_resource type="AudioStream" uid="uid://bih3n67e7b8im" path="res://Levels/MENU/MainMenu OST.mp3" id="8_dk4ha"]
 [ext_resource type="Texture2D" uid="uid://bjfedcwwbhh6n" path="res://Levels/MENU/LevelSelectBG.png" id="8_lhedh"]
@@ -22,7 +22,6 @@
 [node name="MainMenu" type="Node3D"]
 
 [node name="Main" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,7 +105,7 @@ grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
-[node name="LVLSELECT" type="Button" parent="Main/BG/VBoxContainer"]
+[node name="LVLSELECT" type="Button" parent="Main/BG/VBoxContainer" node_paths=PackedStringArray("Hide", "Show")]
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -117,7 +116,9 @@ theme_override_font_sizes/font_size = 35
 text = "LEVEL SELCT"
 flat = true
 alignment = 2
-script = ExtResource("3_lwmqa")
+script = ExtResource("6_d221e")
+Hide = NodePath("../../..")
+Show = NodePath("../../../../LevelSelect")
 
 [node name="OnSelect" type="ColorRect" parent="Main/BG/VBoxContainer/LVLSELECT"]
 layout_mode = 1
@@ -155,6 +156,7 @@ grow_vertical = 2
 color = Color(0.572549, 1, 1, 1)
 
 [node name="LevelSelect" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -342,6 +344,39 @@ theme_override_fonts/font = ExtResource("2_44x6r")
 theme_override_font_sizes/font_size = 40
 text = "PLAY"
 
+[node name="Back" type="Button" parent="LevelSelect/BG" node_paths=PackedStringArray("Hide", "Show")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.572549, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.870588, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_44x6r")
+theme_override_font_sizes/font_size = 35
+text = "back"
+flat = true
+alignment = 2
+script = ExtResource("6_d221e")
+Hide = NodePath("../..")
+Show = NodePath("../../../Main")
+
+[node name="OnSelect" type="ColorRect" parent="LevelSelect/BG/Back"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.572549, 1, 1, 1)
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_dk4ha")
 volume_db = 1.5
@@ -349,6 +384,7 @@ autoplay = true
 
 [connection signal="pressed" from="Main/BG/VBoxContainer/PLAY" to="Main/BG/VBoxContainer/PLAY" method="_button_pressed"]
 [connection signal="pressed" from="Main/BG/VBoxContainer/TUTORIAL" to="Main/BG/VBoxContainer/TUTORIAL" method="_button_pressed"]
+[connection signal="pressed" from="Main/BG/VBoxContainer/LVLSELECT" to="Main/BG/VBoxContainer/LVLSELECT" method="setHidenShow"]
 [connection signal="pressed" from="Main/BG/VBoxContainer/Quit" to="Main/BG/VBoxContainer/Quit" method="_button_pressed"]
 [connection signal="pressed" from="LevelSelect/BG/VBox/Level_Tutorial/Play" to="LevelSelect/BG/VBox/Level_Tutorial" method="onClicked"]
 [connection signal="pressed" from="LevelSelect/BG/VBox/Level_1/Play" to="LevelSelect/BG/VBox/Level_1" method="onClicked"]
@@ -358,3 +394,4 @@ autoplay = true
 [connection signal="pressed" from="LevelSelect/BG/VBox/Level_5/Play" to="LevelSelect/BG/VBox/Level_5" method="onClicked"]
 [connection signal="pressed" from="LevelSelect/BG/VBox/Level_6/Play" to="LevelSelect/BG/VBox/Level_6" method="onClicked"]
 [connection signal="pressed" from="LevelSelect/BG/VBox/Level_7/Play" to="LevelSelect/BG/VBox/Level_7" method="onClicked"]
+[connection signal="pressed" from="LevelSelect/BG/Back" to="LevelSelect/BG/Back" method="setHidenShow"]

@@ -23,3 +23,4 @@ res://Speedboost/Base.tres
 res://Speedboost/RedBoost.tres
 res://Levels/Tutorial.tscn
 res://Levels/MENU/LevelSelectButton.gd
+res://Levels/MENU/HidenShow.gd
