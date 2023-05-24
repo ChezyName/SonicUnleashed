@@ -1,3 +1,4 @@
+Camera3D
 VBoxContainer
 RichTextLabel
 Button
@@ -7,7 +8,6 @@ CanvasLayer
 ColorRect
 WorldEnvironment
 AudioStreamPlayer
-Camera3D
 Node3D
 TextureRect
 Camera2D

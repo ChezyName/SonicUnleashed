@@ -590,6 +590,7 @@ MinSpringSpeed = 30.0
 
 [node name="GoalPost" parent="." instance=ExtResource("9_vlb6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.132468, 4.16341, 298.819)
+finalScene = true
 
 [node name="SonicRingGrab50" parent="." instance=ExtResource("5_aj36j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03278, 264.88)

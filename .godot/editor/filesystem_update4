@@ -1,5 +1,4 @@
 res://Levels/MainMenu.tscn
-res://LevelEnd/Materials/cmn_obj_goalplate_HD_back.tres
 res://Sonic/Materials/chr_classicsonic_body.tres
 res://Sonic/Materials/chr_classicsonic_mouth.tres
 res://Sonic/Materials/chr_classicsonic_eye.tres
@@ -7,6 +6,7 @@ res://Sonic/Animations/sc_jump_ball.res
 res://Rings/SonicRing.tres
 res://LevelEnd/Materials/stu__obj_base.tres
 res://LevelEnd/Materials/cmn_obj_goalplate_HD_metal.tres
+res://LevelEnd/Materials/cmn_obj_goalplate_HD_back.tres
 res://LevelEnd/Materials/cmn_obj_goalplate_s_body.tres
 res://LevelEnd/Materials/cmn_obj_goalplate_s_nose.tres
 res://LevelEnd/Materials/cmn_obj_goalplate_s_eyeL.tres
@@ -21,3 +21,5 @@ res://Spring/Material.001.tres
 res://Spring/Spring.tres
 res://Speedboost/Base.tres
 res://Speedboost/RedBoost.tres
+res://Levels/7.tscn
+res://LevelEnd/LevelEnder.gd

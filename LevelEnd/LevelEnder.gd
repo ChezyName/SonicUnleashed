@@ -9,6 +9,7 @@ func _ready():
 	pass # Replace with function body.
 
 @export var NextLevel:PackedScene
+@export var finalScene = false
 
 var levelEnded:bool = false
 var ringsObtained:int = 0
@@ -19,13 +20,18 @@ var currentRings:float = 0
 var sceneLoaded = false
 
 func load_next_scene():
-	if(NextLevel == null): 
-		push_warning(self.name + " has no 'scene' loaded.")
-		return
-	if(sceneLoaded): return
-	get_tree().change_scene_to_packed(NextLevel)
-	sceneLoaded = true
-	queue_free()
+	if(finalScene):
+		get_tree().change_scene_to_file("res://Levels/MainMenu.tscn")
+		sceneLoaded = true
+		queue_free()
+	else:
+		if(NextLevel == null): 
+			push_warning(self.name + " has no 'scene' loaded.")
+			return
+		if(sceneLoaded): return
+		get_tree().change_scene_to_packed(NextLevel)
+		sceneLoaded = true
+		queue_free()
 
 func NumberToTime(Clock):
 	var minutes = floor(Clock / 60)
